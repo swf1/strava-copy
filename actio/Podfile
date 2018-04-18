@@ -6,6 +6,8 @@ target 'actio' do
   use_frameworks!
 
   # Pods for actio
+  pod 'Firebase/Core'
+
   use_frameworks!
     pod 'FBSDKLoginKit'
     pod 'FacebookCore'
