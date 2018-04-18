@@ -8,6 +8,13 @@ target 'actio' do
   # Pods for actio
   pod 'Firebase/Core'
 
+  use_frameworks!
+    pod 'FBSDKLoginKit'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'Firebase/Auth'
+    pod 'FacebookLogin'
+
   target 'actioTests' do
     inherit! :search_paths
     # Pods for testing

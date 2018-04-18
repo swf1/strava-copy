@@ -7,111 +7,139 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		726112F420826DB7005E3C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F320826DB7005E3C12 /* AppDelegate.swift */; };
-		726112F620826DB7005E3C12 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F520826DB7005E3C12 /* RootViewController.swift */; };
-		726112F820826DB8005E3C12 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F720826DB8005E3C12 /* DataViewController.swift */; };
-		726112FA20826DB8005E3C12 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F920826DB8005E3C12 /* ModelController.swift */; };
-		726112FD20826DB8005E3C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726112FB20826DB8005E3C12 /* Main.storyboard */; };
-		726112FF20826DBA005E3C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726112FE20826DBA005E3C12 /* Assets.xcassets */; };
-		7261130220826DBA005E3C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7261130020826DBA005E3C12 /* LaunchScreen.storyboard */; };
-		7261130D20826DBA005E3C12 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261130C20826DBA005E3C12 /* actioTests.swift */; };
+		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
+		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
+		72365EF52086E13900413444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF42086E13900413444 /* ViewController.swift */; };
+		72365EF82086E13900413444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF62086E13900413444 /* Main.storyboard */; };
+		72365EFA2086E13A00413444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF92086E13A00413444 /* Assets.xcassets */; };
+		72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EFB2086E13A00413444 /* LaunchScreen.storyboard */; };
+		72365F082086E13A00413444 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365F072086E13A00413444 /* actioTests.swift */; };
+		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7261130920826DBA005E3C12 /* PBXContainerItemProxy */ = {
+		72365F042086E13A00413444 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 726112E820826DB7005E3C12 /* Project object */;
+			containerPortal = 72365EE72086E13900413444 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 726112EF20826DB7005E3C12;
+			remoteGlobalIDString = 72365EEE2086E13900413444;
 			remoteInfo = actio;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		726112F020826DB7005E3C12 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		726112F320826DB7005E3C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		726112F520826DB7005E3C12 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		726112F720826DB8005E3C12 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		726112F920826DB8005E3C12 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		726112FC20826DB8005E3C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		726112FE20826DBA005E3C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7261130120826DBA005E3C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7261130320826DBA005E3C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7261130820826DBA005E3C12 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7261130C20826DBA005E3C12 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
-		7261130E20826DBA005E3C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		72365EF42086E13900413444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72365EF72086E13900413444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72365EF92086E13A00413444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72365EFC2086E13A00413444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		72365EFE2086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72365F032086E13A00413444 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72365F072086E13A00413444 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
+		72365F092086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
+		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
+		EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		726112ED20826DB7005E3C12 /* Frameworks */ = {
+		72365EEC2086E13900413444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130520826DBA005E3C12 /* Frameworks */ = {
+		72365F002086E13A00413444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		726112E720826DB7005E3C12 = {
+		2187E81085F4716E3C137B21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				726112F220826DB7005E3C12 /* actio */,
-				7261130B20826DBA005E3C12 /* actioTests */,
-				726112F120826DB7005E3C12 /* Products */,
+				B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */,
+				276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72365EE62086E13900413444 = {
+			isa = PBXGroup;
+			children = (
+				72365EF12086E13900413444 /* actio */,
+				72365F062086E13A00413444 /* actioTests */,
+				72365EF02086E13900413444 /* Products */,
+				8E2C261C5CC7BBC29C92527E /* Pods */,
+				2187E81085F4716E3C137B21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		726112F120826DB7005E3C12 /* Products */ = {
+		72365EF02086E13900413444 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				726112F020826DB7005E3C12 /* actio.app */,
-				7261130820826DBA005E3C12 /* actioTests.xctest */,
+				72365EEF2086E13900413444 /* actio.app */,
+				72365F032086E13A00413444 /* actioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		726112F220826DB7005E3C12 /* actio */ = {
+		72365EF12086E13900413444 /* actio */ = {
 			isa = PBXGroup;
 			children = (
-				726112F320826DB7005E3C12 /* AppDelegate.swift */,
-				726112F520826DB7005E3C12 /* RootViewController.swift */,
-				726112F720826DB8005E3C12 /* DataViewController.swift */,
-				726112F920826DB8005E3C12 /* ModelController.swift */,
-				726112FB20826DB8005E3C12 /* Main.storyboard */,
-				726112FE20826DBA005E3C12 /* Assets.xcassets */,
-				7261130020826DBA005E3C12 /* LaunchScreen.storyboard */,
-				7261130320826DBA005E3C12 /* Info.plist */,
+				72365EF22086E13900413444 /* AppDelegate.swift */,
+				72365EF42086E13900413444 /* ViewController.swift */,
+				72365EF62086E13900413444 /* Main.storyboard */,
+				72365EF92086E13A00413444 /* Assets.xcassets */,
+				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
+				72365EFE2086E13A00413444 /* Info.plist */,
 			);
 			path = actio;
 			sourceTree = "<group>";
 		};
-		7261130B20826DBA005E3C12 /* actioTests */ = {
+		72365F062086E13A00413444 /* actioTests */ = {
 			isa = PBXGroup;
 			children = (
-				7261130C20826DBA005E3C12 /* actioTests.swift */,
-				7261130E20826DBA005E3C12 /* Info.plist */,
+				72365F072086E13A00413444 /* actioTests.swift */,
+				72365F092086E13A00413444 /* Info.plist */,
 			);
 			path = actioTests;
+			sourceTree = "<group>";
+		};
+		8E2C261C5CC7BBC29C92527E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */,
+				D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */,
+				EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */,
+				C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		726112EF20826DB7005E3C12 /* actio */ = {
+		72365EEE2086E13900413444 /* actio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7261131120826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actio" */;
+			buildConfigurationList = 72365F0C2086E13A00413444 /* Build configuration list for PBXNativeTarget "actio" */;
 			buildPhases = (
-				726112EC20826DB7005E3C12 /* Sources */,
-				726112ED20826DB7005E3C12 /* Frameworks */,
-				726112EE20826DB7005E3C12 /* Resources */,
+				74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */,
+				72365EEB2086E13900413444 /* Sources */,
+				72365EEC2086E13900413444 /* Frameworks */,
+				72365EED2086E13900413444 /* Resources */,
+				CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,47 +147,48 @@
 			);
 			name = actio;
 			productName = actio;
-			productReference = 726112F020826DB7005E3C12 /* actio.app */;
+			productReference = 72365EEF2086E13900413444 /* actio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7261130720826DBA005E3C12 /* actioTests */ = {
+		72365F022086E13A00413444 /* actioTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7261131420826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actioTests" */;
+			buildConfigurationList = 72365F0F2086E13A00413444 /* Build configuration list for PBXNativeTarget "actioTests" */;
 			buildPhases = (
-				7261130420826DBA005E3C12 /* Sources */,
-				7261130520826DBA005E3C12 /* Frameworks */,
-				7261130620826DBA005E3C12 /* Resources */,
+				D6D1B7D3E57678823AF45F21 /* [CP] Check Pods Manifest.lock */,
+				72365EFF2086E13A00413444 /* Sources */,
+				72365F002086E13A00413444 /* Frameworks */,
+				72365F012086E13A00413444 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7261130A20826DBA005E3C12 /* PBXTargetDependency */,
+				72365F052086E13A00413444 /* PBXTargetDependency */,
 			);
 			name = actioTests;
 			productName = actioTests;
-			productReference = 7261130820826DBA005E3C12 /* actioTests.xctest */;
+			productReference = 72365F032086E13A00413444 /* actioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		726112E820826DB7005E3C12 /* Project object */ = {
+		72365EE72086E13900413444 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "corvus group";
 				TargetAttributes = {
-					726112EF20826DB7005E3C12 = {
+					72365EEE2086E13900413444 = {
 						CreatedOnToolsVersion = 9.3;
 					};
-					7261130720826DBA005E3C12 = {
+					72365F022086E13A00413444 = {
 						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 726112EF20826DB7005E3C12;
+						TestTargetID = 72365EEE2086E13900413444;
 					};
 				};
 			};
-			buildConfigurationList = 726112EB20826DB7005E3C12 /* Build configuration list for PBXProject "actio" */;
+			buildConfigurationList = 72365EEA2086E13900413444 /* Build configuration list for PBXProject "actio" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,29 +196,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 726112E720826DB7005E3C12;
-			productRefGroup = 726112F120826DB7005E3C12 /* Products */;
+			mainGroup = 72365EE62086E13900413444;
+			productRefGroup = 72365EF02086E13900413444 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				726112EF20826DB7005E3C12 /* actio */,
-				7261130720826DBA005E3C12 /* actioTests */,
+				72365EEE2086E13900413444 /* actio */,
+				72365F022086E13A00413444 /* actioTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		726112EE20826DB7005E3C12 /* Resources */ = {
+		72365EED2086E13900413444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7261130220826DBA005E3C12 /* LaunchScreen.storyboard in Resources */,
-				726112FF20826DBA005E3C12 /* Assets.xcassets in Resources */,
-				726112FD20826DB8005E3C12 /* Main.storyboard in Resources */,
+				72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */,
+				72365EFA2086E13A00413444 /* Assets.xcassets in Resources */,
+				72365EF82086E13900413444 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130620826DBA005E3C12 /* Resources */ = {
+		72365F012086E13A00413444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,49 +227,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-actio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6D1B7D3E57678823AF45F21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-actioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		726112EC20826DB7005E3C12 /* Sources */ = {
+		72365EEB2086E13900413444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726112F620826DB7005E3C12 /* RootViewController.swift in Sources */,
-				726112FA20826DB8005E3C12 /* ModelController.swift in Sources */,
-				726112F820826DB8005E3C12 /* DataViewController.swift in Sources */,
-				726112F420826DB7005E3C12 /* AppDelegate.swift in Sources */,
+				72365EF52086E13900413444 /* ViewController.swift in Sources */,
+				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130420826DBA005E3C12 /* Sources */ = {
+		72365EFF2086E13A00413444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7261130D20826DBA005E3C12 /* actioTests.swift in Sources */,
+				72365F082086E13A00413444 /* actioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7261130A20826DBA005E3C12 /* PBXTargetDependency */ = {
+		72365F052086E13A00413444 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 726112EF20826DB7005E3C12 /* actio */;
-			targetProxy = 7261130920826DBA005E3C12 /* PBXContainerItemProxy */;
+			target = 72365EEE2086E13900413444 /* actio */;
+			targetProxy = 72365F042086E13A00413444 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		726112FB20826DB8005E3C12 /* Main.storyboard */ = {
+		72365EF62086E13900413444 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				726112FC20826DB8005E3C12 /* Base */,
+				72365EF72086E13900413444 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7261130020826DBA005E3C12 /* LaunchScreen.storyboard */ = {
+		72365EFB2086E13A00413444 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7261130120826DBA005E3C12 /* Base */,
+				72365EFC2086E13A00413444 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -248,7 +346,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7261130F20826DBA005E3C12 /* Debug */ = {
+		72365F0A2086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -308,7 +406,7 @@
 			};
 			name = Debug;
 		};
-		7261131020826DBA005E3C12 /* Release */ = {
+		72365F0B2086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,54 +460,49 @@
 			};
 			name = Release;
 		};
-		7261131220826DBA005E3C12 /* Debug */ = {
+		72365F0D2086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XU5AWAYW87;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = actio/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7261131320826DBA005E3C12 /* Release */ = {
+		72365F0E2086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XU5AWAYW87;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = actio/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		7261131520826DBA005E3C12 /* Debug */ = {
+		72365F102086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -418,18 +511,15 @@
 			};
 			name = Debug;
 		};
-		7261131620826DBA005E3C12 /* Release */ = {
+		72365F112086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -441,34 +531,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		726112EB20826DB7005E3C12 /* Build configuration list for PBXProject "actio" */ = {
+		72365EEA2086E13900413444 /* Build configuration list for PBXProject "actio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261130F20826DBA005E3C12 /* Debug */,
-				7261131020826DBA005E3C12 /* Release */,
+				72365F0A2086E13A00413444 /* Debug */,
+				72365F0B2086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7261131120826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actio" */ = {
+		72365F0C2086E13A00413444 /* Build configuration list for PBXNativeTarget "actio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261131220826DBA005E3C12 /* Debug */,
-				7261131320826DBA005E3C12 /* Release */,
+				72365F0D2086E13A00413444 /* Debug */,
+				72365F0E2086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7261131420826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actioTests" */ = {
+		72365F0F2086E13A00413444 /* Build configuration list for PBXNativeTarget "actioTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261131520826DBA005E3C12 /* Debug */,
-				7261131620826DBA005E3C12 /* Release */,
+				72365F102086E13A00413444 /* Debug */,
+				72365F112086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 726112E820826DB7005E3C12 /* Project object */;
+	rootObject = 72365EE72086E13900413444 /* Project object */;
 }
