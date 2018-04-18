@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    let loginButton = FBSDKLoginButton()
-    loginButton.delegate = self
-   // let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-   // loginButton.center = view.center
+   // let loginButton = FBSDKLoginButton()
+   // loginButton.delegate = self
+    let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+    loginButton.center = view.center
     
-   // view.addSubview(loginButton)
+    view.addSubview(loginButton)
     
   }
 
