@@ -7,12 +7,10 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class DataViewController: UIViewController {
 
-  @IBOutlet weak var emailLoginButton: UIButton!
-  @IBOutlet weak var googleLoginButton: UIButton!
-  @IBOutlet weak var facebookLoginButton: UIButton!
   @IBOutlet weak var dataLabel: UILabel!
   var dataObject: String = ""
 
@@ -20,9 +18,11 @@ class DataViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    facebookLoginButton.layer.cornerRadius = 4
-    googleLoginButton.layer.cornerRadius = 4
-    emailLoginButton.layer.cornerRadius = 4
+    
+    let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+    loginButton.center = view.center
+    
+    view.addSubview(loginButton)
 
   }
 
