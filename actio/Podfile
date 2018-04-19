@@ -3,17 +3,16 @@
 
 target 'actio' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKCoreKit'
-  pod 'Firebase/Auth'
-
   # Pods for actio
+  pod 'FacebookLogin'
+ 
   use_frameworks!
+    pod 'FBSDKLoginKit'
+    pod 'FBSDKCoreKit'
+    pod 'Firebase/Auth'
+    pod 'Bolts'
     pod 'FacebookCore'
-    pod 'FacebookLogin'
-    pod 'FacebookLogin'
-
-  target 'actioTests' do
+      target 'actioTests' do
     inherit! :search_paths
     # Pods for testing
   end
