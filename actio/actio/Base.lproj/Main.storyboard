@@ -13,16 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dawn-dusk-forest-347134" translatesAutoresizingMaskIntoConstraints="NO" id="Cmr-XE-xPV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="311"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gUQ-As-D29">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w36-Fh-HLp">
+                                <rect key="frame" x="37" y="414" width="179" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="s2w-KF-nd7"/>
+                                </constraints>
+                                <state key="normal" title="SIGN IN WITH FACEBOOK"/>
+                                <connections>
+                                    <action selector="facebookLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eG-3f-uYw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cmr-XE-xPV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8PB-11-Ufm"/>
+                            <constraint firstItem="w36-Fh-HLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="HsP-pI-FNP"/>
+                            <constraint firstItem="w36-Fh-HLp" firstAttribute="top" secondItem="Cmr-XE-xPV" secondAttribute="bottom" constant="83" id="XiB-k0-s8K"/>
+                            <constraint firstAttribute="trailing" secondItem="Cmr-XE-xPV" secondAttribute="trailing" id="XiR-nZ-oRb"/>
+                            <constraint firstItem="gUQ-As-D29" firstAttribute="leading" secondItem="Cmr-XE-xPV" secondAttribute="leading" id="c82-In-XMn"/>
+                            <constraint firstItem="gUQ-As-D29" firstAttribute="trailing" secondItem="Cmr-XE-xPV" secondAttribute="trailing" id="mWi-Hs-pYb"/>
+                            <constraint firstItem="gUQ-As-D29" firstAttribute="bottom" secondItem="Cmr-XE-xPV" secondAttribute="bottom" id="nXm-w5-sg3"/>
+                            <constraint firstItem="gUQ-As-D29" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oh2-Km-c23"/>
+                            <constraint firstItem="Cmr-XE-xPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oiO-6p-ng2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="203" id="ttg-ub-jrz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="97.601199400299862"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dawn-dusk-forest-347134" width="6016" height="4016"/>
+    </resources>
 </document>
