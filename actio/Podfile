@@ -15,6 +15,7 @@ target 'actio' do
   pod 'Bolts'
   pod 'FacebookCore'
   target 'actioTests' do
+
     inherit! :search_paths
     # Pods for testing
 end
