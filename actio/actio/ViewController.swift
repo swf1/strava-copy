@@ -16,16 +16,21 @@ import FBSDKCoreKit
 import FacebookLogin
 import GoogleSignIn
 
+import UIKit
+
 class ViewController: UIViewController, GIDSignInUIDelegate {
-    override func viewDidLoad() {
-        print("inside view did load")
-        super.viewDidLoad()
-        self.title = ""
-      
-     // GIDSignIn.sharedInstance().uiDelegate = self
-     // GIDSignIn.sharedInstance().signIn()
+ 
+  @IBOutlet weak var googleLogin: UIButton!
+  @IBOutlet weak var emailLogin: UIButton!
+  @IBOutlet weak var facebookLogin: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    emailLogin.layer.borderWidth = 1
+    googleLogin.layer.borderWidth = 1
 
     }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,5 +97,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
       
     }
   }
+  
 }
 

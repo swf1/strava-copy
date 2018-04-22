@@ -9,6 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Yantramanav-Bold.ttf">
+            <string>Yantramanav-Bold</string>
+        </array>
+        <array key="Yantramanav-Medium.ttf">
+            <string>Yantramanav-Medium</string>
+        </array>
         <array key="Yantramanav-Regular.ttf">
             <string>Yantramanav-Regular</string>
         </array>
@@ -27,50 +33,221 @@
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gUQ-As-D29">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" text="actio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5c-0F-ReV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                                        <fontDescription key="fontDescription" name="Yantramanav-Bold" family="Yantramanav" pointSize="64"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w36-Fh-HLp">
-                                <rect key="frame" x="16" y="414" width="343" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="16" y="346" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.23440290180000001" green="0.2330357143" blue="0.69299665180000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s2w-KF-nd7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
-                                <state key="normal" title="Continue with Facebook"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
+                                <state key="normal" title="Continue with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="facebookLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eG-3f-uYw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-ki-pdd">
-                                <rect key="frame" x="16" y="489" width="343" height="50"/>
-                                <state key="normal" title="Continue with Google"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-ki-pdd">
+                                <rect key="frame" x="16" y="416" width="343" height="50"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="16"/>
+                                <state key="normal" title="Continue with Google">
+                                    <color key="titleColor" red="0.24805289506912231" green="0.26315867900848389" blue="0.57650041580200195" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="googleLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zDU-nf-TqT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-G1-Lc9">
+                                <rect key="frame" x="16" y="565" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4RP-tk-z3C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
+                                <state key="normal" title="Continue with email">
+                                    <color key="titleColor" red="0.83921568629999999" green="0.0" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="googleLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38X-B7-jMj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" or " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIc-dL-PLx">
+                                <rect key="frame" x="175" y="536.5" width="25" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOI-BT-u1J">
+                                <rect key="frame" x="208" y="546.5" width="151" height="0.5"/>
+                                <color key="backgroundColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-uo-uwU">
+                                <rect key="frame" x="16" y="546.5" width="151" height="0.5"/>
+                                <color key="backgroundColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Already a member? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57T-uG-dc6">
+                                <rect key="frame" x="107" y="623" width="118" height="21"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="14"/>
+                                <color key="textColor" red="0.83921568627450982" green="0.0" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjN-8C-eHZ">
+                                <rect key="frame" x="233" y="623" width="35" height="19"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="14"/>
+                                <color key="textColor" red="0.83921568627450982" green="0.0" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bgJ-ki-pdd" firstAttribute="centerX" secondItem="Cmr-XE-xPV" secondAttribute="centerX" id="0gm-Li-pRL"/>
+                            <constraint firstItem="n9X-G1-Lc9" firstAttribute="trailing" secondItem="bgJ-ki-pdd" secondAttribute="trailing" id="5pN-uR-6Ea"/>
+                            <constraint firstItem="n9X-G1-Lc9" firstAttribute="top" secondItem="rIc-dL-PLx" secondAttribute="bottom" constant="8" symbolic="YES" id="7tn-gE-rOI"/>
                             <constraint firstItem="Cmr-XE-xPV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8PB-11-Ufm"/>
-                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="top" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="52" id="Caq-bL-bFx"/>
+                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="top" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="20" id="Caq-bL-bFx"/>
+                            <constraint firstItem="YjN-8C-eHZ" firstAttribute="baseline" secondItem="57T-uG-dc6" secondAttribute="baseline" constant="-2" id="Fxo-uX-y3r"/>
                             <constraint firstItem="w36-Fh-HLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HsP-pI-FNP"/>
+                            <constraint firstItem="rIc-dL-PLx" firstAttribute="centerX" secondItem="n9X-G1-Lc9" secondAttribute="centerX" id="KFR-ql-tHj"/>
+                            <constraint firstItem="9fc-uo-uwU" firstAttribute="top" secondItem="jOI-BT-u1J" secondAttribute="top" id="M1z-JH-h7f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n9X-G1-Lc9" secondAttribute="bottom" constant="52" id="Nof-aq-bGh"/>
                             <constraint firstItem="bgJ-ki-pdd" firstAttribute="leading" secondItem="w36-Fh-HLp" secondAttribute="leading" id="PqE-1v-Lk9"/>
-                            <constraint firstItem="w36-Fh-HLp" firstAttribute="top" secondItem="Cmr-XE-xPV" secondAttribute="bottom" constant="83" id="XiB-k0-s8K"/>
+                            <constraint firstItem="rIc-dL-PLx" firstAttribute="centerY" secondItem="9fc-uo-uwU" secondAttribute="centerY" id="QhJ-cS-mgP"/>
+                            <constraint firstItem="w36-Fh-HLp" firstAttribute="top" secondItem="Cmr-XE-xPV" secondAttribute="bottom" constant="15" id="XiB-k0-s8K"/>
                             <constraint firstAttribute="trailing" secondItem="Cmr-XE-xPV" secondAttribute="trailing" id="XiR-nZ-oRb"/>
+                            <constraint firstItem="YjN-8C-eHZ" firstAttribute="leading" secondItem="57T-uG-dc6" secondAttribute="trailing" constant="8" id="YAK-Ac-k1B"/>
+                            <constraint firstItem="jOI-BT-u1J" firstAttribute="trailing" secondItem="n9X-G1-Lc9" secondAttribute="trailing" id="ZSh-Jr-abi"/>
+                            <constraint firstItem="9fc-uo-uwU" firstAttribute="leading" secondItem="n9X-G1-Lc9" secondAttribute="leading" id="agb-R2-MKy"/>
                             <constraint firstItem="gUQ-As-D29" firstAttribute="leading" secondItem="Cmr-XE-xPV" secondAttribute="leading" id="c82-In-XMn"/>
+                            <constraint firstItem="rIc-dL-PLx" firstAttribute="centerY" secondItem="jOI-BT-u1J" secondAttribute="centerY" id="jCR-Uh-LCm"/>
+                            <constraint firstItem="n9X-G1-Lc9" firstAttribute="top" secondItem="bgJ-ki-pdd" secondAttribute="bottom" constant="99" id="k59-uK-X8t"/>
                             <constraint firstItem="gUQ-As-D29" firstAttribute="trailing" secondItem="Cmr-XE-xPV" secondAttribute="trailing" id="mWi-Hs-pYb"/>
+                            <constraint firstItem="jOI-BT-u1J" firstAttribute="leading" secondItem="rIc-dL-PLx" secondAttribute="trailing" constant="8" symbolic="YES" id="nA2-pI-L3l"/>
                             <constraint firstItem="gUQ-As-D29" firstAttribute="bottom" secondItem="Cmr-XE-xPV" secondAttribute="bottom" id="nXm-w5-sg3"/>
                             <constraint firstItem="gUQ-As-D29" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oh2-Km-c23"/>
                             <constraint firstItem="Cmr-XE-xPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oiO-6p-ng2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="203" id="ttg-ub-jrz"/>
+                            <constraint firstItem="n9X-G1-Lc9" firstAttribute="top" secondItem="9fc-uo-uwU" secondAttribute="bottom" constant="18" id="pbR-D7-p7o"/>
+                            <constraint firstItem="n9X-G1-Lc9" firstAttribute="leading" secondItem="bgJ-ki-pdd" secondAttribute="leading" id="rhH-if-jJ9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="271" id="ttg-ub-jrz"/>
                             <constraint firstItem="bgJ-ki-pdd" firstAttribute="trailing" secondItem="w36-Fh-HLp" secondAttribute="trailing" id="u55-Uy-ip6"/>
+                            <constraint firstItem="57T-uG-dc6" firstAttribute="top" secondItem="n9X-G1-Lc9" secondAttribute="bottom" constant="8" symbolic="YES" id="u9r-3v-YHV"/>
+                            <constraint firstItem="57T-uG-dc6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="uGu-A0-OGO"/>
+                            <constraint firstItem="rIc-dL-PLx" firstAttribute="leading" secondItem="9fc-uo-uwU" secondAttribute="trailing" constant="8" symbolic="YES" id="v8a-iK-pa7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLogin" destination="n9X-G1-Lc9" id="sto-co-hue"/>
+                        <outlet property="facebookLogin" destination="bgJ-ki-pdd" id="qUa-NS-svj"/>
+                        <outlet property="googleLogin" destination="bgJ-ki-pdd" id="QiY-OC-QCr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="97.601199400299862"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="8uU-yY-YWg">
+            <objects>
+                <viewController title="LoginView" id="FEt-Ra-7HI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sfm-M7-MFC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMA-Pe-s5v">
+                                <rect key="frame" x="16" y="134" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.23440290180000001" green="0.2330357143" blue="0.69299665180000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="28R-Oa-FbV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
+                                <state key="normal" title="Continue with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ya-Do-6Hl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAj-pV-hAE">
+                                <rect key="frame" x="16" y="204" width="343" height="50"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="16"/>
+                                <state key="normal" title="Continue with Google">
+                                    <color key="titleColor" red="0.2480528951" green="0.26315867900000001" blue="0.5765004158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="googleLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J6t-Wq-PC5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWQ-F2-jhY">
+                                <rect key="frame" x="16" y="353" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gJB-iZ-Lht"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
+                                <state key="normal" title="Continue with email">
+                                    <color key="titleColor" red="0.83921568629999999" green="0.0" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="googleLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfU-mc-Ekl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sAj-pV-hAE" firstAttribute="trailing" secondItem="HMA-Pe-s5v" secondAttribute="trailing" id="2u6-VS-dxs"/>
+                            <constraint firstItem="sAj-pV-hAE" firstAttribute="top" secondItem="HMA-Pe-s5v" secondAttribute="bottom" constant="20" id="ZzY-1l-k46"/>
+                            <constraint firstItem="RWQ-F2-jhY" firstAttribute="trailing" secondItem="sAj-pV-hAE" secondAttribute="trailing" id="f1K-lv-AlA"/>
+                            <constraint firstItem="RWQ-F2-jhY" firstAttribute="leading" secondItem="sAj-pV-hAE" secondAttribute="leading" id="hwW-hy-kOr"/>
+                            <constraint firstItem="RWQ-F2-jhY" firstAttribute="top" secondItem="sAj-pV-hAE" secondAttribute="bottom" constant="99" id="nhd-HJ-WMQ"/>
+                            <constraint firstItem="sAj-pV-hAE" firstAttribute="leading" secondItem="HMA-Pe-s5v" secondAttribute="leading" id="vUF-6J-50L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8IJ-iK-YMG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8k-hf-dLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="98"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="TIg-cL-VNB">
