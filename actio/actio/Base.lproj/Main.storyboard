@@ -4,16 +4,20 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Yantramanav-Regular.ttf">
+            <string>Yantramanav-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartController" id="BYZ-38-t0r" customClass="ViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,21 +29,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w36-Fh-HLp">
-                                <rect key="frame" x="37" y="414" width="179" height="50"/>
+                                <rect key="frame" x="16" y="414" width="343" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s2w-KF-nd7"/>
                                 </constraints>
-                                <state key="normal" title="SIGN IN WITH FACEBOOK"/>
+                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
+                                <state key="normal" title="Continue with Facebook"/>
                                 <connections>
                                     <action selector="facebookLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eG-3f-uYw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-ki-pdd">
+                                <rect key="frame" x="16" y="489" width="343" height="50"/>
+                                <state key="normal" title="Continue with Google"/>
+                                <connections>
+                                    <action selector="googleLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zDU-nf-TqT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="centerX" secondItem="Cmr-XE-xPV" secondAttribute="centerX" id="0gm-Li-pRL"/>
                             <constraint firstItem="Cmr-XE-xPV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8PB-11-Ufm"/>
-                            <constraint firstItem="w36-Fh-HLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="HsP-pI-FNP"/>
+                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="top" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="52" id="Caq-bL-bFx"/>
+                            <constraint firstItem="w36-Fh-HLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HsP-pI-FNP"/>
+                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="leading" secondItem="w36-Fh-HLp" secondAttribute="leading" id="PqE-1v-Lk9"/>
                             <constraint firstItem="w36-Fh-HLp" firstAttribute="top" secondItem="Cmr-XE-xPV" secondAttribute="bottom" constant="83" id="XiB-k0-s8K"/>
                             <constraint firstAttribute="trailing" secondItem="Cmr-XE-xPV" secondAttribute="trailing" id="XiR-nZ-oRb"/>
                             <constraint firstItem="gUQ-As-D29" firstAttribute="leading" secondItem="Cmr-XE-xPV" secondAttribute="leading" id="c82-In-XMn"/>
@@ -48,6 +63,7 @@
                             <constraint firstItem="gUQ-As-D29" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oh2-Km-c23"/>
                             <constraint firstItem="Cmr-XE-xPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oiO-6p-ng2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w36-Fh-HLp" secondAttribute="bottom" constant="203" id="ttg-ub-jrz"/>
+                            <constraint firstItem="bgJ-ki-pdd" firstAttribute="trailing" secondItem="w36-Fh-HLp" secondAttribute="trailing" id="u55-Uy-ip6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -59,7 +75,7 @@
         <!--Root View Controller-->
         <scene sceneID="TIg-cL-VNB">
             <objects>
-                <tableViewController id="wMX-Ia-diV" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wMX-Ia-diV" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WSa-76-os1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
