@@ -10,19 +10,27 @@
 //
 
 import UIKit
-import FBSDKLoginKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 import FacebookLogin
+import GoogleSignIn
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        print("inside view did load")
-        super.viewDidLoad()
-        self.title = ""
+import UIKit
+
+class ViewController: UIViewController, GIDSignInUIDelegate {
+ 
+  @IBOutlet weak var googleLogin: UIButton!
+  @IBOutlet weak var emailLogin: UIButton!
+  @IBOutlet weak var facebookLogin: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    emailLogin.layer.borderWidth = 1
+    googleLogin.layer.borderWidth = 1
 
     }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,7 +39,21 @@ class ViewController: UIViewController {
     @IBAction func unwindtoWelcomeView(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
-    
+  
+    // our button triggers this
+    @IBAction func googleLogin(sender:UIButton) {
+      GIDSignIn.sharedInstance().uiDelegate = self
+      GIDSignIn.sharedInstance().signIn()
+      
+    }
+  
+
+  @IBAction func  googleLogout (sender:UIButton) {
+      func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+      // Perform any operations when the user disconnects from app here.
+      // ...
+    }
+  }
   @IBAction func facebookLogin(sender: UIButton) {
     let fbLoginManager = FBSDKLoginManager()
     fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
@@ -75,5 +97,6 @@ class ViewController: UIViewController {
       
     }
   }
+  
 }
 

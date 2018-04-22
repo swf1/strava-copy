@@ -9,12 +9,10 @@ target 'actio' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-
+  pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
-  pod 'Firebase/Auth'
   pod 'Bolts'
-  pod 'FacebookCore'
   target 'actioTests' do
 
     inherit! :search_paths
