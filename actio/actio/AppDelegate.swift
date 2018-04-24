@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         // sends us to the correct view after authentication
         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "MainView") as UIViewController
+        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "ActivitiesView") as UIViewController
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = initialViewControlleripad
         self.window?.makeKeyAndVisible()
