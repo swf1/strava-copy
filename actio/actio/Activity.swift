@@ -33,8 +33,8 @@ class Activity: NSObject {
     }
 
     init?(snapshot: DataSnapshot) {
+        guard let uid = snapshot.key as? String else { return nil }
         guard let params = snapshot.value as? [String:Any] else { return nil }
-        guard let uid = params["uid"] as? String else { return nil }
         guard let name = params["name"] as? String else { return nil }
         guard let type = params["type"] as? String else { return nil }
         guard let startDateLocal = params["start_date_local"] as? String else { return nil }
