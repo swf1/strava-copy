@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 
 @UIApplicationMain
