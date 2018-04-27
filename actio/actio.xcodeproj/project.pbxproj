@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3FA7E6A3208D480D0006CB6E /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7E6A2208D480D0006CB6E /* ActivitiesViewController.swift */; };
 		3FA7E6A5208D49EC0006CB6E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7E6A4208D49EC0006CB6E /* Activity.swift */; };
+		3FDAB4C72092D19E00F3B36A /* FirebaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDAB4C62092D19E00F3B36A /* FirebaseAdapter.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
 		72365EF52086E13900413444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF42086E13900413444 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA7E6A2208D480D0006CB6E /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		3FA7E6A4208D49EC0006CB6E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		3FDAB4C62092D19E00F3B36A /* FirebaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAdapter.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72365EF42086E13900413444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				72ACA90720899CC0003D35D9 /* GoogleService-Info.plist */,
 				72365EFE2086E13A00413444 /* Info.plist */,
 				3FA7E6A2208D480D0006CB6E /* ActivitiesViewController.swift */,
+				3FDAB4C62092D19E00F3B36A /* FirebaseAdapter.swift */,
 			);
 			path = actio;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
+				3FDAB4C72092D19E00F3B36A /* FirebaseAdapter.swift in Sources */,
 				3FA7E6A3208D480D0006CB6E /* ActivitiesViewController.swift in Sources */,
 				3FA7E6A5208D49EC0006CB6E /* Activity.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,

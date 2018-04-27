@@ -13,27 +13,24 @@ import UIKit
 import Firebase
 
 class ActivitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    var ref: DatabaseReference!
+    var firebase: FirebaseAdapter!
     var activities: [DataSnapshot]! = []
-    fileprivate var _refHandle: DatabaseHandle!
-
     @IBOutlet weak var clientTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
-        ref = Database.database().reference()
-        _refHandle = self.ref.child("activities").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else { return }
-            strongSelf.activities.append(snapshot)
-            strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.activities.count-1, section: 0)], with: .automatic)
-        })
+        firebase = FirebaseAdapter(childAddedHandler: makeChildAddedHandler())
     }
 
-    deinit {
-        if _refHandle != nil {
-            self.ref.child("activities").removeObserver(withHandle: _refHandle)
+    func makeChildAddedHandler() -> (DataSnapshot) -> Void {
+        return { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            strongSelf.activities.append(snapshot)
+            strongSelf.clientTable.insertRows(
+                at: [IndexPath(row: strongSelf.activities.count-1, section: 0)],
+                with: .automatic
+            )
         }
     }
 
