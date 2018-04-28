@@ -2,7 +2,10 @@
 //  FirebaseAdapter.swift
 //  actio
 //
-//  Created by Tyler McGinnis on 4/26/18.
+//  Contributors:
+//    Alieta Train
+//    Tyler Mcginnis on 4/28/18.
+//    Jason Hoffman
 //  Copyright © 2018 corvus group. All rights reserved.
 //
 
@@ -10,17 +13,15 @@ import Foundation
 import Firebase
 
 class FirebaseAdapter {
+    var model: String
     var ref: DatabaseReference!
-    fileprivate var _refHandle: DatabaseHandle!
 
-    init(childAddedHandler: @escaping (DataSnapshot) -> Void) {
+    init(model: String) {
+        self.model = model
         ref = Database.database().reference()
-        _refHandle = self.ref.child("activities").observe(.childAdded, with: childAddedHandler)
     }
 
-    deinit {
-        if _refHandle != nil {
-            self.ref.child("activities").removeObserver(withHandle: _refHandle)
-        }
+    func getRef() -> DatabaseReference {
+        return self.ref.child(model)
     }
 }

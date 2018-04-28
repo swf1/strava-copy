@@ -14,23 +14,29 @@ import Firebase
 
 class ActivitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var firebase: FirebaseAdapter!
-    var activities: [DataSnapshot]! = []
+    var activities: [Activity]! = []
+    fileprivate var _refHandle: DatabaseHandle!
+
     @IBOutlet weak var clientTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
-        firebase = FirebaseAdapter(childAddedHandler: makeChildAddedHandler())
-    }
-
-    func makeChildAddedHandler() -> (DataSnapshot) -> Void {
-        return { [weak self] (snapshot) -> Void in
+        firebase = FirebaseAdapter(model: "activities")
+        _refHandle = firebase.getRef().observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.activities.append(snapshot)
+            guard let activity = Activity(snapshot: snapshot) else { return }
+            strongSelf.activities.append(activity)
             strongSelf.clientTable.insertRows(
                 at: [IndexPath(row: strongSelf.activities.count-1, section: 0)],
                 with: .automatic
             )
+        })
+    }
+
+    deinit {
+        if _refHandle != nil {
+            firebase.getRef().removeObserver(withHandle: _refHandle)
         }
     }
 
@@ -40,8 +46,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.clientTable.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-        let activitySnapshot = self.activities[indexPath.row]
-        guard let activity = Activity(snapshot: activitySnapshot) else { return cell }
+        let activity = self.activities[indexPath.row]
         cell.textLabel?.text = "\(activity.name)"
         return cell
     }
