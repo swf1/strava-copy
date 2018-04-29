@@ -14,6 +14,7 @@ import FirebaseDatabase
 
 class Activity: NSObject {
     var uid: String
+    var athlete: Athlete
     var name: String
     var type: String
     var startDateLocal: String
@@ -24,8 +25,9 @@ class Activity: NSObject {
     var trainer: Bool?
     var commute: Bool?
 
-    init(uid: String, name: String, type: String, startDateLocal: String, description: String) {
+    init(uid: String, athlete: Athlete, name: String, type: String, startDateLocal: String, description: String) {
         self.uid = uid
+        self.athlete = athlete
         self.name = name
         self.type = type
         self.startDateLocal = startDateLocal
@@ -39,8 +41,11 @@ class Activity: NSObject {
         guard let type = params["type"] as? String else { return nil }
         guard let startDateLocal = params["start_date_local"] as? String else { return nil }
         guard let description = params["description"] as? String else { return nil }
+        guard let athlete = params["athlete"] as? [String:Any] else { return nil }
+        guard let athleteUID = athlete["uid"] as? String else { return nil }
 
         self.uid = uid
+        self.athlete = Athlete(uid: athleteUID)
         self.name = name
         self.type = type
         self.startDateLocal = startDateLocal

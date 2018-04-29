@@ -25,12 +25,17 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
         firebase = FirebaseAdapter(model: "activities")
         _refHandle = firebase.getRef().observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
+
+            guard let user = Auth.auth().currentUser else { return };
             guard let activity = Activity(snapshot: snapshot) else { return }
-            strongSelf.activities.append(activity)
-            strongSelf.clientTable.insertRows(
-                at: [IndexPath(row: strongSelf.activities.count-1, section: 0)],
-                with: .automatic
-            )
+
+            if user.uid == activity.athlete.uid {
+                strongSelf.activities.append(activity)
+                strongSelf.clientTable.insertRows(
+                    at: [IndexPath(row: strongSelf.activities.count-1, section: 0)],
+                    with: .automatic
+                )
+            }
         })
     }
 
