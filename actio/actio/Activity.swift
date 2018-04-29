@@ -13,7 +13,7 @@ import Foundation
 import FirebaseDatabase
 
 class Activity: NSObject {
-    var uid: String
+    var uid: String?
     var athlete: Athlete
     var name: String
     var type: String
@@ -25,8 +25,7 @@ class Activity: NSObject {
     var trainer: Bool?
     var commute: Bool?
 
-    init(uid: String, athlete: Athlete, name: String, type: String, startDateLocal: String, description: String) {
-        self.uid = uid
+    init(athlete: Athlete, name: String, type: String, startDateLocal: String, description: String) {
         self.athlete = athlete
         self.name = name
         self.type = type
@@ -50,5 +49,31 @@ class Activity: NSObject {
         self.type = type
         self.startDateLocal = startDateLocal
         self.activityDescription = description
+    }
+
+    func save(withConnection firebase: FirebaseAdapter) {
+        let activityData: [String:Any?] = getData()
+        firebase.getRef().childByAutoId().setValue(activityData)
+    }
+
+    func update(withConnection firebase: FirebaseAdapter) {
+        let activityData: [String:Any?] = getData()
+        firebase.getRef().child(self.uid!).setValue(activityData)
+    }
+
+    func delete(withConnection firebase: FirebaseAdapter) {
+        firebase.getRef().child(self.uid!).removeValue()
+    }
+
+    private func getData() -> [String:Any?] {
+        return [
+            "name": self.name,
+            "type": self.type,
+            "description": self.activityDescription,
+            "start_date_local": self.startDateLocal,
+            "athlete": [
+                "uid": self.athlete.uid
+            ]
+        ]
     }
 }

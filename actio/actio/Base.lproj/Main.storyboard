@@ -352,6 +352,7 @@
         <!--New Activity View Controller-->
         <scene sceneID="9uE-fR-MpM">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb6-VW-tij" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SaveActivityView" title="New Activity View Controller" id="3rA-oa-Ipd" customClass="SaveActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRU-iV-NTB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -436,7 +437,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Save Activity"/>
                                         <connections>
-                                            <action selector="didSaveActivity:" destination="3rA-oa-Ipd" eventType="touchUpInside" id="TVW-G0-ERA"/>
+                                            <action selector="didPressSave:" destination="3rA-oa-Ipd" eventType="primaryActionTriggered" id="QpH-RO-ki7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -453,7 +454,6 @@
                         <outlet property="typeField" destination="VBk-M1-bKH" id="dDY-9B-9bf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb6-VW-tij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="-626.53673163418296"/>
         </scene>

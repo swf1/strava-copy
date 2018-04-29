@@ -25,35 +25,35 @@ class SaveActivityViewController: UIViewController {
         firebase = FirebaseAdapter(model: "activities")
     }
 
-    @IBAction func didSaveActivity(_ sender: UIButton) {
-        guard let name = nameField.text else { return }
-        guard let type = typeField.text else { return }
-        guard let description = descriptionField.text else { return }
+    @IBAction func didPressSave(_ sender: UIButton) {
+        if let inputs = collectInputs() {
+            nameField.text = ""
+            typeField.text = ""
+            descriptionField.text = ""
 
-        nameField.text = ""
-        typeField.text = ""
-        descriptionField.text = ""
+            view.endEditing(true)
 
-        view.endEditing(true)
+            guard let user = Auth.auth().currentUser else { return };
+            let activity = Activity(
+                athlete: Athlete(uid: user.uid),
+                name: inputs["name"]!,
+                type: inputs["type"]!,
+                startDateLocal: String(NSDate().timeIntervalSince1970),
+                description: inputs["description"]!
+            )
+            activity.save(withConnection: firebase)
+        }
+    }
 
-        let data = [
+    func collectInputs() -> [String:String]? {
+        guard let name = nameField.text else { return nil }
+        guard let type = typeField.text else { return nil }
+        guard let description = descriptionField.text else { return nil }
+
+        return [
             "name": name,
             "type": type,
             "description": description
         ]
-
-        saveActivity(withData: data)
-    }
-
-    func saveActivity(withData data: [String: Any]) {
-        var activityData = data
-
-        guard let user = Auth.auth().currentUser else { return };
-        activityData["athlete"] = ["uid": user.uid]
-
-        let timestamp = NSDate().timeIntervalSince1970
-        activityData["start_date_local"] = timestamp
-
-        firebase.getRef().childByAutoId().setValue(activityData)
     }
 }
