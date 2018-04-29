@@ -1,10 +1,14 @@
 //
-//  Athlete.swift
+//  Activity.swift
 //  actio
 //
-//  Created by Tyler McGinnis on 4/28/18.
+//  Contributors:
+//    Alieta Train
+//    Tyler Mcginnis on 4/28/18.
+//    Jason Hoffman
 //  Copyright © 2018 corvus group. All rights reserved.
 //
+
 
 import Foundation
 
