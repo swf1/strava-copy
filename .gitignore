@@ -56,3 +56,5 @@ Pods/
 
 GoogleService-Info.plist
 actio/.mapbox  # holds mapbox token
+.mapbox
+
