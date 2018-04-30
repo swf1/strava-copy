@@ -21,6 +21,9 @@
 		72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */; };
 		72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */; };
 		72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */; };
+		72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4D20969A17007CD9CD /* SignInViewController.swift */; };
+		72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */; };
+		72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */; };
 		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Black.ttf"; sourceTree = "<group>"; };
 		72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Regular.ttf"; sourceTree = "<group>"; };
 		72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Thin.ttf"; sourceTree = "<group>"; };
+		72EF6B4D20969A17007CD9CD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
 		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 		72ACA905208989AE003D35D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */,
+				72EF6B4D20969A17007CD9CD /* SignInViewController.swift */,
+				72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,8 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */,
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
+				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
+				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +563,10 @@
 				DEVELOPMENT_TEAM = DFRBG323GF;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -570,7 +585,10 @@
 				DEVELOPMENT_TEAM = DFRBG323GF;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -587,7 +605,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -604,7 +626,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
