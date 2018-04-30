@@ -12,12 +12,14 @@ import UIKit
 class ActivityCollectionViewController: UIViewController {
 
   @IBOutlet weak var activityCollectionView: UICollectionView!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
   }
 }
+
 extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

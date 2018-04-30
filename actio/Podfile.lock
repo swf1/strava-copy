@@ -36,6 +36,11 @@ PODS:
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
+  - GoogleSignIn (4.1.2):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -46,7 +51,14 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.15):
+    - GTMSessionFetcher/Full (= 1.1.15)
   - GTMSessionFetcher/Core (1.1.15)
+  - GTMSessionFetcher/Full (1.1.15):
+    - GTMSessionFetcher/Core (= 1.1.15)
+  - Mapbox-iOS-SDK (4.0.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -54,11 +66,14 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
-  - FacebookCore
+  - Bolts
   - FacebookLogin
+  - FBSDKCoreKit
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
+  - GoogleSignIn
+  - Mapbox-iOS-SDK (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -72,8 +87,11 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseInstanceID
+    - GoogleSignIn
     - GoogleToolboxForMac
+    - GTMOAuth2
     - GTMSessionFetcher
+    - Mapbox-iOS-SDK
     - nanopb
 
 SPEC CHECKSUMS:
@@ -87,10 +105,13 @@ SPEC CHECKSUMS:
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Mapbox-iOS-SDK: 271754e96eb4434ba1b0a8c68432e1ea26fe9841
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 2c0d4be01df8ef6f3399dfe2b9667d66d8def129
+PODFILE CHECKSUM: 22f0cccaf271821f0c81ec2895b534c5bdb6c4b4
 
 COCOAPODS: 1.5.0
