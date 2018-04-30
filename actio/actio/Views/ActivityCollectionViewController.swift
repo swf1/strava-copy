@@ -15,7 +15,7 @@ class ActivityCollectionViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     activityCollectionView.delegate = self
-    activityCollectionView.dataSource = self as? UICollectionViewDataSource
+    activityCollectionView.dataSource = self
   }
 }
 extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
