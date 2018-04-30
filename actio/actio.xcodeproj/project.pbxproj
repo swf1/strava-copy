@@ -204,6 +204,7 @@
 				72365EED2086E13900413444 /* Resources */,
 				CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */,
 				9D16BC923770B62CD763C448 /* [CP] Copy Pods Resources */,
+				31594F3C20976CBE00F807D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +301,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31594F3C20976CBE00F807D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.mapbox",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "token_file=.mapbox\ntoken=\"$(cat $token_file)\"\nif [ \"$token\" ]; then\nplutil -replace MGLMapboxAccessToken -string $token \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nelse\necho 'error: Missing Mapbox access token'\nopen 'https://www.mapbox.com/studio/account/tokens/'\necho \"error: Get an access token from <https://www.mapbox.com/studio/account/tokens/>, then create a new file at $token_file that contains the access token.\"\nexit 1\nfi";
+		};
 		74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,7 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFRBG323GF;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,7 +605,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFRBG323GF;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

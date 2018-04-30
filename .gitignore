@@ -55,3 +55,4 @@ Pods/
 .DS_Store
 
 GoogleService-Info.plist
+actio/.mapbox  # holds mapbox token
