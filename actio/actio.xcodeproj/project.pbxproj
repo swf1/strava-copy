@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
+		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
 		72365EF52086E13900413444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF42086E13900413444 /* ViewController.swift */; };
 		72365EF82086E13900413444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF62086E13900413444 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4D20969A17007CD9CD /* SignInViewController.swift */; };
 		72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */; };
 		72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */; };
+		72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */; };
 		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72365EF42086E13900413444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		72EF6B4D20969A17007CD9CD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = actio_mockups.pdf; sourceTree = "<group>"; };
 		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
 		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				72365EF42086E13900413444 /* ViewController.swift */,
 				72365EF62086E13900413444 /* Main.storyboard */,
 				72365EF92086E13A00413444 /* Assets.xcassets */,
+				72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */,
 				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
 				72ACA90720899CC0003D35D9 /* GoogleService-Info.plist */,
 				72365EFE2086E13A00413444 /* Info.plist */,
@@ -154,6 +159,7 @@
 				72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */,
 				72EF6B4D20969A17007CD9CD /* SignInViewController.swift */,
 				72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */,
+				72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */,
 				72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */,
 				72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */,
 				72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */,
@@ -398,6 +405,7 @@
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
 				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
 				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
+				72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

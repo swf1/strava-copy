@@ -22,13 +22,12 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
  
   @IBOutlet weak var googleLogin: UIButton!
   @IBOutlet weak var emailLogin: UIButton!
-  @IBOutlet weak var facebookLogin: UIButton!
+  @IBOutlet weak var facebookButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    emailLogin.layer.borderWidth = 1
-    googleLogin.layer.borderWidth = 1
-
+    emailLogin.layer.borderWidth = 0.5
+    googleLogin.layer.borderWidth = 0.5
     }
   
     override func didReceiveMemoryWarning() {
