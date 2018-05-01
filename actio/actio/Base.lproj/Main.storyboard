@@ -779,6 +779,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="MAl-uL-Zfi">
                                             <color key="tintColor" red="0.68235294117647061" green="0.0" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="closeButtonPressed:" destination="Uq0-XJ-M4B" id="q2l-Iw-AB2"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
