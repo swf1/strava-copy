@@ -783,13 +783,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-P7-yUe" customClass="MGLMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-P7-yUe">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-P8-pb7">
-                                        <rect key="frame" x="177" y="580" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-Ma-Kjk">
+                                        <rect key="frame" x="340" y="568" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.013840418780000001" green="0.013840418780000001" blue="0.013840418780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="856-AE-WuH"/>
+                                            <constraint firstAttribute="width" constant="40" id="YkB-NK-Pbs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Center">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-P8-pb7">
+                                        <rect key="frame" x="177" y="568" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.2979351335" green="0.88793389720000004" blue="0.39764093540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="W9d-mt-ecI"/>
+                                            <constraint firstAttribute="width" constant="60" id="e9N-4Z-aRJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" red="0.80310120558375631" green="0.072938488192276107" blue="0.62234654267158696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -797,6 +813,13 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MeV-Ma-Kjk" secondAttribute="trailing" constant="34" id="9Kl-Nd-sKN"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVd-P8-pb7" secondAttribute="bottom" constant="44" id="Dea-CG-alZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVd-P8-pb7" secondAttribute="trailing" constant="177" id="Iid-hw-v9W"/>
+                                    <constraint firstAttribute="bottom" secondItem="MeV-Ma-Kjk" secondAttribute="bottom" constant="64" id="n2J-fp-eN8"/>
+                                    <constraint firstItem="fVd-P8-pb7" firstAttribute="leading" secondItem="Uf2-P7-yUe" secondAttribute="leading" constant="177" id="oE6-Ma-yKW"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/light-v9"/>
                                 </userDefinedRuntimeAttributes>
@@ -815,9 +838,11 @@
                         <viewLayoutGuide key="safeArea" id="kAB-tS-Q15"/>
                     </view>
                     <connections>
+                        <outlet property="centerButton" destination="MeV-Ma-Kjk" id="GW4-vL-iQZ"/>
                         <outlet property="closeButton" destination="MAl-uL-Zfi" id="Oc8-DF-Obg"/>
                         <outlet property="mapView" destination="Uf2-P7-yUe" id="dpN-3L-wuZ"/>
                         <outlet property="settingsButton" destination="0dQ-gj-G73" id="TDo-bZ-wr4"/>
+                        <outlet property="startButton" destination="fVd-P8-pb7" id="GW1-Rj-6Iy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-sA-kI4" userLabel="First Responder" sceneMemberID="firstResponder"/>

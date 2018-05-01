@@ -16,7 +16,8 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
-    
+    @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     var locationManager: CLLocationManager!
     var regionRadius: CLLocationDistance = 500

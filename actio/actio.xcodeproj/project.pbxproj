@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		31594F3620974B2500F807D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31594F3520974B2500F807D9 /* GoogleService-Info.plist */; };
 		31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3920974F6A00F807D9 /* InitialMapViewController.swift */; };
+		31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3D2097A0D400F807D9 /* ActivityTimer.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
 		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31594F3520974B2500F807D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31594F3920974F6A00F807D9 /* InitialMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialMapViewController.swift; sourceTree = "<group>"; };
+		31594F3D2097A0D400F807D9 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
 		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				72EF6B1F208BF3F7007CD9CD /* Fonts */,
+				31594F3D2097A0D400F807D9 /* ActivityTimer.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
 				31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */,
+				31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */,
 				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
 				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
 				72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */,
