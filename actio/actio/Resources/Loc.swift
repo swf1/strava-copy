@@ -19,6 +19,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
     private let locationManager: CLLocationManager
     var currentLocation: CLLocation?
     var locationArray: [CLLocation]?
+    var isGPSActive: Bool? // For 'gps active' flag
     
     override init() {
         locationManager = CLLocationManager()
@@ -30,8 +31,13 @@ class Loc: NSObject, CLLocationManagerDelegate {
     }
     
     func startLogging() {
+        if CLLocationManager.authorizationStatus() != .authorizedAlways {
+            locationManager.requestAlwaysAuthorization()
+        }
+        
         locationManager.startUpdatingLocation()
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {

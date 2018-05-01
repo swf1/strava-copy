@@ -10,51 +10,61 @@ import UIKit
 import Mapbox
 import CoreLocation
 
+// This view controller only needs to show the user's location. On 'play', the
+// view segues to another MGLMapView that will take care of tracking
+
 class InitialMapViewController: UIViewController {
 
-    
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    var locationManager: CLLocationManager!
+    var locationManager: Loc!
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
-    var course: Double = 0.0
-    var totalDistance = 0.0
     var log = false
-    var courseView = false
-    var firstLast: [CLLocationCoordinate2D]?  // for start and end coordinate. should be added to activity object
-    // For simulated reading from DB
-    let fileManager = FileManager.default
-    var paceArray = [Double]() // To calc average pace
-    var df = DateComponentsFormatter()  // For time display
-    var currentLocation: CLLocation? = nil // use this instead of locationmanager.location
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        // CLLocationManager setup
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest // Battery expensive
-        locationManager.activityType = .fitness
-        locationManager.startUpdatingLocation()  // Tie 'GPS active' to this in delegate method
+        // Look at me. I'm the location manager now.
+        let locationManager = Loc.shared
+        locationManager.startLogging()
         
         // MapBox setup
         mapView.delegate = self
-        mapView.isPitchEnabled = true
-        mapView.showsHeading = false
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        mapView.isPitchEnabled = true // not needed here
+        mapView.showsHeading = false // not needed here
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if mapView.isUserLocationVisible {
+            if let loc = mapView.userLocation {
+                mapView.setCenter(loc.coordinate, zoomLevel: 15.0, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func centerButtonPressed(_ sender: Any) {
+        centerMap()
+    }
+    
+    func centerMap() {
+        if let loc = mapView.userLocation {
+            mapView.setCenter(loc.coordinate, zoomLevel: 15.0, animated: true)
+            UIView.animate(withDuration: 0.2) {
+                self.centerButton.alpha = 0.0
+            }
+        }
     }
     
     // Hide status bar at top when modal seuges
@@ -71,9 +81,13 @@ class InitialMapViewController: UIViewController {
 // MARK: MGLMapViewDelegate
 extension InitialMapViewController: MGLMapViewDelegate {
     
-}
-
-// MARK: CLLocationManagerDelegate
-extension InitialMapViewController: CLLocationManagerDelegate {
+    func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
+        // do
+    }
     
+    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.centerButton.alpha = 1.0
+        }
+    }
 }
