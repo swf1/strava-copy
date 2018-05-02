@@ -11,6 +11,7 @@
 		31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3920974F6A00F807D9 /* InitialMapViewController.swift */; };
 		31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3D2097A0D400F807D9 /* ActivityTimer.swift */; };
 		31594F402098B53B00F807D9 /* Loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3F2098B53B00F807D9 /* Loc.swift */; };
+		31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F41209935E300F807D9 /* StartActivityViewController.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
 		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		31594F3920974F6A00F807D9 /* InitialMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialMapViewController.swift; sourceTree = "<group>"; };
 		31594F3D2097A0D400F807D9 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
 		31594F3F2098B53B00F807D9 /* Loc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loc.swift; sourceTree = "<group>"; };
+		31594F41209935E300F807D9 /* StartActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
 		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */,
 				72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */,
 				31594F3920974F6A00F807D9 /* InitialMapViewController.swift */,
+				31594F41209935E300F807D9 /* StartActivityViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
+				31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */,
 				31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */,
 				31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */,
 				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
