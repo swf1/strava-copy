@@ -7,20 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31594F3620974B2500F807D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31594F3520974B2500F807D9 /* GoogleService-Info.plist */; };
+		31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3920974F6A00F807D9 /* InitialMapViewController.swift */; };
+		31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3D2097A0D400F807D9 /* ActivityTimer.swift */; };
+		31594F402098B53B00F807D9 /* Loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3F2098B53B00F807D9 /* Loc.swift */; };
+		31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F41209935E300F807D9 /* StartActivityViewController.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
+		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
 		72365EF52086E13900413444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF42086E13900413444 /* ViewController.swift */; };
 		72365EF82086E13900413444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF62086E13900413444 /* Main.storyboard */; };
 		72365EFA2086E13A00413444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF92086E13A00413444 /* Assets.xcassets */; };
 		72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EFB2086E13A00413444 /* LaunchScreen.storyboard */; };
 		72365F082086E13A00413444 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365F072086E13A00413444 /* actioTests.swift */; };
-		72ACA90820899CC0003D35D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72ACA90720899CC0003D35D9 /* GoogleService-Info.plist */; };
 		72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */; };
 		72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */; };
 		72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */; };
 		72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */; };
 		72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */; };
 		72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */; };
+		72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4D20969A17007CD9CD /* SignInViewController.swift */; };
+		72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */; };
+		72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */; };
+		72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */; };
 		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +45,12 @@
 
 /* Begin PBXFileReference section */
 		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31594F3520974B2500F807D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31594F3920974F6A00F807D9 /* InitialMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialMapViewController.swift; sourceTree = "<group>"; };
+		31594F3D2097A0D400F807D9 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
+		31594F3F2098B53B00F807D9 /* Loc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loc.swift; sourceTree = "<group>"; };
+		31594F41209935E300F807D9 /* StartActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
+		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72365EF42086E13900413444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,13 +61,16 @@
 		72365F032086E13A00413444 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365F072086E13A00413444 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
 		72365F092086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72ACA90720899CC0003D35D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Bold.ttf"; sourceTree = "<group>"; };
 		72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Light.ttf"; sourceTree = "<group>"; };
 		72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Medium.ttf"; sourceTree = "<group>"; };
 		72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Black.ttf"; sourceTree = "<group>"; };
 		72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Regular.ttf"; sourceTree = "<group>"; };
 		72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Thin.ttf"; sourceTree = "<group>"; };
+		72EF6B4D20969A17007CD9CD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = actio_mockups.pdf; sourceTree = "<group>"; };
 		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
 		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,13 +132,13 @@
 			children = (
 				72ACA906208989BD003D35D9 /* Resources */,
 				72ACA905208989AE003D35D9 /* Views */,
-				72ACA9042089899B003D35D9 /* Controllers */,
 				72365EF22086E13900413444 /* AppDelegate.swift */,
 				72365EF42086E13900413444 /* ViewController.swift */,
 				72365EF62086E13900413444 /* Main.storyboard */,
 				72365EF92086E13A00413444 /* Assets.xcassets */,
+				72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */,
 				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
-				72ACA90720899CC0003D35D9 /* GoogleService-Info.plist */,
+				31594F3520974B2500F807D9 /* GoogleService-Info.plist */,
 				72365EFE2086E13A00413444 /* Info.plist */,
 			);
 			path = actio;
@@ -135,16 +153,15 @@
 			path = actioTests;
 			sourceTree = "<group>";
 		};
-		72ACA9042089899B003D35D9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		72ACA905208989AE003D35D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */,
+				72EF6B4D20969A17007CD9CD /* SignInViewController.swift */,
+				72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */,
+				72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */,
+				31594F3920974F6A00F807D9 /* InitialMapViewController.swift */,
+				31594F41209935E300F807D9 /* StartActivityViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				72EF6B1F208BF3F7007CD9CD /* Fonts */,
+				31594F3D2097A0D400F807D9 /* ActivityTimer.swift */,
+				31594F3F2098B53B00F807D9 /* Loc.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,6 +213,7 @@
 				72365EED2086E13900413444 /* Resources */,
 				CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */,
 				9D16BC923770B62CD763C448 /* [CP] Copy Pods Resources */,
+				31594F3C20976CBE00F807D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,12 +286,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */,
 				72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */,
 				72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */,
 				72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */,
 				72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */,
 				72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */,
-				72ACA90820899CC0003D35D9 /* GoogleService-Info.plist in Resources */,
+				31594F3620974B2500F807D9 /* GoogleService-Info.plist in Resources */,
 				72365EFA2086E13A00413444 /* Assets.xcassets in Resources */,
 				72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */,
 				72365EF82086E13900413444 /* Main.storyboard in Resources */,
@@ -289,6 +310,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31594F3C20976CBE00F807D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.mapbox",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "token_file=.mapbox\ntoken=\"$(cat $token_file)\"\nif [ \"$token\" ]; then\nplutil -replace MGLMapboxAccessToken -string $token \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nelse\necho 'error: Missing Mapbox access token'\nopen 'https://www.mapbox.com/studio/account/tokens/'\necho \"error: Get an access token from <https://www.mapbox.com/studio/account/tokens/>, then create a new file at $token_file that contains the access token.\"\nexit 1\nfi";
+		};
 		74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +375,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -352,6 +389,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,8 +423,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */,
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
+				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
+				31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */,
+				31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */,
+				31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */,
+				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
+				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
+				72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,10 +595,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFRBG323GF;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -567,10 +617,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFRBG323GF;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -587,7 +640,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -604,7 +661,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
