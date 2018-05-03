@@ -8,14 +8,26 @@
 
 import Foundation
 import CoreLocation.CLLocation
+import Repeat
 
 class ActivityTimer {
     
+    private var currentLocation: CLLocation?
+    private var timer: Repeater!
+    private var paceArray = [Double]()
+    private var coordinateArray = [CLLocationCoordinate2D]()
+    private var df = DateComponentsFormatter()
+
     var totalDistance = 0.0
-    var paceArray = [Double]()
-    var coordinateArray = [CLLocationCoordinate2D]()
-    var df = DateComponentsFormatter()
-    var currentLocation: CLLocation?
+    var counter = 0.0
+    
+
+    func config() {
+        timer = Repeater.every(.seconds(1.0), { _ in
+            self.counter += 1.0
+            print(String(self.counter))
+        })
+    }
     
     func pace() -> String {
         if let loc = currentLocation {
@@ -44,6 +56,18 @@ class ActivityTimer {
             dist = dist.converted(to: .miles)
             totalDistance += dist.value
         }
+    }
+    
+    func startTime() {
+        timer.start()
+    }
+
+    func printTime() {
+        print(String(counter))
+    }
+    
+    func pause() {
+        timer.pause()
     }
     
     func appendCoordinate(_ coordinate: CLLocationCoordinate2D) {

@@ -22,6 +22,7 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     let locationManager = Loc.shared
+    let activityTimer = ActivityTimer() 
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
@@ -40,6 +41,9 @@ class InitialMapViewController: UIViewController {
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
+        
+        activityTimer.config()
+        activityTimer.startTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {

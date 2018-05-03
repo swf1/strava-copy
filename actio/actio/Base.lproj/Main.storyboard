@@ -301,13 +301,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRt-IC-Odb">
-                                <rect key="frame" x="24" y="322" width="366" height="23"/>
+                                <rect key="frame" x="24" y="322.66666666666669" width="366" height="22.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-Qh-FsT">
-                                <rect key="frame" x="24" y="44" width="366" height="42"/>
+                                <rect key="frame" x="24" y="44" width="366" height="41.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="32"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -359,7 +359,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NM-ZS-pQh">
-                                <rect key="frame" x="24" y="268" width="366" height="30"/>
+                                <rect key="frame" x="24" y="268.66666666666669" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712240000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="14"/>
@@ -369,7 +369,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN6-5t-kS2">
-                                <rect key="frame" x="24" y="237" width="366" height="23"/>
+                                <rect key="frame" x="24" y="238.33333333333334" width="366" height="22.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -423,7 +423,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-iG-45m">
-                                <rect key="frame" x="24" y="149" width="366" height="30"/>
+                                <rect key="frame" x="24" y="148.33333333333334" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712240000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -456,13 +456,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSI-5t-eYz">
-                                <rect key="frame" x="24" y="102" width="366" height="23"/>
+                                <rect key="frame" x="24" y="102" width="366" height="22.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swz-4V-48u">
-                                <rect key="frame" x="24" y="203" width="366" height="35"/>
+                                <rect key="frame" x="24" y="202.33333333333334" width="366" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Send reset link">
