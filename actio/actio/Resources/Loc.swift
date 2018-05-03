@@ -46,7 +46,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
 //            let howRecent = loc.timestamp.timeIntervalSinceNow
 //            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
             currentLocation = loc
-            if logging { activityTimer.appendCoordinate(loc.coordinate) }
+            if logging { activityTimer.appendLocation(loc) }
         }
     }
     

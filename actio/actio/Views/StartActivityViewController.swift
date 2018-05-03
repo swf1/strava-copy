@@ -79,7 +79,6 @@ class StartActivityViewController: UIViewController {
     
     func toggleButtons() {
         // this should become an animation
-    
         pauseButton.isHidden = !pauseButton.isHidden
         saveButton.isHidden = !saveButton.isHidden
         resumeButton.isHidden = !resumeButton.isHidden
@@ -116,8 +115,9 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
         paceLabel.text = activityTimer.pace()
         distanceLabel.text = String(activityTimer.totalDistance)
-        
-        if let coords = activityTimer.coordinates() {
+        if let locations = activityTimer.coordinates() {
+            // Get coordinates
+            let coords = locations.map { $0.coordinate }
             let pline = MGLPolyline(coordinates: coords, count: UInt(coords.count))
             mapView.add(pline)
         }
@@ -128,6 +128,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
 //        writePolylineToFile(encoded)
         
     }
+    
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
         if annotation.title == "recalled" {

@@ -17,7 +17,7 @@ class ActivityTimer {
     private var currentLocation: CLLocation?
     private var timer: Repeater!
     private var paceArray = [Double]()
-    private var coordinateArray = [CLLocationCoordinate2D]()
+    private var locationArray = [CLLocation]()
     private var df = DateComponentsFormatter()
     private var firstLast = [CLLocationCoordinate2D]()
     
@@ -58,8 +58,8 @@ class ActivityTimer {
     }
     
     func totalDistance(newLocation: CLLocation) {
-        if let last = coordinateArray.last {  // Using paceArray here for now
-            let loc = CLLocation(latitude: last.latitude, longitude: last.longitude)
+        if let last = locationArray.last {  // Using paceArray here for now
+            let loc = CLLocation(latitude: last.coordinate.latitude, longitude: last.coordinate.longitude)
             var dist = Measurement(value: newLocation.distance(from: loc), unit: UnitLength.meters)
             dist = dist.converted(to: .miles)
             totalDistance += dist.value
@@ -84,20 +84,21 @@ class ActivityTimer {
     func pause() {
         timer.pause()
         // for use if the user ends their activity
-        if coordinateArray.count > 1 {
-            firstLast = [coordinateArray[0], coordinateArray.last] as! [CLLocationCoordinate2D]
+        if locationArray.count > 1 {
+            firstLast = [locationArray[0].coordinate, locationArray.last?.coordinate] as! [CLLocationCoordinate2D]
         }
     }
     
-    func appendCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        coordinateArray.append(coordinate)
+    func appendLocation(_ location: CLLocation) {
+        locationArray.append(location)
+        currentLocation = location
     }
     
     // nil if empty
-    func coordinates() -> [CLLocationCoordinate2D]? {
+    func coordinates() -> [CLLocation]? {
         // has to be > 1 or MGLPolyline will crash
-        if coordinateArray.count > 1 {
-            return coordinateArray
+        if locationArray.count > 1 {
+            return locationArray
         }
         
         return nil
