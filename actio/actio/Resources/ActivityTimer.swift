@@ -19,7 +19,8 @@ class ActivityTimer {
     private var paceArray = [Double]()
     private var coordinateArray = [CLLocationCoordinate2D]()
     private var df = DateComponentsFormatter()
-
+    private var firstLast = [CLLocationCoordinate2D]()
+    
     var totalDistance = 0.0
     var counter = 0.0
     
@@ -72,15 +73,31 @@ class ActivityTimer {
         return tot
     }
     
+    // function to encode GeoJSON for Activty object
+    // but leave creating the polyline to view controller
+    
+
     func startTime() {
         timer.start()
     }
     
     func pause() {
         timer.pause()
+        // for use if the user ends their activity 
+        firstLast = [coordinateArray[0], coordinateArray.last] as! [CLLocationCoordinate2D]
     }
     
     func appendCoordinate(_ coordinate: CLLocationCoordinate2D) {
         coordinateArray.append(coordinate)
+    }
+    
+    // nil if empty
+    func coordinates() -> [CLLocationCoordinate2D]? {
+        // has to be > 1 or MGLPolyline will crash
+        if coordinateArray.count > 1 {
+            return coordinateArray
+        }
+        
+        return nil
     }
 }
