@@ -1020,7 +1020,7 @@
                                     <constraint firstItem="0Es-Jv-uo9" firstAttribute="top" secondItem="QY3-WG-y43" secondAttribute="top" constant="8" id="xKm-N2-mm8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM" customClass="MGLMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM">
                                 <rect key="frame" x="0.0" y="319" width="414" height="307"/>
                                 <color key="backgroundColor" red="0.82540847081218272" green="0.82540847081218272" blue="0.82540847081218272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1044,6 +1044,7 @@
                         <viewLayoutGuide key="safeArea" id="Ffr-W7-MYl"/>
                     </view>
                     <connections>
+                        <outlet property="elapsedTimeLabel" destination="Q0G-MQ-jTu" id="Spe-A8-Ocq"/>
                         <outlet property="pauseButton" destination="cYf-Vk-l5z" id="gKB-Cf-IRe"/>
                     </connections>
                 </viewController>

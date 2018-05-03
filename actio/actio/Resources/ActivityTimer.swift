@@ -27,8 +27,13 @@ class ActivityTimer {
     func config() {
         timer = Repeater.every(.seconds(1.0), { _ in
             self.counter += 1.0
-            print(String(self.counter))
+            // Sends notification with each tick that's picked up by other VCs
+            NotificationCenter.default.post(name: Notification.Name("Tick"), object: nil, userInfo: ["time": self.totalTime()])
         })
+        
+        df.allowedUnits = [.minute, .second]
+        df.zeroFormattingBehavior = [.pad]
+        df.unitsStyle = .abbreviated
     }
     
     func pace() -> String {
@@ -62,9 +67,9 @@ class ActivityTimer {
     
     func totalTime() -> String {
         let c = Measurement(value: counter, unit: UnitDuration.seconds)
-        let totalTime = c.converted(to: .minutes)
-        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
-        return formattedTime
+        guard let tot = df.string(from: c.value) else { return "?:??" }
+//        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
+        return tot
     }
     
     func startTime() {

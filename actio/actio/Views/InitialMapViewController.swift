@@ -32,6 +32,8 @@ class InitialMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.startLogging()
+        activityTimer.config()
+
         // MapBox setup
         mapView.delegate = self
         mapView.userTrackingMode = .follow
@@ -41,8 +43,6 @@ class InitialMapViewController: UIViewController {
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
-        
-        activityTimer.config()
     }
     
     override func viewDidAppear(_ animated: Bool) {
