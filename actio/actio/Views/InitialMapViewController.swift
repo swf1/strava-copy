@@ -52,6 +52,7 @@ class InitialMapViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
+        locationManager.logging = true // not a great solution for this
         activityTimer.startTime()
     }
     
@@ -82,6 +83,7 @@ class InitialMapViewController: UIViewController {
     }
 
 }
+
 
 // MARK: MGLMapViewDelegate
 extension InitialMapViewController: MGLMapViewDelegate {

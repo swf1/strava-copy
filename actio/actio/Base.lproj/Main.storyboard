@@ -900,7 +900,7 @@
                                             <color key="titleColor" red="1" green="0.98914341248791693" blue="0.99475236315720394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="pauseButtonPressed:" destination="vjF-wv-RfD" eventType="touchUpInside" id="g1S-b6-yCG"/>
+                                            <action selector="pauseButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="aHM-Nn-9mC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-l0-y6G">
@@ -924,6 +924,9 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="jAf-aa-9dg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arg-x1-Zqw">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="60"/>
@@ -935,6 +938,9 @@
                                                 <state key="normal" title="Resume">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="resumeButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="Lol-Qo-tll"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1049,7 +1055,7 @@
                                     <constraint firstItem="0Es-Jv-uo9" firstAttribute="top" secondItem="QY3-WG-y43" secondAttribute="top" constant="8" id="xKm-N2-mm8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="319" width="414" height="307"/>
                                 <color key="backgroundColor" red="0.82540847081218272" green="0.82540847081218272" blue="0.82540847081218272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1084,7 +1090,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h81-3C-mAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="vjF-wv-RfD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-678.26086956521749" y="3261.684782608696"/>
         </scene>

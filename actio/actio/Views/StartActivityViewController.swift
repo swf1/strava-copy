@@ -28,7 +28,10 @@ class StartActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Will receive notification from ActivityTimer
+        
+        // hide save and resume buttons
+        saveButton.isHidden = true
+        resumeButton.isHidden = true
         
         // MapBox setup again
         mapView.delegate = self
@@ -39,6 +42,8 @@ class StartActivityViewController: UIViewController {
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
+        
+        // Will receive notification from ActivityTimer
         NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
     }
 
@@ -49,8 +54,18 @@ class StartActivityViewController: UIViewController {
 
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
+        toggleButtons()
         activityTimer.pause()
         paused = !paused
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        // perform saving functions here
+    }
+    
+    @IBAction func resumeButtonPressed(_ sender: Any) {
+        toggleButtons()
+        // and go back to activity
     }
     
     @objc func updateTime(_ notification: Notification) {
@@ -60,6 +75,15 @@ class StartActivityViewController: UIViewController {
                 self.elapsedTimeLabel.text = t
             }
         }
+    }
+    
+    func toggleButtons() {
+        // this should become an animation
+    
+        pauseButton.isHidden = !pauseButton.isHidden
+        saveButton.isHidden = !saveButton.isHidden
+        resumeButton.isHidden = !resumeButton.isHidden
+        mapToggleButton.isHidden = !mapToggleButton.isHidden
     }
     
     func courseMode() {
@@ -84,19 +108,6 @@ class StartActivityViewController: UIViewController {
 
 }
 
-extension StartActivityViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let loc = locations.last {
-            let howRecent = loc.timestamp.timeIntervalSinceNow
-            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
-            // has to be here to keep storing in background
-            // should keep coordinates even when paused to tie location change together
-            // after un-pause
-            activityTimer.appendCoordinate(loc.coordinate)
-        }
-    }
-}
 
 extension StartActivityViewController: MGLMapViewDelegate {
     
@@ -111,7 +122,8 @@ extension StartActivityViewController: MGLMapViewDelegate {
             mapView.add(pline)
         }
         
-        // Writing to Activity object will go here
+        // Writing to Activity object will go here if updating continuously
+        // or all coordinates at once in saveButtonPressed
 //        let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
 //        writePolylineToFile(encoded)
         

@@ -83,8 +83,10 @@ class ActivityTimer {
     
     func pause() {
         timer.pause()
-        // for use if the user ends their activity 
-        firstLast = [coordinateArray[0], coordinateArray.last] as! [CLLocationCoordinate2D]
+        // for use if the user ends their activity
+        if coordinateArray.count > 1 {
+            firstLast = [coordinateArray[0], coordinateArray.last] as! [CLLocationCoordinate2D]
+        }
     }
     
     func appendCoordinate(_ coordinate: CLLocationCoordinate2D) {
