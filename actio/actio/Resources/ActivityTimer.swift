@@ -12,6 +12,8 @@ import Repeat
 
 class ActivityTimer {
     
+    static let shared = ActivityTimer() 
+    
     private var currentLocation: CLLocation?
     private var timer: Repeater!
     private var paceArray = [Double]()
@@ -21,7 +23,7 @@ class ActivityTimer {
     var totalDistance = 0.0
     var counter = 0.0
     
-
+    // Must call before using
     func config() {
         timer = Repeater.every(.seconds(1.0), { _ in
             self.counter += 1.0
@@ -58,12 +60,15 @@ class ActivityTimer {
         }
     }
     
+    func totalTime() -> String {
+        let c = Measurement(value: counter, unit: UnitDuration.seconds)
+        let totalTime = c.converted(to: .minutes)
+        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
+        return formattedTime
+    }
+    
     func startTime() {
         timer.start()
-    }
-
-    func printTime() {
-        print(String(counter))
     }
     
     func pause() {

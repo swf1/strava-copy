@@ -22,7 +22,7 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     let locationManager = Loc.shared
-    let activityTimer = ActivityTimer() 
+    let activityTimer = ActivityTimer.shared
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
