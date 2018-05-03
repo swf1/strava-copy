@@ -18,6 +18,9 @@ class StartActivityViewController: UIViewController {
     var paused = false
     
     @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var mapToggleButton: UIButton!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
