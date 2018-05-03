@@ -43,13 +43,16 @@ class InitialMapViewController: UIViewController {
         mapView.showsUserLocation = true
         
         activityTimer.config()
-        activityTimer.startTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if mapView.isUserLocationVisible {
             centerMap()
         }
+    }
+    
+    @IBAction func startButtonPressed(_ sender: Any) {
+        activityTimer.startTime()
     }
     
     @IBAction func centerButtonPressed(_ sender: Any) {

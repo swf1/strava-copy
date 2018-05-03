@@ -817,6 +817,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="startButtonPressed:" destination="Uq0-XJ-M4B" eventType="touchUpInside" id="2gV-BD-HtX"/>
                                             <segue destination="HMM-Ay-f4a" kind="show" id="i67-cl-gKA"/>
                                         </connections>
                                     </button>
@@ -857,10 +858,10 @@
             </objects>
             <point key="canvasLocation" x="-1462.3188405797102" y="3261.684782608696"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Activity View Controller-->
         <scene sceneID="YcY-uz-tGW">
             <objects>
-                <viewController id="HMM-Ay-f4a" sceneMemberID="viewController">
+                <viewController id="HMM-Ay-f4a" customClass="StartActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EMD-02-c2A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -898,6 +899,9 @@
                                         <state key="normal" title="Pause">
                                             <color key="titleColor" red="1" green="0.98914341248791693" blue="0.99475236315720394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pauseButtonPressed:" destination="vjF-wv-RfD" eventType="touchUpInside" id="g1S-b6-yCG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-l0-y6G">
                                         <rect key="frame" x="320" y="35" width="40" height="40"/>
@@ -1039,8 +1043,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ffr-W7-MYl"/>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="cYf-Vk-l5z" id="gKB-Cf-IRe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h81-3C-mAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vjF-wv-RfD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-746.37681159420299" y="3261.684782608696"/>
         </scene>
