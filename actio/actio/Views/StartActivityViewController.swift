@@ -129,5 +129,16 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
     }
     
+    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+        if annotation.title == "recalled" {
+            return UIColor.blue
+        }
+        
+        return UIColor.orange
+    }
+    
+    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
+        return 5.0
+    }
     
 }

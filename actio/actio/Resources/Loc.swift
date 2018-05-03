@@ -42,8 +42,9 @@ class Loc: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
-            let howRecent = loc.timestamp.timeIntervalSinceNow
-            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
+            // This isn't working right
+//            let howRecent = loc.timestamp.timeIntervalSinceNow
+//            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
             currentLocation = loc
             if logging { activityTimer.appendCoordinate(loc.coordinate) }
         }
