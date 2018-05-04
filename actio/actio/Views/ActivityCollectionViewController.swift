@@ -12,9 +12,11 @@ import UIKit
 class ActivityCollectionViewController: UIViewController {
 
   @IBOutlet weak var activityCollectionView: UICollectionView!
-    
+
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
   }

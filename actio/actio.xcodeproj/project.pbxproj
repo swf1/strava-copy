@@ -20,6 +20,8 @@
 		72365EFA2086E13A00413444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF92086E13A00413444 /* Assets.xcassets */; };
 		72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EFB2086E13A00413444 /* LaunchScreen.storyboard */; };
 		72365F082086E13A00413444 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365F072086E13A00413444 /* actioTests.swift */; };
+		72573699209BFE9100E442BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72573698209BFE9100E442BB /* GoogleService-Info.plist */; };
+		7257369D209C014700E442BB /* token.mapbox in Resources */ = {isa = PBXBuildFile; fileRef = 7257369C209C014700E442BB /* token.mapbox */; };
 		72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */; };
 		72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */; };
 		72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */; };
@@ -61,6 +63,8 @@
 		72365F032086E13A00413444 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365F072086E13A00413444 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
 		72365F092086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72573698209BFE9100E442BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7257369C209C014700E442BB /* token.mapbox */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = token.mapbox; sourceTree = "<group>"; };
 		72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Bold.ttf"; sourceTree = "<group>"; };
 		72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Light.ttf"; sourceTree = "<group>"; };
 		72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Medium.ttf"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */,
 				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
 				31594F3520974B2500F807D9 /* GoogleService-Info.plist */,
+				72573698209BFE9100E442BB /* GoogleService-Info.plist */,
+				7257369C209C014700E442BB /* token.mapbox */,
 				72365EFE2086E13A00413444 /* Info.plist */,
 			);
 			path = actio;
@@ -287,10 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */,
+				7257369D209C014700E442BB /* token.mapbox in Resources */,
 				72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */,
 				72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */,
 				72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */,
 				72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */,
+				72573699209BFE9100E442BB /* GoogleService-Info.plist in Resources */,
 				72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */,
 				31594F3620974B2500F807D9 /* GoogleService-Info.plist in Resources */,
 				72365EFA2086E13A00413444 /* Assets.xcassets in Resources */,
