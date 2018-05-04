@@ -13,6 +13,9 @@ target 'actio' do
   pod 'FBSDKCoreKit'
   pod 'Bolts'
   pod 'Mapbox-iOS-SDK', '~> 4.0.0' # 3.7(?) will be installed without specific version
+  pod 'Repeat'
+  
+  
   target 'actioTests' do
 
     inherit! :search_paths

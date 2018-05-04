@@ -64,6 +64,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Repeat (0.5.2)
 
 DEPENDENCIES:
   - Bolts
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Firebase/Core
   - GoogleSignIn
   - Mapbox-iOS-SDK (~> 4.0.0)
+  - Repeat
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Mapbox-iOS-SDK
     - nanopb
+    - Repeat
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -111,7 +114,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Mapbox-iOS-SDK: 271754e96eb4434ba1b0a8c68432e1ea26fe9841
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Repeat: 74b826ae93ac10ff3d408304ea151178f28e7639
 
-PODFILE CHECKSUM: 22f0cccaf271821f0c81ec2895b534c5bdb6c4b4
+PODFILE CHECKSUM: 4311e9bf8e948ac18356d569793333e19338c5da
 
 COCOAPODS: 1.5.0
