@@ -137,6 +137,7 @@
 				72ACA906208989BD003D35D9 /* Resources */,
 				72ACA905208989AE003D35D9 /* Views */,
 				72365EF22086E13900413444 /* AppDelegate.swift */,
+				3FA7E6A4208D49EC0006CB6E /* Activity.swift */,
 				72365EF42086E13900413444 /* ViewController.swift */,
 				72365EF62086E13900413444 /* Main.storyboard */,
 				72365EF92086E13A00413444 /* Assets.xcassets */,
@@ -146,6 +147,10 @@
 				72573698209BFE9100E442BB /* GoogleService-Info.plist */,
 				7257369C209C014700E442BB /* token.mapbox */,
 				72365EFE2086E13A00413444 /* Info.plist */,
+				3FA7E6A2208D480D0006CB6E /* ActivitiesViewController.swift */,
+				3FDAB4C62092D19E00F3B36A /* FirebaseAdapter.swift */,
+				3FBC6C7F2095467B000580CD /* Athlete.swift */,
+				3F36E9D4209634A300C811EB /* SaveActivityViewController.swift */,
 			);
 			path = actio;
 			sourceTree = "<group>";
@@ -608,7 +613,10 @@
 				DEVELOPMENT_TEAM = DFRBG323GF;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -627,7 +635,10 @@
 				DEVELOPMENT_TEAM = DFRBG323GF;
 				INFOPLIST_FILE = actio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -644,7 +655,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -661,7 +676,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = actioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
