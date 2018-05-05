@@ -19,13 +19,14 @@ class ActivityCollectionViewController: UIViewController {
 
   @IBAction func showChooseView(_ sender: AnyObject) {
     chooseView.isHidden = false
-    // any other objects should be tied to this view as superView
-    // for example adding this okayButton
+    // might add a greyscale to make the background look unavailble.
+    // this would also be a large button to unselect the pop up
+    // there is likely a better ios/swift way of doing this so I'm waiting.
   }
   @IBAction func hideChooseView(_ sender: AnyObject) {
     chooseView.isHidden = true
-    // any other objects should be tied to this view as superView
-    // for example adding this okayButton
+    // when we leave the screen we need to rehide the pop up prompt
+    // removing it upon return is too slow.
   }
 
   override func viewDidLoad() {
