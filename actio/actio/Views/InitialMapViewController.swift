@@ -20,6 +20,7 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var gpsLabel: UILabel!
     
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
@@ -62,6 +63,13 @@ class InitialMapViewController: UIViewController {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func gpsFlag() {
+        if let flag = locationManager.gpsFlag {
+            flag.0 ? (gpsLabel.backgroundColor = UIColor.green) : (gpsLabel.backgroundColor = UIColor.red)
+            gpsLabel.text = flag.1
+        }
     }
     
     func centerMap() {

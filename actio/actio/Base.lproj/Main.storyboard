@@ -842,11 +842,11 @@
         <scene sceneID="kgj-9m-ioV">
             <objects>
                 <viewController id="Uq0-XJ-M4B" customClass="InitialMapViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2iA-MA-0yy">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2iA-MA-0yy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wx-bI-ovQ">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Wx-bI-ovQ">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Igu-Rw-NZw"/>
@@ -866,10 +866,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-P7-yUe" customClass="MGLMapView">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-P7-yUe" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-Ma-Kjk">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-Ma-Kjk">
                                         <rect key="frame" x="336" y="588" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="2up-1b-98E"/>
@@ -881,7 +881,7 @@
                                             <action selector="centerButtonPressed:" destination="Uq0-XJ-M4B" eventType="touchUpInside" id="DCD-1h-EZJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-P8-pb7">
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-P8-pb7">
                                         <rect key="frame" x="180" y="568" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="BTC-ZH-QNz"/>
@@ -899,6 +899,14 @@
                                             <segue destination="HMM-Ay-f4a" kind="show" id="i67-cl-gKA"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GPS is active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-Tc-qAb">
+                                        <rect key="frame" x="0.0" y="-9" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0039215686274509803" green="0.74117647058823533" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.99227656269989029" green="1" blue="0.98155071004281036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -929,6 +937,7 @@
                     <connections>
                         <outlet property="centerButton" destination="MeV-Ma-Kjk" id="GW4-vL-iQZ"/>
                         <outlet property="closeButton" destination="MAl-uL-Zfi" id="Oc8-DF-Obg"/>
+                        <outlet property="gpsLabel" destination="KAF-Tc-qAb" id="2YN-vX-JcO"/>
                         <outlet property="mapView" destination="Uf2-P7-yUe" id="dpN-3L-wuZ"/>
                         <outlet property="settingsButton" destination="0dQ-gj-G73" id="TDo-bZ-wr4"/>
                         <outlet property="startButton" destination="fVd-P8-pb7" id="GW1-Rj-6Iy"/>
@@ -936,7 +945,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-sA-kI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1504" y="3193"/>
+            <point key="canvasLocation" x="-1504.3478260869567" y="3192.3913043478265"/>
         </scene>
         <!--Start Activity View Controller-->
         <scene sceneID="YcY-uz-tGW">
@@ -1182,7 +1191,7 @@
                                     <constraint firstItem="0Es-Jv-uo9" firstAttribute="top" secondItem="QY3-WG-y43" secondAttribute="top" constant="8" id="xKm-N2-mm8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-qa-knM" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="319" width="414.66666666666669" height="307"/>
                                 <color key="backgroundColor" red="0.82540847081218272" green="0.82540847081218272" blue="0.82540847081218272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>

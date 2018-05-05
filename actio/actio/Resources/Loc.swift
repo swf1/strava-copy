@@ -20,7 +20,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
     let activityTimer = ActivityTimer.shared
     var currentLocation: CLLocation?
     var locationArray: [CLLocation]?
-    var isGPSActive: Bool? // For 'gps active' flag
+    var gpsFlag: (Bool, String)?
     var logging = false
     
     override init() {
@@ -40,6 +40,17 @@ class Loc: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
+    func isGPSActive(err: CLError) {
+        switch err.code {
+        case .locationUnknown:
+            gpsFlag = (false, "Location unavailable")
+        case .denied:
+            gpsFlag = (false, "Location services disabled")
+        default:
+            gpsFlag = (true, "GPS is Active")
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
             // This isn't working right
@@ -47,6 +58,12 @@ class Loc: NSObject, CLLocationManagerDelegate {
 //            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
             currentLocation = loc
             if logging { activityTimer.appendLocation(loc) }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let err = error as? CLError {
+            isGPSActive(err: err)
         }
     }
     
