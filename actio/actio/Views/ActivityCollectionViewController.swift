@@ -12,15 +12,34 @@ import UIKit
 class ActivityCollectionViewController: UIViewController {
 
   @IBOutlet weak var activityCollectionView: UICollectionView!
-
+  @IBOutlet weak var chooseView: UIView!
   
+  @IBOutlet weak var goToTrackRun: UIView!
+  
+
+  @IBAction func showChooseView(_ sender: AnyObject) {
+    chooseView.isHidden = false
+    // any other objects should be tied to this view as superView
+    // for example adding this okayButton
+  }
+  @IBAction func hideChooseView(_ sender: AnyObject) {
+    chooseView.isHidden = true
+    // any other objects should be tied to this view as superView
+    // for example adding this okayButton
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    chooseView.isHidden = true
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
   }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+      chooseView.isHidden = true
+  }
 }
+
 
 extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -32,4 +51,10 @@ extension ActivityCollectionViewController: UICollectionViewDelegate, UICollecti
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath)
     return cell
   }
+}
+
+
+func didPressButtonFromCustomView(sender:UIButton) {
+  // do whatever you want
+  // make view disappears again, or remove from its superview
 }
