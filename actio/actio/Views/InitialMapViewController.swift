@@ -22,6 +22,7 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     let locationManager = Loc.shared
+    let activityTimer = ActivityTimer.shared
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
@@ -31,6 +32,8 @@ class InitialMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.startLogging()
+        activityTimer.config()
+
         // MapBox setup
         mapView.delegate = self
         mapView.userTrackingMode = .follow
@@ -46,6 +49,11 @@ class InitialMapViewController: UIViewController {
         if mapView.isUserLocationVisible {
             centerMap()
         }
+    }
+    
+    @IBAction func startButtonPressed(_ sender: Any) {
+        locationManager.logging = true // not a great solution for this
+        activityTimer.startTime()
     }
     
     @IBAction func centerButtonPressed(_ sender: Any) {
@@ -75,6 +83,7 @@ class InitialMapViewController: UIViewController {
     }
 
 }
+
 
 // MARK: MGLMapViewDelegate
 extension InitialMapViewController: MGLMapViewDelegate {

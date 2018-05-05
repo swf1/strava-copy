@@ -8,14 +8,34 @@
 
 import Foundation
 import CoreLocation.CLLocation
+import Repeat
 
 class ActivityTimer {
     
+    static let shared = ActivityTimer() 
+    
+    private var currentLocation: CLLocation?
+    private var timer: Repeater!
+    private var paceArray = [Double]()
+    private var locationArray = [CLLocation]()
+    private var df = DateComponentsFormatter()
+    private var firstLast = [CLLocationCoordinate2D]()
+    
     var totalDistance = 0.0
-    var paceArray = [Double]()
-    var coordinateArray = [CLLocationCoordinate2D]()
-    var df = DateComponentsFormatter()
-    var currentLocation: CLLocation?
+    var counter = 0.0
+    
+    // Must call before using
+    func config() {
+        timer = Repeater.every(.seconds(1.0), { _ in
+            self.counter += 1.0
+            // Sends notification with each tick that's picked up by other VCs
+            NotificationCenter.default.post(name: Notification.Name("Tick"), object: nil, userInfo: ["time": self.totalTime()])
+        })
+        
+        df.allowedUnits = [.minute, .second]
+        df.zeroFormattingBehavior = [.pad]
+        df.unitsStyle = .abbreviated
+    }
     
     func pace() -> String {
         if let loc = currentLocation {
@@ -38,15 +58,49 @@ class ActivityTimer {
     }
     
     func totalDistance(newLocation: CLLocation) {
-        if let last = coordinateArray.last {  // Using paceArray here for now
-            let loc = CLLocation(latitude: last.latitude, longitude: last.longitude)
+        if let last = locationArray.last {  // Using paceArray here for now
+            let loc = CLLocation(latitude: last.coordinate.latitude, longitude: last.coordinate.longitude)
             var dist = Measurement(value: newLocation.distance(from: loc), unit: UnitLength.meters)
             dist = dist.converted(to: .miles)
             totalDistance += dist.value
         }
     }
     
-    func appendCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        coordinateArray.append(coordinate)
+    func totalTime() -> String {
+        let c = Measurement(value: counter, unit: UnitDuration.seconds)
+        guard let tot = df.string(from: c.value) else { return "?:??" }
+//        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
+        return tot
+    }
+    
+    // function to encode GeoJSON for Activty object
+    // but leave creating the polyline to view controller
+    
+
+    func startTime() {
+        timer.start()
+    }
+    
+    func pause() {
+        timer.pause()
+        // for use if the user ends their activity
+        if locationArray.count > 1 {
+            firstLast = [locationArray[0].coordinate, locationArray.last?.coordinate] as! [CLLocationCoordinate2D]
+        }
+    }
+    
+    func appendLocation(_ location: CLLocation) {
+        locationArray.append(location)
+        currentLocation = location
+    }
+    
+    // nil if empty
+    func coordinates() -> [CLLocation]? {
+        // has to be > 1 or MGLPolyline will crash
+        if locationArray.count > 1 {
+            return locationArray
+        }
+        
+        return nil
     }
 }
