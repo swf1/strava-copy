@@ -12,6 +12,10 @@
 		31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3D2097A0D400F807D9 /* ActivityTimer.swift */; };
 		31594F402098B53B00F807D9 /* Loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3F2098B53B00F807D9 /* Loc.swift */; };
 		31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F41209935E300F807D9 /* StartActivityViewController.swift */; };
+		3FBDAB23209E6A2A0043D7B8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBDAB22209E6A2A0043D7B8 /* Activity.swift */; };
+		3FBDAB25209E6BBA0043D7B8 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBDAB24209E6BBA0043D7B8 /* Athlete.swift */; };
+		3FBDAB27209E6BC20043D7B8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBDAB26209E6BC20043D7B8 /* Route.swift */; };
+		3FBDAB29209E6BFB0043D7B8 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBDAB28209E6BFB0043D7B8 /* Coordinate.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
 		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
 		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
@@ -52,6 +56,10 @@
 		31594F3D2097A0D400F807D9 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
 		31594F3F2098B53B00F807D9 /* Loc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loc.swift; sourceTree = "<group>"; };
 		31594F41209935E300F807D9 /* StartActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
+		3FBDAB22209E6A2A0043D7B8 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		3FBDAB24209E6BBA0043D7B8 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		3FBDAB26209E6BC20043D7B8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		3FBDAB28209E6BFB0043D7B8 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +119,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3FBDAB2A209E6DDC0043D7B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FBDAB22209E6A2A0043D7B8 /* Activity.swift */,
+				3FBDAB24209E6BBA0043D7B8 /* Athlete.swift */,
+				3FBDAB28209E6BFB0043D7B8 /* Coordinate.swift */,
+				3FBDAB26209E6BC20043D7B8 /* Route.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		72365EE62086E13900413444 = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +153,10 @@
 		72365EF12086E13900413444 /* actio */ = {
 			isa = PBXGroup;
 			children = (
+				3FBDAB2A209E6DDC0043D7B8 /* Models */,
 				72ACA906208989BD003D35D9 /* Resources */,
 				72ACA905208989AE003D35D9 /* Views */,
 				72365EF22086E13900413444 /* AppDelegate.swift */,
-				3FA7E6A4208D49EC0006CB6E /* Activity.swift */,
 				72365EF42086E13900413444 /* ViewController.swift */,
 				72365EF62086E13900413444 /* Main.storyboard */,
 				72365EF92086E13A00413444 /* Assets.xcassets */,
@@ -147,10 +166,6 @@
 				72573698209BFE9100E442BB /* GoogleService-Info.plist */,
 				7257369C209C014700E442BB /* token.mapbox */,
 				72365EFE2086E13A00413444 /* Info.plist */,
-				3FA7E6A2208D480D0006CB6E /* ActivitiesViewController.swift */,
-				3FDAB4C62092D19E00F3B36A /* FirebaseAdapter.swift */,
-				3FBC6C7F2095467B000580CD /* Athlete.swift */,
-				3F36E9D4209634A300C811EB /* SaveActivityViewController.swift */,
 			);
 			path = actio;
 			sourceTree = "<group>";
@@ -391,6 +406,7 @@
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -406,6 +422,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,11 +459,15 @@
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
+				3FBDAB27209E6BC20043D7B8 /* Route.swift in Sources */,
 				31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */,
 				31594F3A20974F6A00F807D9 /* InitialMapViewController.swift in Sources */,
+				3FBDAB29209E6BFB0043D7B8 /* Coordinate.swift in Sources */,
 				31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */,
+				3FBDAB25209E6BBA0043D7B8 /* Athlete.swift in Sources */,
 				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
 				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
+				3FBDAB23209E6A2A0043D7B8 /* Activity.swift in Sources */,
 				72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
