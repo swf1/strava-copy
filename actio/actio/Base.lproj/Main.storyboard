@@ -712,7 +712,7 @@
                                                             <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Uq0-XJ-M4B" kind="presentation" id="eCp-ZK-pTW"/>
+                                                            <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySelected" id="eCp-ZK-pTW"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi4-0o-9CZ">
@@ -725,7 +725,7 @@
                                                             <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Uq0-XJ-M4B" kind="presentation" id="B8J-EK-AmQ"/>
+                                                            <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySelected" id="B8J-EK-AmQ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1297,7 +1297,7 @@
         <image name="swquare_map" width="182" height="175"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B8J-EK-AmQ"/>
+        <segue reference="eCp-ZK-pTW"/>
         <segue reference="D0k-EN-zs2"/>
         <segue reference="dUl-3J-noZ"/>
         <segue reference="BZw-cp-LUj"/>

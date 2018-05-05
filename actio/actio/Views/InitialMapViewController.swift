@@ -44,9 +44,13 @@ class InitialMapViewController: UIViewController {
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
+        
+        // sets flag at top of screen
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        gpsFlag()
         if mapView.isUserLocationVisible {
             centerMap()
         }
@@ -67,10 +71,14 @@ class InitialMapViewController: UIViewController {
     
     func gpsFlag() {
         if let flag = locationManager.gpsFlag {
-            flag.0 ? (gpsLabel.backgroundColor = UIColor.green) : (gpsLabel.backgroundColor = UIColor.red)
-            gpsLabel.text = flag.1
+            // Animation needed to change after view loads? 
+            UIView.animate(withDuration: 0.2) {
+                flag.0 ? (self.gpsLabel.backgroundColor = UIColor.green) : (self.gpsLabel.backgroundColor = UIColor.red)
+                self.gpsLabel.text = flag.1
+            }
         }
     }
+    
     
     func centerMap() {
         if let loc = mapView.userLocation {
@@ -104,4 +112,5 @@ extension InitialMapViewController: MGLMapViewDelegate {
             self.centerButton.alpha = 1.0
         }
     }
+    
 }

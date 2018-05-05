@@ -20,7 +20,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
     let activityTimer = ActivityTimer.shared
     var currentLocation: CLLocation?
     var locationArray: [CLLocation]?
-    var gpsFlag: (Bool, String)?
+    var gpsFlag: (Bool, String)? 
     var logging = false
     
     override init() {
@@ -53,6 +53,8 @@ class Loc: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
+            gpsFlag = (true, "GPS is Active")
+
             // This isn't working right
 //            let howRecent = loc.timestamp.timeIntervalSinceNow
 //            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
@@ -62,6 +64,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("didFailWithError")
         if let err = error as? CLError {
             isGPSActive(err: err)
         }
