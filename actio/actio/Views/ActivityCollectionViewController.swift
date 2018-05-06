@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class ActivityCollectionViewController: UIViewController {
-
+    
+    
   @IBOutlet weak var activityCollectionView: UICollectionView!
   @IBOutlet weak var chooseView: UIView!
   
@@ -39,6 +40,7 @@ class ActivityCollectionViewController: UIViewController {
   override func viewDidDisappear(_ animated: Bool) {
       chooseView.isHidden = true
   }
+    
 }
 
 

@@ -33,8 +33,8 @@ class ActivityTimer {
         })
         
         df.allowedUnits = [.minute, .second]
-        df.zeroFormattingBehavior = [.pad]
-        df.unitsStyle = .abbreviated
+        df.zeroFormattingBehavior = [.default]
+        df.unitsStyle = .positional
     }
     
     func pace() -> String {
