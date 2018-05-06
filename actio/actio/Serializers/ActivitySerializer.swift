@@ -10,3 +10,17 @@
 //
 
 import Foundation
+import Firebase
+
+class ActivitySerializer {
+    static func createMap(fromActivity activity: Activity) -> [String:Any?] {
+        return [
+            "name": activity.name,
+            "type": activity.type,
+            "start_date_local": activity.startDateLocal,
+            "athlete": [
+                "uid": activity.athlete.uid
+            ]
+        ]
+    }
+}

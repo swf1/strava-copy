@@ -20,15 +20,13 @@ class FirebaseActivityStorageAdapter: ActivityStorageAdapter {
     }
 
     func save(activity: Activity) {
-        let serializer = ActivitySerializer()
-        let data = serializer.createMap(fromActivity: activity)
+        let data = ActivitySerializer.createMap(fromActivity: activity)
         ref.child("activity").childByAutoId().setValue(data)
     }
 
     func update(activity: Activity) {
         if let uid = activity.uid {
-            let serializer = ActivitySerializer()
-            let data = serializer.createMap(fromActivity: activity)
+            let data = ActivitySerializer.createMap(fromActivity: activity)
             ref.child("activity").child(uid).setValue(data)
         }
     }
