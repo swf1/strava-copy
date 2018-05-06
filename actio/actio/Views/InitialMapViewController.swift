@@ -27,6 +27,8 @@ class InitialMapViewController: UIViewController {
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
     var log = false
+  
+
     
     
     override func viewDidLoad() {
