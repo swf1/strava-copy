@@ -10,3 +10,9 @@
 //
 
 import Foundation
+
+protocol ActivityStorageAdapter {
+    func save(activity: Activity)
+    func update(activity: Activity)
+    func delete(activity: Activity)
+}
