@@ -17,11 +17,11 @@ class StartActivityViewController: UIViewController {
     let time = 0.0
     var paused = false
     
-  @IBOutlet weak var activityNameField: UITextField!
-  @IBOutlet weak var cancelToResumeButton: UIButton!
-  @IBOutlet weak var recordActivityButton: UIButton!
-  @IBOutlet weak var saveView: UIView!
-  @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var activityNameField: UITextField!
+    @IBOutlet weak var cancelToResumeButton: UIButton!
+    @IBOutlet weak var recordActivityButton: UIButton!
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var mapToggleButton: UIButton!
@@ -105,13 +105,14 @@ class StartActivityViewController: UIViewController {
         mapView.userTrackingMode = .followWithCourse
         mapView.setCamera(
             MGLMapCamera(
-                lookingAtCenter: mapView.userLocation!.coordinate,
-                fromDistance: 500,
+                lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
+                fromDistance: 400,
                 pitch: 70.0,
                 heading: mapView.camera.heading),
             animated: true
         )
     }
+    
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
@@ -128,9 +129,8 @@ extension StartActivityViewController: MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
         if paused { return }
-        
         paceLabel.text = activityTimer.pace()
-        distanceLabel.text = String(activityTimer.totalDistance)
+        distanceLabel.text = String(format: "%.2f", activityTimer.totalDistance)
         if let locations = activityTimer.coordinates() {
             // Get coordinates
             let coords = locations.map { $0.coordinate }

@@ -909,6 +909,13 @@
                                             <segue destination="HMM-Ay-f4a" kind="show" id="i67-cl-gKA"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GPS is Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-8L-XBp">
+                                        <rect key="frame" x="26" y="26" width="340" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -937,6 +944,7 @@
                     <connections>
                         <outlet property="centerButton" destination="MeV-Ma-Kjk" id="GW4-vL-iQZ"/>
                         <outlet property="closeButton" destination="MAl-uL-Zfi" id="Oc8-DF-Obg"/>
+                        <outlet property="gpsLabel" destination="ekd-8L-XBp" id="DOu-kF-Xaz"/>
                         <outlet property="mapView" destination="Uf2-P7-yUe" id="dpN-3L-wuZ"/>
                         <outlet property="settingsButton" destination="0dQ-gj-G73" id="TDo-bZ-wr4"/>
                         <outlet property="startButton" destination="fVd-P8-pb7" id="GW1-Rj-6Iy"/>
@@ -944,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-sA-kI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1859" y="2273"/>
+            <point key="canvasLocation" x="-1471.0144927536232" y="2254.8913043478265"/>
         </scene>
         <!--Start Activity View Controller-->
         <scene sceneID="YcY-uz-tGW">
@@ -1494,7 +1502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiV-P2-7cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95.652173913043484" y="2272.826086956522"/>
+            <point key="canvasLocation" x="142" y="2292"/>
         </scene>
     </scenes>
     <resources>

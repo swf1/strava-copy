@@ -29,8 +29,6 @@ class InitialMapViewController: UIViewController {
     var cam = MGLMapCamera()
     var log = false
   
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,5 +112,9 @@ extension InitialMapViewController: MGLMapViewDelegate {
             self.centerButton.alpha = 1.0
         }
     }
+    
+//    func mapView(_ mapView: MGLMapView, didFailToLocateUserWithError error: Error) {
+//        <#code#>
+//    }
     
 }

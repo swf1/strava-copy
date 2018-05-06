@@ -33,7 +33,7 @@ class ActivityTimer {
         })
         
         df.allowedUnits = [.minute, .second]
-        df.zeroFormattingBehavior = [.default]
+        df.zeroFormattingBehavior = [.pad]
         df.unitsStyle = .positional
     }
     
@@ -62,7 +62,7 @@ class ActivityTimer {
             let loc = CLLocation(latitude: last.coordinate.latitude, longitude: last.coordinate.longitude)
             var dist = Measurement(value: newLocation.distance(from: loc), unit: UnitLength.meters)
             dist = dist.converted(to: .miles)
-            totalDistance += dist.value
+            totalDistance += dist.value  // don't round to keep accuracy. round in view controller
         }
     }
     

@@ -54,12 +54,14 @@ class Loc: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
             gpsFlag = (true, "GPS is Active")
-
             // This isn't working right
 //            let howRecent = loc.timestamp.timeIntervalSinceNow
 //            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
             currentLocation = loc
-            if logging { activityTimer.appendLocation(loc) }
+            if logging {
+                activityTimer.totalDistance(newLocation: loc) // here so keeps track in background
+                activityTimer.appendLocation(loc)
+            }
         }
     }
     
