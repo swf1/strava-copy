@@ -32,7 +32,7 @@ class Activity: NSObject {
         athlete: Athlete,
         name: String,
         type: String,
-        startDateLocal: string
+        startDateLocal: String
     ) {
         self.uid = uid
         self.athlete = athlete
@@ -46,7 +46,7 @@ class Activity: NSObject {
         athlete: Athlete,
         name: String,
         type: String,
-        startDateLocal: string,
+        startDateLocal: String,
         route: Route
     ) {
         self.uid = uid

@@ -12,6 +12,6 @@
 import Foundation
 
 struct Coordinate {
-    var latitude
-    var longitude
+    var latitude: String
+    var longitude: String
 }

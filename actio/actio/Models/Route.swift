@@ -15,10 +15,6 @@ class Route: NSObject {
     var name: String?
     var coordinates: [Coordinate]
     
-    init() {
-        self.coordinates = [Coordinate]
-    }
-    
     init?(coordinates: [Coordinate]) {
         self.coordinates = coordinates
     }
