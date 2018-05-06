@@ -1,8 +1,11 @@
 //
-//  FirebaseActivityStorageAdapter.swift
+//  Activity.swift
 //  actio
 //
-//  Created by Tyler McGinnis on 5/5/18.
+//  Contributors:
+//    Alieta Train
+//    Tyler Mcginnis on 5/5/18.
+//    Jason Hoffman
 //  Copyright © 2018 corvus group. All rights reserved.
 //
 
