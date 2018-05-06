@@ -17,7 +17,11 @@ class StartActivityViewController: UIViewController {
     let time = 0.0
     var paused = false
     
-    @IBOutlet weak var pauseButton: UIButton!
+  @IBOutlet weak var activityNameField: UITextField!
+  @IBOutlet weak var cancelToResumeButton: UIButton!
+  @IBOutlet weak var recordActivityButton: UIButton!
+  @IBOutlet weak var saveView: UIView!
+  @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var mapToggleButton: UIButton!
@@ -32,6 +36,7 @@ class StartActivityViewController: UIViewController {
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
+        saveView.isHidden = true
         
         // MapBox setup again
         mapView.delegate = self
@@ -59,9 +64,20 @@ class StartActivityViewController: UIViewController {
         paused = !paused
     }
     
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        // perform saving functions here
-    }
+  @IBAction func saveButtonPressed(_ sender: Any) {
+    // open view to add activity name for saving 
+    saveView.isHidden = false
+  }
+  
+  @IBAction func recordActivityPressed(_ sender: Any) {
+    // perform saving functions here
+    saveView.isHidden = false
+  }
+  
+  @IBAction func cancelRecordButtonPressed(_ sender: Any) {
+    // perform saving functions here
+    saveView.isHidden = true
+  }
     
     @IBAction func resumeButtonPressed(_ sender: Any) {
         toggleButtons()

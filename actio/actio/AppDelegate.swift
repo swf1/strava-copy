@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     // Add any custom logic here.
     
+    // not used here but has to be initialized with enough time to
+    // decide if gps is working or not? 
+    let _ = Loc.shared
+    
     return true
   }
   

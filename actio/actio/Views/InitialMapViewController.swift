@@ -20,6 +20,7 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var gpsLabel: UILabel!
     
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
@@ -27,6 +28,8 @@ class InitialMapViewController: UIViewController {
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
     var log = false
+  
+
     
     
     override func viewDidLoad() {
@@ -43,9 +46,13 @@ class InitialMapViewController: UIViewController {
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
+        
+        // sets flag at top of screen
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        gpsFlag()
         if mapView.isUserLocationVisible {
             centerMap()
         }
@@ -63,6 +70,17 @@ class InitialMapViewController: UIViewController {
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func gpsFlag() {
+        if let flag = locationManager.gpsFlag {
+            // Animation needed to change after view loads? 
+            UIView.animate(withDuration: 0.2) {
+                flag.0 ? (self.gpsLabel.backgroundColor = UIColor.green) : (self.gpsLabel.backgroundColor = UIColor.red)
+                self.gpsLabel.text = flag.1
+            }
+        }
+    }
+    
     
     func centerMap() {
         if let loc = mapView.userLocation {
@@ -96,4 +114,5 @@ extension InitialMapViewController: MGLMapViewDelegate {
             self.centerButton.alpha = 1.0
         }
     }
+    
 }
