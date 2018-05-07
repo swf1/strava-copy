@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tE0-sv-0ak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -893,7 +893,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-P8-pb7">
-                                        <rect key="frame" x="166.66666666666666" y="563" width="80" height="80"/>
+                                        <rect key="frame" x="167" y="563" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="74M-YD-nT2"/>
                                             <constraint firstAttribute="width" constant="80" id="wev-cV-KEL"/>
@@ -909,19 +909,25 @@
                                             <segue destination="HMM-Ay-f4a" kind="show" id="i67-cl-gKA"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GPS is Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-8L-XBp">
-                                        <rect key="frame" x="26" y="26" width="340" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS is now active!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2T-mA-3t2">
+                                        <rect key="frame" x="8" y="8" width="398" height="41"/>
+                                        <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="r7O-sh-USV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Q2T-mA-3t2" firstAttribute="centerX" secondItem="fVd-P8-pb7" secondAttribute="centerX" id="3CC-9y-Hj5"/>
+                                    <constraint firstItem="Q2T-mA-3t2" firstAttribute="top" secondItem="Uf2-P7-yUe" secondAttribute="topMargin" id="Bci-bJ-HSR"/>
                                     <constraint firstAttribute="bottom" secondItem="MeV-Ma-Kjk" secondAttribute="bottom" constant="57" id="TN5-dn-6I4"/>
                                     <constraint firstItem="fVd-P8-pb7" firstAttribute="centerY" secondItem="MeV-Ma-Kjk" secondAttribute="centerY" id="jnl-kC-NT1"/>
                                     <constraint firstAttribute="trailing" secondItem="MeV-Ma-Kjk" secondAttribute="trailing" constant="54" id="mQT-50-3ka"/>
+                                    <constraint firstItem="Q2T-mA-3t2" firstAttribute="leading" secondItem="Uf2-P7-yUe" secondAttribute="leadingMargin" id="rO3-GR-BQS"/>
                                     <constraint firstItem="fVd-P8-pb7" firstAttribute="centerX" secondItem="Uf2-P7-yUe" secondAttribute="centerX" id="yQn-Ze-RPU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -944,7 +950,7 @@
                     <connections>
                         <outlet property="centerButton" destination="MeV-Ma-Kjk" id="GW4-vL-iQZ"/>
                         <outlet property="closeButton" destination="MAl-uL-Zfi" id="Oc8-DF-Obg"/>
-                        <outlet property="gpsLabel" destination="ekd-8L-XBp" id="DOu-kF-Xaz"/>
+                        <outlet property="gpsLabel" destination="Q2T-mA-3t2" id="WcC-lV-2Df"/>
                         <outlet property="mapView" destination="Uf2-P7-yUe" id="dpN-3L-wuZ"/>
                         <outlet property="settingsButton" destination="0dQ-gj-G73" id="TDo-bZ-wr4"/>
                         <outlet property="startButton" destination="fVd-P8-pb7" id="GW1-Rj-6Iy"/>
@@ -952,7 +958,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-sA-kI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471.0144927536232" y="2254.8913043478265"/>
+            <point key="canvasLocation" x="-1859.4202898550725" y="2272.826086956522"/>
         </scene>
         <!--Start Activity View Controller-->
         <scene sceneID="YcY-uz-tGW">
@@ -1502,7 +1508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiV-P2-7cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="2292"/>
+            <point key="canvasLocation" x="95.652173913043484" y="2272.826086956522"/>
         </scene>
     </scenes>
     <resources>
@@ -1522,7 +1528,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eCp-ZK-pTW"/>
-        <segue reference="NUX-b0-Jcf"/>
+        <segue reference="ypa-5v-peG"/>
         <segue reference="D0k-EN-zs2"/>
         <segue reference="dUl-3J-noZ"/>
         <segue reference="BZw-cp-LUj"/>

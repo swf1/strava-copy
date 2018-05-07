@@ -21,14 +21,17 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var gpsLabel: UILabel!
-    
-    let locationManager = Loc.shared
+  
+  let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
     var log = false
+<<<<<<< HEAD
   
+=======
+>>>>>>> development
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,7 @@ class InitialMapViewController: UIViewController {
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
-        mapView.showsUserLocation = true
+        mapView.showsUserLocation = true      
         
         // sets flag at top of screen
 
@@ -73,7 +76,7 @@ class InitialMapViewController: UIViewController {
         if let flag = locationManager.gpsFlag {
             // Animation needed to change after view loads? 
             UIView.animate(withDuration: 0.2) {
-                flag.0 ? (self.gpsLabel.backgroundColor = UIColor.green) : (self.gpsLabel.backgroundColor = UIColor.red)
+                flag.0 ? (self.gpsLabel.backgroundColor = UIColor(displayP3Red: 1.75, green: 0.0, blue: 2.14, alpha: 1.0)) : (self.gpsLabel.backgroundColor = UIColor(displayP3Red: 1.75, green: 0.0, blue: 2.14, alpha: 1.0))
                 self.gpsLabel.text = flag.1
             }
         }
