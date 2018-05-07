@@ -41,6 +41,15 @@ class ActivityCollectionViewController: UIViewController {
       chooseView.isHidden = true
   }
     
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "activitySegue" {
+//            if let flag = locationManager.gpsFlag, let vc = segue.destination as? InitialMapViewController {
+//                flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
+//                vc.gpsLabel.text = flag.1
+//            }
+//        }
+//    }
 }
 
 

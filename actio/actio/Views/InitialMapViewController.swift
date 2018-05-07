@@ -21,17 +21,15 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var gpsLabel: UILabel!
-  
-  let locationManager = Loc.shared
+    @IBOutlet weak var gpsLabelHeightConstraint: NSLayoutConstraint! // for animation
+    
+    let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     var regionRadius: CLLocationDistance = 500
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
     var log = false
-<<<<<<< HEAD
-  
-=======
->>>>>>> development
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,22 +39,19 @@ class InitialMapViewController: UIViewController {
         // MapBox setup
         mapView.delegate = self
         mapView.userTrackingMode = .follow
-        mapView.isPitchEnabled = true // not needed here
-        mapView.showsHeading = false // not needed here
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true      
         
-        // sets flag at top of screen
-
+        // hide then show when set
     }
     
     override func viewDidAppear(_ animated: Bool) {
         gpsFlag()
-        if mapView.isUserLocationVisible {
-            centerMap()
-        }
+//        if mapView.isUserLocationVisible {
+//            centerMap()
+//        }
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
@@ -74,10 +69,12 @@ class InitialMapViewController: UIViewController {
     
     func gpsFlag() {
         if let flag = locationManager.gpsFlag {
-            // Animation needed to change after view loads? 
-            UIView.animate(withDuration: 0.2) {
-                flag.0 ? (self.gpsLabel.backgroundColor = UIColor(displayP3Red: 1.75, green: 0.0, blue: 2.14, alpha: 1.0)) : (self.gpsLabel.backgroundColor = UIColor(displayP3Red: 1.75, green: 0.0, blue: 2.14, alpha: 1.0))
+            // Animation needed to change after view loads?
+            UIView.animate(withDuration: 0.5) {
+                // Still need a green color
+                flag.0 ? (self.gpsLabel.backgroundColor = UIColor.green) : (self.gpsLabel.backgroundColor = UIColor.red)
                 self.gpsLabel.text = flag.1
+                self.gpsLabelHeightConstraint.constant = 41
             }
         }
     }
@@ -113,6 +110,12 @@ extension InitialMapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
         UIView.animate(withDuration: 0.2) {
             self.centerButton.alpha = 1.0
+        }
+    }
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        if mapView.isUserLocationVisible {
+            centerMap()
         }
     }
     

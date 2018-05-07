@@ -30,6 +30,8 @@ class StartActivityViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var mapView: MGLMapView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,25 +42,25 @@ class StartActivityViewController: UIViewController {
         
         // MapBox setup again
         mapView.delegate = self
-        mapView.userTrackingMode = .follow
-        mapView.isPitchEnabled = true // not needed here
-        mapView.showsHeading = false // not needed here
+//        mapView.userTrackingMode = .follow
+//        mapView.isPitchEnabled = true // not needed here
+//        mapView.showsHeading = false // not needed here
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
         mapView.showsUserLocation = true
-        
         // Will receive notification from ActivityTimer
         NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        courseMode()
+//        courseMode()
     }
     
 
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
+        topDownMode()
         toggleButtons()
         activityTimer.pause()
         paused = !paused
@@ -81,6 +83,7 @@ class StartActivityViewController: UIViewController {
     
     @IBAction func resumeButtonPressed(_ sender: Any) {
         toggleButtons()
+        courseMode()
         // and go back to activity
     }
     
@@ -103,14 +106,22 @@ class StartActivityViewController: UIViewController {
     
     func courseMode() {
         mapView.userTrackingMode = .followWithCourse
-        mapView.setCamera(
-            MGLMapCamera(
+         let courseCam =  MGLMapCamera(
                 lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
                 fromDistance: 400,
                 pitch: 70.0,
-                heading: mapView.camera.heading),
-            animated: true
-        )
+                heading: mapView.camera.heading)
+        mapView.fly(to: courseCam, completionHandler: nil)
+    }
+    
+    func topDownMode() {
+        mapView.userTrackingMode = .follow
+        let topDownCam = MGLMapCamera(
+                lookingAtCenter: mapView.userLocation!.coordinate,
+                fromDistance: 1500,
+                pitch: 0.0,
+                heading: mapView.camera.heading)
+        mapView.fly(to: topDownCam, completionHandler: nil)
     }
     
     // Hide status bar at top when modal seuges
@@ -145,6 +156,9 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
     }
     
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        courseMode()
+    }
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
         if annotation.title == "recalled" {
