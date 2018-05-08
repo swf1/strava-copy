@@ -42,9 +42,6 @@ class StartActivityViewController: UIViewController {
         
         // MapBox setup again
         mapView.delegate = self
-//        mapView.userTrackingMode = .follow
-//        mapView.isPitchEnabled = true // not needed here
-//        mapView.showsHeading = false // not needed here
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
@@ -53,10 +50,6 @@ class StartActivityViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-//        courseMode()
-    }
-    
 
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
@@ -124,6 +117,17 @@ class StartActivityViewController: UIViewController {
         mapView.fly(to: topDownCam, completionHandler: nil)
     }
     
+    func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
+        var annotations = [MGLPointAnnotation]()
+        for c in coordinates {
+            let p = MGLPointAnnotation()
+            p.coordinate = c
+            annotations.append(p)
+        }
+        mapView.addAnnotations(annotations)
+    }
+    
+    
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
@@ -158,6 +162,26 @@ extension StartActivityViewController: MGLMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         courseMode()
+    }
+    
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        guard annotation is MGLPointAnnotation else {
+            return nil
+        }
+        
+        let reuseIdentifier = "\(annotation.coordinate.longitude)"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        
+        // If there’s no reusable annotation view available, initialize a new one.
+        if annotationView == nil {
+            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView!.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+            
+            annotationView?.backgroundColor = UIColor.red
+        }
+        
+        return annotationView
     }
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {

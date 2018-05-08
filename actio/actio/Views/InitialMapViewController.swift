@@ -89,6 +89,7 @@ class InitialMapViewController: UIViewController {
         }
     }
     
+    
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
@@ -118,6 +119,7 @@ extension InitialMapViewController: MGLMapViewDelegate {
             centerMap()
         }
     }
+    
     
 //    func mapView(_ mapView: MGLMapView, didFailToLocateUserWithError error: Error) {
 //        <#code#>
