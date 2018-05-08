@@ -39,6 +39,7 @@ class InitialMapViewController: UIViewController {
         // MapBox setup
         mapView.delegate = self
         mapView.userTrackingMode = .follow
+        mapView.isPitchEnabled = false
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
