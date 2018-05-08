@@ -1291,6 +1291,9 @@
                                                 <state key="normal" title="record activity">
                                                     <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="recordActivityPressed:" destination="HMM-Ay-f4a" eventType="touchDown" id="FEJ-HB-YzH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWD-dM-nI8">
                                                 <rect key="frame" x="0.0" y="302.33333333333331" width="259.66666666666669" height="57.666666666666686"/>
@@ -1516,7 +1519,7 @@
             <objects>
                 <viewController storyboardIdentifier="ActivitiesView" id="AW7-LX-wZC" customClass="ActivitiesViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ot7-8y-CMS" userLabel="Root">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UU4-B6-fQE">
@@ -1528,7 +1531,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eyn-Ot-70q" id="9Fo-rS-pvG">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1568,10 +1571,9 @@
         <!--New Activity View Controller-->
         <scene sceneID="9uE-fR-MpM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb6-VW-tij" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SaveActivityView" title="New Activity View Controller" id="3rA-oa-Ipd" customClass="SaveActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRU-iV-NTB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-Zz-V8c" userLabel="Header">
@@ -1670,6 +1672,7 @@
                         <outlet property="typeField" destination="VBk-M1-bKH" id="dDY-9B-9bf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb6-VW-tij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="-626.53673163418296"/>
         </scene>
@@ -1693,8 +1696,8 @@
         <segue reference="eCp-ZK-pTW"/>
         <segue reference="ypa-5v-peG"/>
         <segue reference="D0k-EN-zs2"/>
-        <segue reference="dUl-3J-noZ"/>
-        <segue reference="BZw-cp-LUj"/>
+        <segue reference="Pmv-px-QhH"/>
+        <segue reference="bud-4M-U63"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

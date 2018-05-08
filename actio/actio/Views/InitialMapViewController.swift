@@ -15,6 +15,7 @@ import CoreLocation
 
 class InitialMapViewController: UIViewController {
 
+    var activity: Activity!
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
@@ -58,6 +59,13 @@ class InitialMapViewController: UIViewController {
     @IBAction func startButtonPressed(_ sender: Any) {
         locationManager.logging = true // not a great solution for this
         activityTimer.startTime()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? StartActivityViewController
+        {
+            vc.activity = self.activity
+        }
     }
     
     @IBAction func centerButtonPressed(_ sender: Any) {
