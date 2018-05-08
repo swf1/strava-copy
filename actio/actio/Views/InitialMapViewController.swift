@@ -44,9 +44,17 @@ class InitialMapViewController: UIViewController {
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
-        mapView.showsUserLocation = true      
         
-        // hide then show when set
+        if locationManager.locServicesEnabled() {
+            mapView.showsUserLocation = true
+        } else {
+            centerButton.isHidden = true // prevent crash
+            let osu = CLLocationCoordinate2D(latitude: 44.5638, longitude: -123.2794)
+            let noLoc = MGLMapCamera(lookingAtCenter: osu, fromDistance: 2000, pitch: 0.0, heading: 0.0)
+            mapView.fly(to: noLoc, completionHandler: nil)
+        }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,7 +96,8 @@ class InitialMapViewController: UIViewController {
         }
     }
     
-    
+    // app will crash with this called and location
+    // services disabled
     func centerMap() {
         if let loc = mapView.userLocation {
             mapView.setCenter(loc.coordinate, zoomLevel: 15.0, animated: true)

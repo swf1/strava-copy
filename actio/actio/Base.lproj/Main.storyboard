@@ -911,7 +911,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS is now active!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2T-mA-3t2">
-                                        <rect key="frame" x="8" y="8" width="398" height="41"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="0.0"/>
                                         <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="r7O-sh-USV"/>
@@ -1695,7 +1695,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="B8J-EK-AmQ"/>
-        <segue reference="ypa-5v-peG"/>
+        <segue reference="NUX-b0-Jcf"/>
         <segue reference="D0k-EN-zs2"/>
         <segue reference="Pmv-px-QhH"/>
         <segue reference="bud-4M-U63"/>
