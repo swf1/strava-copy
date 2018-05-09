@@ -20,6 +20,7 @@ class StartActivityViewController: UIViewController {
     let activityTimer = ActivityTimer.shared
     let time = 0.0
     var paused = false
+    var source: MGLShapeSource!
     
     @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
@@ -112,15 +113,31 @@ class StartActivityViewController: UIViewController {
         }
     }
     
-    func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
-        var annotations = [MGLPointAnnotation]()
-        for c in coordinates {
-            let p = MGLPointAnnotation()
-            p.coordinate = c
-            annotations.append(p)
-        }
+    func initPolyline() {
+        guard let style = self.mapView.style else { return }
         
-        mapView.addAnnotations(annotations)
+        // empty polyline to update as coordinate arrive
+        let pline = MGLPolyline()
+        source = MGLShapeSource(identifier: "activeRoute", shape: pline, options: nil)
+        style.addSource(source)
+        
+        let layer = MGLLineStyleLayer(identifier: "activeRoute", source: source)
+        
+        layer.lineJoin = NSExpression(forConstantValue: "round")
+        layer.lineCap = NSExpression(forConstantValue: "round")
+        
+        // color can be set here
+        layer.lineColor = NSExpression(forConstantValue: UIColor.orange)
+        layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
+                                       [14: 2, 18: 20])
+
+        style.addLayer(layer)
+//        style.addLayer(dashedLayer)
+//        style.insertLayer(casingLayer, below: layer)
+    }
+    
+    func updatePolyline(coordinates: [CLLocationCoordinate2D]) {
+        source.shape = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
     }
     
     func toggleButtons() {
@@ -131,14 +148,16 @@ class StartActivityViewController: UIViewController {
         mapToggleButton.isHidden = !mapToggleButton.isHidden
     }
     
+    // polyline updates can take place in courseMode and topMode functions
     func courseMode() {
-        mapView.userTrackingMode = .followWithCourse
          let courseCam =  MGLMapCamera(
                 lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
                 fromDistance: 400,
                 pitch: 70.0,
                 heading: mapView.camera.heading)
-        mapView.fly(to: courseCam, completionHandler: nil)
+        mapView.fly(to: courseCam) {
+            self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
+        }
     }
     
     func topDownMode() {
@@ -149,6 +168,8 @@ class StartActivityViewController: UIViewController {
                 pitch: 0.0,
                 heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
+        
+        
     }
     
     func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
@@ -158,6 +179,17 @@ class StartActivityViewController: UIViewController {
             p.coordinate = c
             annotations.append(p)
         }
+        mapView.addAnnotations(annotations)
+    }
+    
+    func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
+        var annotations = [MGLPointAnnotation]()
+        for c in coordinates {
+            let p = MGLPointAnnotation()
+            p.coordinate = c
+            annotations.append(p)
+        }
+        
         mapView.addAnnotations(annotations)
     }
     
@@ -182,9 +214,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
         if let locations = activityTimer.coordinates() {
             // Get coordinates
             let coords = locations.map { $0.coordinate }
-            let pline = MGLPolyline(coordinates: coords, count: UInt(coords.count))
-            pline.title = "activeRoute"
-            mapView.add(pline)
+            updatePolyline(coordinates: coords)
         }
         
         // Writing to Activity object will go here if updating continuously
@@ -196,6 +226,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         print("didFinishLoading")
+        initPolyline()
         courseMode()
     }
     
