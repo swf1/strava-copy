@@ -63,6 +63,7 @@ class StartActivityViewController: UIViewController {
         toggleButtons()
         activityTimer.pause()
         paused = !paused
+        showCompletedRoute()
     }
     
   @IBAction func saveButtonPressed(_ sender: Any) {
@@ -90,7 +91,6 @@ class StartActivityViewController: UIViewController {
     @IBAction func resumeButtonPressed(_ sender: Any) {
         toggleButtons()
         courseMode()
-        // and go back to activity
     }
     
     @objc func updateTime(_ notification: Notification) {
@@ -100,6 +100,27 @@ class StartActivityViewController: UIViewController {
                 self.elapsedTimeLabel.text = t
             }
         }
+    }
+    
+    func showCompletedRoute() {
+        if let c = activityTimer.coordinates() {
+            let coordinates = c.map { $0.coordinate }
+            let polyLine = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+            polyLine.title = "recalled"
+            mapView.add(polyLine)
+            annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
+        }
+    }
+    
+    func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
+        var annotations = [MGLPointAnnotation]()
+        for c in coordinates {
+            let p = MGLPointAnnotation()
+            p.coordinate = c
+            annotations.append(p)
+        }
+        
+        mapView.addAnnotations(annotations)
     }
     
     func toggleButtons() {
@@ -140,7 +161,6 @@ class StartActivityViewController: UIViewController {
         mapView.addAnnotations(annotations)
     }
     
-    
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
@@ -163,6 +183,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
             // Get coordinates
             let coords = locations.map { $0.coordinate }
             let pline = MGLPolyline(coordinates: coords, count: UInt(coords.count))
+            pline.title = "activeRoute"
             mapView.add(pline)
         }
         
@@ -174,6 +195,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        print("didFinishLoading")
         courseMode()
     }
     
