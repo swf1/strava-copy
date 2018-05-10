@@ -40,6 +40,16 @@ class Loc: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
+    func locServicesEnabled() -> Bool {
+        if  CLLocationManager.authorizationStatus() == .denied ||
+            CLLocationManager.authorizationStatus() == .restricted ||
+            CLLocationManager.authorizationStatus() == .notDetermined {
+            return false
+        }
+        
+        return true
+    }
+    
     func isGPSActive(err: CLError) {
         switch err.code {
         case .locationUnknown:
@@ -54,12 +64,15 @@ class Loc: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
             gpsFlag = (true, "GPS is Active")
-
             // This isn't working right
 //            let howRecent = loc.timestamp.timeIntervalSinceNow
 //            guard loc.horizontalAccuracy < 5 && abs(howRecent) < 10 else { return }
             currentLocation = loc
-            if logging { activityTimer.appendLocation(loc) }
+            if logging {
+                activityTimer.totalDistance(newLocation: loc) // here so keeps track in background
+                // only append activity coordinates here to avoid dupes
+                activityTimer.appendLocation(loc)
+            }
         }
     }
     
