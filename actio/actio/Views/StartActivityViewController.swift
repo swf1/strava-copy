@@ -21,6 +21,7 @@ class StartActivityViewController: UIViewController {
     let time = 0.0
     var paused = false
     var source: MGLShapeSource!
+    var lineLayer: MGLStyleLayer!
     
     @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
@@ -103,6 +104,8 @@ class StartActivityViewController: UIViewController {
         }
     }
     
+    // polyline can't be changed so have to hide
+    // orange and draw blue
     func showCompletedRoute() {
         if let c = activityTimer.coordinates() {
             let coordinates = c.map { $0.coordinate }
@@ -120,20 +123,16 @@ class StartActivityViewController: UIViewController {
         let pline = MGLPolyline()
         source = MGLShapeSource(identifier: "activeRoute", shape: pline, options: nil)
         style.addSource(source)
-        
         let layer = MGLLineStyleLayer(identifier: "activeRoute", source: source)
-        
         layer.lineJoin = NSExpression(forConstantValue: "round")
         layer.lineCap = NSExpression(forConstantValue: "round")
-        
         // color can be set here
         layer.lineColor = NSExpression(forConstantValue: UIColor.orange)
         layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                        [14: 2, 18: 20])
-
+        layer.sourceLayerIdentifier = "activeRoute"
+        lineLayer = layer
         style.addLayer(layer)
-//        style.addLayer(dashedLayer)
-//        style.insertLayer(casingLayer, below: layer)
     }
     
     func updatePolyline(coordinates: [CLLocationCoordinate2D]) {
@@ -150,23 +149,25 @@ class StartActivityViewController: UIViewController {
     
     // polyline updates can take place in courseMode and topMode functions
     func courseMode() {
-         let courseCam =  MGLMapCamera(
-                lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
-                fromDistance: 400,
-                pitch: 70.0,
-                heading: mapView.camera.heading)
+        lineLayer.isVisible = true
+        let courseCam =  MGLMapCamera(
+            lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
+            fromDistance: 400,
+            pitch: 70.0,
+            heading: mapView.camera.heading)
         mapView.fly(to: courseCam) {
             self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
         }
     }
     
     func topDownMode() {
+        lineLayer.isVisible = false
         mapView.userTrackingMode = .follow
         let topDownCam = MGLMapCamera(
-                lookingAtCenter: mapView.userLocation!.coordinate,
-                fromDistance: 1500,
-                pitch: 0.0,
-                heading: mapView.camera.heading)
+            lookingAtCenter: mapView.userLocation!.coordinate,
+            fromDistance: 1500,
+            pitch: 0.0,
+            heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
         
         
@@ -192,6 +193,7 @@ class StartActivityViewController: UIViewController {
         
         mapView.addAnnotations(annotations)
     }
+    
     
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
@@ -254,7 +256,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
         if annotation.title == "recalled" {
             return UIColor.blue
         }
-        
+
         return UIColor.orange
     }
     
