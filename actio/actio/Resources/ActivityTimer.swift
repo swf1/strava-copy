@@ -31,7 +31,7 @@ class ActivityTimer {
             // Sends notification with each tick that's picked up by other VCs
             NotificationCenter.default.post(name: Notification.Name("Tick"), object: nil, userInfo: ["time": self.totalTime()])
         })
-        
+        timer.pause()
         df.allowedUnits = [.minute, .second]
         df.zeroFormattingBehavior = [.pad]
         df.unitsStyle = .positional
