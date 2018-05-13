@@ -83,6 +83,14 @@ class StartActivityViewController: UIViewController {
     data["name"] = activity.name
     data["athlete"] = ["uid": activity.athlete.uid]
     data["start_date_local"] = activity.startDateLocal
+    var coordinates: [[String:Double]] = []
+    for l in activityTimer.coordinates()! {
+        coordinates.append([
+            "latitude": l.coordinate.latitude,
+            "longitude": l.coordinate.longitude
+        ])
+    }
+    data["route"] = ["coordinates": coordinates]
     self.ref.child("activities").childByAutoId().setValue(data)
   }
   
