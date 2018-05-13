@@ -22,10 +22,12 @@ class StartActivityViewController: UIViewController {
     var paused = false
     var source: MGLShapeSource!
     
-    @IBOutlet weak var activityNameField: UITextField!
+   @IBOutlet weak var saveView: UIView!
+  @IBOutlet weak var statsView: UIView!
+  @IBOutlet weak var mainView: UIView!
+  @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
     @IBOutlet weak var recordActivityButton: UIButton!
-    @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -40,7 +42,7 @@ class StartActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.ref = Database.database().reference()
+        self.ref = Database.database().reference()
         
         // hide save and resume buttons
         saveButton.isHidden = true
@@ -58,7 +60,21 @@ class StartActivityViewController: UIViewController {
         paused = !paused
         showCompletedRoute()
     }
-    
+  @IBAction func showStatsView(sender: UIButton) {
+    if (self.statsView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.statsView.alpha = 1
+        self.mainView.alpha = 0
+        self.saveView.alpha = 0
+      })
+    } else {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.statsView.alpha = 0
+        self.mainView.alpha = 1
+        self.saveView.alpha = 0
+      })
+    }
+  }
   @IBAction func saveButtonPressed(_ sender: Any) {
     // open view to add activity name for saving 
     saveView.isHidden = false
@@ -185,9 +201,7 @@ class StartActivityViewController: UIViewController {
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
-
 }
-
 
 extension StartActivityViewController: MGLMapViewDelegate {
     
@@ -203,8 +217,8 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
         // Writing to Activity object will go here if updating continuously
         // or all coordinates at once in saveButtonPressed
-//        let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
-//        writePolylineToFile(encoded)
+        // let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
+        // writePolylineToFile(encoded)
         
     }
     

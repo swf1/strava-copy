@@ -1018,6 +1018,9 @@
                                             <constraint firstAttribute="width" constant="40" id="Lyn-Lh-vw1"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="ic_keyboard_arrow_down"/>
+                                        <connections>
+                                            <action selector="showStatsViewWithSender:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="Jus-M6-F04"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QzM-Le-v4i">
                                         <rect key="frame" x="117" y="25" width="180" height="60"/>
@@ -1111,12 +1114,15 @@
                     <connections>
                         <outlet property="distanceLabel" destination="9gN-EB-1KM" id="kq0-Kn-8MQ"/>
                         <outlet property="elapsedTimeLabel" destination="Q0G-MQ-jTu" id="Spe-A8-Ocq"/>
+                        <outlet property="mainView" destination="zBE-3t-zBJ" id="GF9-6O-YbT"/>
                         <outlet property="mapToggleButton" destination="FCR-l0-y6G" id="Q4R-vc-Bvw"/>
                         <outlet property="mapView" destination="qWK-qa-knM" id="kRg-fT-dxT"/>
                         <outlet property="paceLabel" destination="a1Y-FX-mGr" id="Mqf-DF-czT"/>
                         <outlet property="pauseButton" destination="cYf-Vk-l5z" id="czJ-B1-yW9"/>
                         <outlet property="resumeButton" destination="Arg-x1-Zqw" id="mra-8Z-BTC"/>
                         <outlet property="saveButton" destination="F70-YT-688" id="AFo-4h-lLa"/>
+                        <outlet property="saveView" destination="lK1-Nl-GhU" id="ShH-Rx-JXf"/>
+                        <outlet property="statsView" destination="z2U-61-PzJ" id="QfP-1i-a4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h81-3C-mAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1496,7 +1502,7 @@
         <!--statsActivityView-->
         <scene sceneID="8eL-lG-upG">
             <objects>
-                <viewController title="statsActivityView" id="QhQ-eh-Lu2" sceneMemberID="viewController">
+                <viewController title="statsActivityView" id="QhQ-eh-Lu2" customClass="StatsActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lKu-fi-kNM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1519,7 +1525,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xN-DF-k9q">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="142"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_query_builder_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="e26-t2-sma">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharp_loop_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="e26-t2-sma">
                                                                                 <rect key="frame" x="30" y="28.999999999999993" width="121" height="84.333333333333314"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -1588,7 +1594,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDT-Cf-WsU">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="142"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_query_builder_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="KLL-ex-Tte">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharp_equalizer_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="KLL-ex-Tte">
                                                                                 <rect key="frame" x="30" y="28.999999999999993" width="121" height="84.333333333333314"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -1609,8 +1615,8 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-IA-z9x">
-                                                                                <rect key="frame" x="50.333333333333321" y="71" width="80.666666666666686" height="71"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-IA-z9x">
+                                                                                <rect key="frame" x="69.666666666666686" y="71" width="41.666666666666657" height="71"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1679,8 +1685,8 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byk-n6-Wut">
-                                                                        <rect key="frame" x="50.333333333333321" y="71" width="80.666666666666686" height="71"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byk-n6-Wut">
+                                                                        <rect key="frame" x="71.666666666666686" y="71" width="38" height="71"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1732,6 +1738,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1N5-AQ-tah"/>
                     </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="5oH-la-KXq" id="oqi-YB-Ox0"/>
+                        <outlet property="elapsedTimeLabel" destination="cYD-1P-WCK" id="qXT-bD-mSE"/>
+                        <outlet property="paceLabel" destination="O5q-rO-S5s" id="OyK-Qc-HB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTl-l2-VqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1861,6 +1872,8 @@
         <image name="ic_pause_circle_filled" width="24" height="24"/>
         <image name="ic_perm_identity" width="24" height="24"/>
         <image name="ic_play_circle_filled" width="24" height="24"/>
+        <image name="sharp_equalizer_black_18dp" width="18" height="18"/>
+        <image name="sharp_loop_black_18dp" width="18" height="18"/>
         <image name="swquare_map" width="182" height="175"/>
     </resources>
     <inferredMetricsTieBreakers>
