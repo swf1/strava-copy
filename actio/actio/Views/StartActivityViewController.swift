@@ -26,35 +26,27 @@ class StartActivityViewController: UIViewController {
     @IBOutlet weak var cancelToResumeButton: UIButton!
     @IBOutlet weak var recordActivityButton: UIButton!
     @IBOutlet weak var saveView: UIView!
-    @IBOutlet weak var pauseButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var resumeButton: UIButton!
-    @IBOutlet weak var mapToggleButton: UIButton!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var mapView: MGLMapView!
     
-    
-    
+  @IBOutlet weak var resumeButton: UIButton!
+  @IBOutlet weak var mapToggleButton: UIButton!
+  
+  @IBOutlet weak var pauseButton: UIButton!
+  @IBOutlet weak var saveButton: UIButton!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ref = Database.database().reference()
+        //self.ref = Database.database().reference()
         
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
-        saveView.isHidden = true
-        
-        // MapBox setup again
-        mapView.delegate = self
-        mapView.compassView.isHidden = true
-        mapView.attributionButton.isHidden = true
-        mapView.logoView.isHidden = true
-        mapView.showsUserLocation = true
-        // Will receive notification from ActivityTimer
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
+        //saveView.isHidden = true
+      
     }
 
 
@@ -94,14 +86,6 @@ class StartActivityViewController: UIViewController {
         courseMode()
     }
     
-    @objc func updateTime(_ notification: Notification) {
-        if let t = notification.userInfo?["time"] as? String {
-            // has to be on main thread
-            DispatchQueue.main.async {
-                self.elapsedTimeLabel.text = t
-            }
-        }
-    }
     
     func showCompletedRoute() {
         if let c = activityTimer.coordinates() {

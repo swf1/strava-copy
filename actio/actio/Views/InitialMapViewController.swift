@@ -120,7 +120,6 @@ class InitialMapViewController: UIViewController {
 
 }
 
-
 // MARK: MGLMapViewDelegate
 extension InitialMapViewController: MGLMapViewDelegate {
     
