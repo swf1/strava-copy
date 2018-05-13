@@ -15,7 +15,7 @@ class ActivityCollectionViewController: UIViewController {
 
   @IBOutlet weak var activityCollectionView: UICollectionView!
   @IBOutlet weak var chooseView: UIView!
-    var chooseViewActivityType: String = "Run"
+    var chooseViewActivityType: String!
   
   @IBOutlet weak var goToTrackRun: UIView!
   
@@ -32,6 +32,14 @@ class ActivityCollectionViewController: UIViewController {
     // removing it upon return is too slow.
   }
     
+    @IBAction func didPressRun() {
+        self.chooseViewActivityType = "Run"
+    }
+
+    @IBAction func didPressBike() {
+        self.chooseViewActivityType = "Bike"
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? InitialMapViewController
         {
