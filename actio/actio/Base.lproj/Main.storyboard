@@ -1010,6 +1010,9 @@
                                         <state key="normal" backgroundImage="ic_pause_circle_filled">
                                             <color key="titleColor" red="1" green="0.98914341248791693" blue="0.99475236315720394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pauseButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="6fu-da-4C9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-l0-y6G">
                                         <rect key="frame" x="320" y="35" width="40" height="40"/>
@@ -1042,6 +1045,9 @@
                                                         <integer key="value" value="30"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="NGW-b3-3Uq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arg-x1-Zqw">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="60"/>
@@ -1060,6 +1066,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resumeButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="q1i-sn-6JT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

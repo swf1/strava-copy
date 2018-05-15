@@ -47,14 +47,11 @@ class StartActivityViewController: UIViewController {
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
-        //saveView.isHidden = true
-      
     }
-
 
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
-        topDownMode()
+       // topDownMode()
         toggleButtons()
         activityTimer.pause()
         paused = !paused
