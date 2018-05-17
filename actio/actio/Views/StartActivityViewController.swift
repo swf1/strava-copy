@@ -161,6 +161,7 @@ class StartActivityViewController: UIViewController {
     func courseMode() {
         orangeLayer.isVisible = true
         blueLayer.isVisible = false
+        removeAnnotations()
         let courseCam =  MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
             fromDistance: 400,
@@ -183,19 +184,11 @@ class StartActivityViewController: UIViewController {
             heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
         
-        
-    }
-    
-    func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
-        var annotations = [MGLPointAnnotation]()
-        for c in coordinates {
-            let p = MGLPointAnnotation()
-            p.coordinate = c
-            annotations.append(p)
+        if let c = activityTimer.coordinates() {
+            annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
         }
-        mapView.addAnnotations(annotations)
     }
-    
+
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
         var annotations = [MGLPointAnnotation]()
         for c in coordinates {
@@ -207,6 +200,11 @@ class StartActivityViewController: UIViewController {
         mapView.addAnnotations(annotations)
     }
     
+    func removeAnnotations() {
+        if let annotations = mapView.annotations {
+            mapView.removeAnnotations(annotations)
+        }
+    }
     
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
