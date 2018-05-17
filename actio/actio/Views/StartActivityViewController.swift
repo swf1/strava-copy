@@ -113,7 +113,6 @@ class StartActivityViewController: UIViewController {
         }
     }
     
-
     func initBlueLine() {
         guard let style = self.mapView.style else { return }
         let blueLine = MGLPolyline()

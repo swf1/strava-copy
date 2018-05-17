@@ -1381,7 +1381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h81-3C-mAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639.13043478260875" y="2272.826086956522"/>
+            <point key="canvasLocation" x="-900" y="2424"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="74e-d3-bsw">
@@ -1515,7 +1515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiV-P2-7cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95.652173913043484" y="2272.826086956522"/>
+            <point key="canvasLocation" x="-49" y="2444"/>
         </scene>
         <!--Activities View Controller-->
         <scene sceneID="qqh-kg-ta8">
@@ -1697,7 +1697,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="B8J-EK-AmQ"/>
-        <segue reference="ypa-5v-peG"/>
+        <segue reference="b3P-bc-mTt"/>
         <segue reference="D0k-EN-zs2"/>
         <segue reference="Pmv-px-QhH"/>
         <segue reference="bud-4M-U63"/>
