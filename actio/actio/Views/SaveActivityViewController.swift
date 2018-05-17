@@ -6,4 +6,12 @@
 //  Copyright © 2018 corvus group. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreLocation
+import Mapbox
+import Firebase
+
+
+class SaveActivityViewController: UIViewController {
+
+}

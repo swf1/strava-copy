@@ -1049,6 +1049,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="saveButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="NGW-b3-3Uq"/>
+                                                    <action selector="showSaveViewWithSender:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="mhd-c1-605"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arg-x1-Zqw">
@@ -1762,21 +1763,21 @@
         <!--saveActivityView-->
         <scene sceneID="IFi-Mc-ptB">
             <objects>
-                <viewController title="saveActivityView" id="lWa-Ub-qss" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GSe-zr-cp7">
+                <viewController title="saveActivityView" id="lWa-Ub-qss" customClass="SaveActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GSe-zr-cp7" customClass="Save">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ax4-c3-c0J" userLabel="Save View">
-                                <rect key="frame" x="78" y="101" width="259.66666666666663" height="360"/>
+                            <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ax4-c3-c0J" userLabel="Save View">
+                                <rect key="frame" x="78" y="101" width="260" height="360"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-0V-HYW">
-                                        <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="360.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-0V-HYW">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360"/>
                                         <subviews>
-                                            <view contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
-                                                <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="57.666666666666664"/>
+                                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="57.666666666666664"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Save your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-hE-y2n">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-hE-y2n">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="57.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.98253947500000005" green="0.99252063040000005" blue="0.99219316239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1791,20 +1792,20 @@
                                                     <constraint firstItem="N2T-hE-y2n" firstAttribute="leading" secondItem="jce-cr-UCz" secondAttribute="leading" id="rPQ-zH-b7A"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
-                                                <rect key="frame" x="0.0" y="75.666666666666671" width="259.66666666666669" height="57.666666666666671"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
+                                                <rect key="frame" x="0.0" y="75.666666666666657" width="260" height="57.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
-                                                <rect key="frame" x="0.0" y="151.33333333333334" width="259.66666666666669" height="57.666666666666657"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
+                                                <rect key="frame" x="0.0" y="151.33333333333334" width="260" height="57.333333333333343"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
-                                                <rect key="frame" x="0.0" y="227" width="259.66666666666669" height="57.666666666666686"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
+                                                <rect key="frame" x="0.0" y="226.66666666666669" width="260" height="57.666666666666686"/>
                                                 <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="18"/>
                                                 <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1812,12 +1813,17 @@
                                                 <state key="normal" title="record activity">
                                                     <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="recordActivityPressed:" destination="HMM-Ay-f4a" eventType="touchDown" id="Oxg-3q-tx7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGp-ok-wLe">
-                                                <rect key="frame" x="0.0" y="302.66666666666669" width="259.66666666666669" height="57.666666666666686"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGp-ok-wLe">
+                                                <rect key="frame" x="0.0" y="302.33333333333331" width="260" height="57.666666666666686"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="18"/>
                                                 <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1861,6 +1867,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ax4-c3-c0J" firstAttribute="top" secondItem="iXs-Fy-VlA" secondAttribute="top" constant="81" id="4PL-dy-Jbb"/>
+                            <constraint firstItem="Ax4-c3-c0J" firstAttribute="leading" secondItem="iXs-Fy-VlA" secondAttribute="leading" constant="78" id="TVD-bm-uaZ"/>
+                            <constraint firstItem="iXs-Fy-VlA" firstAttribute="trailing" secondItem="Ax4-c3-c0J" secondAttribute="trailing" constant="76" id="drr-oi-Ymu"/>
+                            <constraint firstItem="Ax4-c3-c0J" firstAttribute="centerY" secondItem="GSe-zr-cp7" secondAttribute="centerY" id="sda-JU-t1g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iXs-Fy-VlA"/>
                     </view>
                 </viewController>

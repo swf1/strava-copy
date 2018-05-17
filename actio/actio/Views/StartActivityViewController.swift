@@ -25,10 +25,10 @@ class StartActivityViewController: UIViewController {
     var blueSource: MGLShapeSource!
     var blueLayer: MGLStyleLayer!
     
-   @IBOutlet weak var saveView: UIView!
-  @IBOutlet weak var statsView: UIView!
-  @IBOutlet weak var mainView: UIView!
-  @IBOutlet weak var activityNameField: UITextField!
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var statsView: UIView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
     @IBOutlet weak var recordActivityButton: UIButton!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
@@ -42,9 +42,11 @@ class StartActivityViewController: UIViewController {
   @IBOutlet weak var pauseButton: UIButton!
   @IBOutlet weak var saveButton: UIButton!
   
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.ref = Database.database().reference()
         
         // hide save and resume buttons
@@ -52,9 +54,11 @@ class StartActivityViewController: UIViewController {
         resumeButton.isHidden = true
     }
 
+  var delegate: mainActivityViewProtocol?
+  
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
-       // topDownMode()
+        self.delegate?.topDownMode()
         toggleButtons()
         activityTimer.pause()
         paused = !paused
@@ -71,6 +75,16 @@ class StartActivityViewController: UIViewController {
         self.statsView.alpha = 0
         self.mainView.alpha = 1
         self.saveView.alpha = 0
+      })
+    }
+  }
+  
+  @IBAction func showSaveView(sender: UIButton) {
+    if (self.saveView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.saveView.alpha = 1
+        self.mainView.alpha = 0
+        self.statsView.alpha = 0
       })
     }
   }
@@ -106,7 +120,7 @@ class StartActivityViewController: UIViewController {
     
     @IBAction func resumeButtonPressed(_ sender: Any) {
         toggleButtons()
-        courseMode()
+        self.delegate?.courseMode()
     }
     
     
@@ -155,34 +169,6 @@ class StartActivityViewController: UIViewController {
         mapToggleButton.isHidden = !mapToggleButton.isHidden
     }
     
-    // polyline updates can take place in courseMode and topMode functions
-    func courseMode() {
-        orangeLayer.isVisible = true
-        blueLayer.isVisible = false
-        let courseCam =  MGLMapCamera(
-            lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
-            fromDistance: 400,
-            pitch: 70.0,
-            heading: mapView.camera.heading)
-        mapView.fly(to: courseCam) {
-            self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
-        }
-    }
-    
-    func topDownMode() {
-        orangeLayer.isVisible = false
-        blueSource.shape = orangeSource.shape
-        blueLayer.isVisible = true // blue line only updates on pause so doesn't keep extending
-        mapView.userTrackingMode = .follow
-        let topDownCam = MGLMapCamera(
-            lookingAtCenter: mapView.userLocation!.coordinate,
-            fromDistance: 1500,
-            pitch: 0.0,
-            heading: mapView.camera.heading)
-        mapView.fly(to: topDownCam, completionHandler: nil)
-        
-        
-    }
     
     func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
         var annotations = [MGLPointAnnotation]()
@@ -239,7 +225,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
         print("didFinishLoading")
         initOrangeLine()
         initBlueLine()
-        courseMode()
+        self.delegate?.courseMode()
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
@@ -275,3 +261,4 @@ extension StartActivityViewController: MGLMapViewDelegate {
     }
     
 }
+
