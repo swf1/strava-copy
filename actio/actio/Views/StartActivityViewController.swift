@@ -96,8 +96,15 @@ class StartActivityViewController: UIViewController {
   
   
   @IBAction func cancelRecordButtonPressed(_ sender: Any) {
+    cancelToResumeButton.isHidden = true
     // perform saving functions here
-    saveView.isHidden = true
+    if (self.saveView.alpha == 1) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.saveView.alpha = 0
+        self.mainView.alpha = 1
+        self.statsView.alpha = 0
+      })
+    }
   }
     
     @IBAction func resumeButtonPressed(_ sender: Any) {

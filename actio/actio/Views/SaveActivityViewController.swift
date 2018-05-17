@@ -15,6 +15,7 @@ import Firebase
 class SaveActivityViewController: UIViewController {
   var activity: Activity!
   var ref: DatabaseReference!
+  let locationManager = Loc.shared
 
   let activityTimer = ActivityTimer.shared
 
@@ -42,7 +43,7 @@ class SaveActivityViewController: UIViewController {
     data["route"] = ["coordinates": coordinates]
     self.ref.child("activities").childByAutoId().setValue(data)
     // go to activity view
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityCollectionViewController")
-    self.present(vc!, animated: true, completion: nil)
+    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityCollectionViewController")
+    //self.present(vc!, animated: true, completion: nil)
   }
 }
