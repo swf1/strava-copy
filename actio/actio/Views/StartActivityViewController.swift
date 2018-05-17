@@ -20,7 +20,10 @@ class StartActivityViewController: UIViewController {
     let activityTimer = ActivityTimer.shared
     let time = 0.0
     var paused = false
-    var source: MGLShapeSource!
+    var orangeSource: MGLShapeSource!
+    var orangeLayer: MGLStyleLayer!
+    var blueSource: MGLShapeSource!
+    var blueLayer: MGLStyleLayer!
     
    @IBOutlet weak var saveView: UIView!
   @IBOutlet weak var statsView: UIView!
@@ -55,7 +58,6 @@ class StartActivityViewController: UIViewController {
         toggleButtons()
         activityTimer.pause()
         paused = !paused
-        showCompletedRoute()
     }
   @IBAction func showStatsView(sender: UIButton) {
     if (self.statsView.alpha == 0) {
@@ -86,6 +88,14 @@ class StartActivityViewController: UIViewController {
     data["name"] = activity.name
     data["athlete"] = ["uid": activity.athlete.uid]
     data["start_date_local"] = activity.startDateLocal
+    var coordinates: [[String:Double]] = []
+    for l in activityTimer.coordinates()! {
+        coordinates.append([
+            "latitude": l.coordinate.latitude,
+            "longitude": l.coordinate.longitude
+        ])
+    }
+    data["route"] = ["coordinates": coordinates]
     self.ref.child("activities").childByAutoId().setValue(data)
   }
   
@@ -100,41 +110,41 @@ class StartActivityViewController: UIViewController {
     }
     
     
-    func showCompletedRoute() {
-        if let c = activityTimer.coordinates() {
-            let coordinates = c.map { $0.coordinate }
-            let polyLine = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
-            polyLine.title = "recalled"
-            mapView.add(polyLine)
-            annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
-        }
-    }
-    
-    func initPolyline() {
+
+    func initBlueLine() {
         guard let style = self.mapView.style else { return }
-        
-        // empty polyline to update as coordinate arrive
-        let pline = MGLPolyline()
-        source = MGLShapeSource(identifier: "activeRoute", shape: pline, options: nil)
-        style.addSource(source)
-        
-        let layer = MGLLineStyleLayer(identifier: "activeRoute", source: source)
-        
+        let blueLine = MGLPolyline()
+        blueSource = MGLShapeSource(identifier: "blueLine", shape: blueLine, options: nil)
+        style.addSource(blueSource)
+        let layer = MGLLineStyleLayer(identifier: "blueLine", source: blueSource)
         layer.lineJoin = NSExpression(forConstantValue: "round")
         layer.lineCap = NSExpression(forConstantValue: "round")
-        
+        layer.lineColor = NSExpression(forConstantValue: UIColor.blue)
+        layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
+                                       [14: 2, 18: 20])
+        blueLayer = layer
+        style.addLayer(blueLayer)
+//        annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
+    }
+    
+    func initOrangeLine() {
+        guard let style = self.mapView.style else { return }
+        let pline = MGLPolyline()
+        orangeSource = MGLShapeSource(identifier: "orangeLine", shape: pline, options: nil)
+        style.addSource(orangeSource)
+        let layer = MGLLineStyleLayer(identifier: "orangeLine", source: orangeSource)
+        layer.lineJoin = NSExpression(forConstantValue: "round")
+        layer.lineCap = NSExpression(forConstantValue: "round")
         // color can be set here
         layer.lineColor = NSExpression(forConstantValue: UIColor.orange)
         layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                        [14: 2, 18: 20])
-
+        orangeLayer = layer
         style.addLayer(layer)
-//        style.addLayer(dashedLayer)
-//        style.insertLayer(casingLayer, below: layer)
     }
     
-    func updatePolyline(coordinates: [CLLocationCoordinate2D]) {
-        source.shape = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+    func updateOrangeLine(coordinates: [CLLocationCoordinate2D]) {
+        orangeSource.shape = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
     }
     
     func toggleButtons() {
@@ -147,23 +157,28 @@ class StartActivityViewController: UIViewController {
     
     // polyline updates can take place in courseMode and topMode functions
     func courseMode() {
-         let courseCam =  MGLMapCamera(
-                lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
-                fromDistance: 400,
-                pitch: 70.0,
-                heading: mapView.camera.heading)
+        orangeLayer.isVisible = true
+        blueLayer.isVisible = false
+        let courseCam =  MGLMapCamera(
+            lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
+            fromDistance: 400,
+            pitch: 70.0,
+            heading: mapView.camera.heading)
         mapView.fly(to: courseCam) {
             self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
         }
     }
     
     func topDownMode() {
+        orangeLayer.isVisible = false
+        blueSource.shape = orangeSource.shape
+        blueLayer.isVisible = true // blue line only updates on pause so doesn't keep extending
         mapView.userTrackingMode = .follow
         let topDownCam = MGLMapCamera(
-                lookingAtCenter: mapView.userLocation!.coordinate,
-                fromDistance: 1500,
-                pitch: 0.0,
-                heading: mapView.camera.heading)
+            lookingAtCenter: mapView.userLocation!.coordinate,
+            fromDistance: 1500,
+            pitch: 0.0,
+            heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
         
         
@@ -190,6 +205,7 @@ class StartActivityViewController: UIViewController {
         mapView.addAnnotations(annotations)
     }
     
+    
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
@@ -209,7 +225,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
         if let locations = activityTimer.coordinates() {
             // Get coordinates
             let coords = locations.map { $0.coordinate }
-            updatePolyline(coordinates: coords)
+            updateOrangeLine(coordinates: coords)
         }
         
         // Writing to Activity object will go here if updating continuously
@@ -221,7 +237,8 @@ extension StartActivityViewController: MGLMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         print("didFinishLoading")
-        initPolyline()
+        initOrangeLine()
+        initBlueLine()
         courseMode()
     }
     
@@ -249,7 +266,7 @@ extension StartActivityViewController: MGLMapViewDelegate {
         if annotation.title == "recalled" {
             return UIColor.blue
         }
-        
+
         return UIColor.orange
     }
     

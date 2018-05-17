@@ -704,6 +704,7 @@
                                                             <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
+                                                            <action selector="didPressRun" destination="tE0-sv-0ak" eventType="touchDown" id="TEI-Aa-SxO"/>
                                                             <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="eCp-ZK-pTW"/>
                                                         </connections>
                                                     </button>
@@ -717,6 +718,7 @@
                                                             <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
+                                                            <action selector="didPressBike" destination="tE0-sv-0ak" eventType="touchDown" id="baq-aL-Gdd"/>
                                                             <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="B8J-EK-AmQ"/>
                                                         </connections>
                                                     </button>
