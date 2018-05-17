@@ -25,21 +25,23 @@ class StartActivityViewController: UIViewController {
     var blueSource: MGLShapeSource!
     var blueLayer: MGLStyleLayer!
     
-    @IBOutlet weak var activityNameField: UITextField!
+   @IBOutlet weak var saveView: UIView!
+  @IBOutlet weak var statsView: UIView!
+  @IBOutlet weak var mainView: UIView!
+  @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
     @IBOutlet weak var recordActivityButton: UIButton!
-    @IBOutlet weak var saveView: UIView!
-    @IBOutlet weak var pauseButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var resumeButton: UIButton!
-    @IBOutlet weak var mapToggleButton: UIButton!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var mapView: MGLMapView!
     
-    
-    
+  @IBOutlet weak var resumeButton: UIButton!
+  @IBOutlet weak var mapToggleButton: UIButton!
+  
+  @IBOutlet weak var pauseButton: UIButton!
+  @IBOutlet weak var saveButton: UIButton!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,27 +50,30 @@ class StartActivityViewController: UIViewController {
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
-        saveView.isHidden = true
-        
-        // MapBox setup again
-        mapView.delegate = self
-        mapView.compassView.isHidden = true
-        mapView.attributionButton.isHidden = true
-        mapView.logoView.isHidden = true
-        mapView.showsUserLocation = true
-        mapView.isUserInteractionEnabled = false // maybe this goes away later
-        // Will receive notification from ActivityTimer
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
     }
 
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
-        topDownMode()
+       // topDownMode()
         toggleButtons()
         activityTimer.pause()
         paused = !paused
     }
-    
+  @IBAction func showStatsView(sender: UIButton) {
+    if (self.statsView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.statsView.alpha = 1
+        self.mainView.alpha = 0
+        self.saveView.alpha = 0
+      })
+    } else {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.statsView.alpha = 0
+        self.mainView.alpha = 1
+        self.saveView.alpha = 0
+      })
+    }
+  }
   @IBAction func saveButtonPressed(_ sender: Any) {
     // open view to add activity name for saving 
     saveView.isHidden = false
@@ -104,14 +109,6 @@ class StartActivityViewController: UIViewController {
         courseMode()
     }
     
-    @objc func updateTime(_ notification: Notification) {
-        if let t = notification.userInfo?["time"] as? String {
-            // has to be on main thread
-            DispatchQueue.main.async {
-                self.elapsedTimeLabel.text = t
-            }
-        }
-    }
     
 
     func initBlueLine() {
@@ -217,7 +214,6 @@ class StartActivityViewController: UIViewController {
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
-
 }
 
 extension StartActivityViewController: MGLMapViewDelegate {
@@ -234,8 +230,8 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
         // Writing to Activity object will go here if updating continuously
         // or all coordinates at once in saveButtonPressed
-//        let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
-//        writePolylineToFile(encoded)
+        // let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
+        // writePolylineToFile(encoded)
         
     }
     
