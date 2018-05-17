@@ -28,9 +28,8 @@ class StartActivityViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var statsView: UIView!
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var activityNameField: UITextField!
+    
     @IBOutlet weak var cancelToResumeButton: UIButton!
-    @IBOutlet weak var recordActivityButton: UIButton!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -52,6 +51,8 @@ class StartActivityViewController: UIViewController {
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
+        cancelToResumeButton.isHidden = true
+
     }
 
   var delegate: mainActivityViewProtocol?
@@ -90,28 +91,9 @@ class StartActivityViewController: UIViewController {
   }
   @IBAction func saveButtonPressed(_ sender: Any) {
     // open view to add activity name for saving 
-    saveView.isHidden = false
+    cancelToResumeButton.isHidden = false
   }
   
-  @IBAction func recordActivityPressed(_ sender: Any) {
-    // perform saving functions here
-    saveView.isHidden = false
-    self.activity.name = activityNameField.text!
-    var data: [String:Any] = [:]
-    data["type"] = activity.type
-    data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal
-    var coordinates: [[String:Double]] = []
-    for l in activityTimer.coordinates()! {
-        coordinates.append([
-            "latitude": l.coordinate.latitude,
-            "longitude": l.coordinate.longitude
-        ])
-    }
-    data["route"] = ["coordinates": coordinates]
-    self.ref.child("activities").childByAutoId().setValue(data)
-  }
   
   @IBAction func cancelRecordButtonPressed(_ sender: Any) {
     // perform saving functions here

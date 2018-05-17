@@ -1048,7 +1048,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="saveButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="NGW-b3-3Uq"/>
+                                                    <action selector="saveButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="dJd-jL-wkT"/>
                                                     <action selector="showSaveViewWithSender:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="mhd-c1-605"/>
                                                 </connections>
                                             </button>
@@ -1075,16 +1075,27 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGJ-G5-Qc1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FCR-l0-y6G" secondAttribute="bottom" constant="35" id="HL7-c7-E9x"/>
                                     <constraint firstItem="QzM-Le-v4i" firstAttribute="centerY" secondItem="JWB-j9-Tfy" secondAttribute="centerY" id="Kp0-Z2-iSv"/>
+                                    <constraint firstItem="SGJ-G5-Qc1" firstAttribute="top" secondItem="JWB-j9-Tfy" secondAttribute="top" id="RAP-YI-IF6"/>
                                     <constraint firstAttribute="trailing" secondItem="FCR-l0-y6G" secondAttribute="trailing" constant="54" id="VEd-Kq-eoY"/>
+                                    <constraint firstItem="SGJ-G5-Qc1" firstAttribute="leading" secondItem="JWB-j9-Tfy" secondAttribute="leading" id="WAG-Ex-JXU"/>
                                     <constraint firstItem="QzM-Le-v4i" firstAttribute="centerX" secondItem="JWB-j9-Tfy" secondAttribute="centerX" id="YSv-zI-9Yt"/>
+                                    <constraint firstItem="SGJ-G5-Qc1" firstAttribute="centerX" secondItem="QzM-Le-v4i" secondAttribute="centerX" id="bSX-E0-2U6"/>
                                     <constraint firstItem="cYf-Vk-l5z" firstAttribute="centerY" secondItem="JWB-j9-Tfy" secondAttribute="centerY" id="pAE-Tq-5b2"/>
                                     <constraint firstItem="cYf-Vk-l5z" firstAttribute="centerX" secondItem="JWB-j9-Tfy" secondAttribute="centerX" id="tzT-Fx-F77"/>
                                     <constraint firstAttribute="height" constant="110" id="yRe-MA-e44"/>
+                                    <constraint firstItem="SGJ-G5-Qc1" firstAttribute="centerY" secondItem="FCR-l0-y6G" secondAttribute="centerY" id="zJ6-KM-EkV"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2U-61-PzJ">
@@ -1124,6 +1135,7 @@
                         <viewLayoutGuide key="safeArea" id="Ffr-W7-MYl"/>
                     </view>
                     <connections>
+                        <outlet property="cancelToResumeButton" destination="SGJ-G5-Qc1" id="mgn-uy-dri"/>
                         <outlet property="distanceLabel" destination="9gN-EB-1KM" id="kq0-Kn-8MQ"/>
                         <outlet property="elapsedTimeLabel" destination="Q0G-MQ-jTu" id="Spe-A8-Ocq"/>
                         <outlet property="mainView" destination="zBE-3t-zBJ" id="GF9-6O-YbT"/>
@@ -1139,7 +1151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h81-3C-mAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-48" y="1298"/>
+            <point key="canvasLocation" x="-49.275362318840585" y="1297.8260869565217"/>
         </scene>
         <!--Activities View Controller-->
         <scene sceneID="qqh-kg-ta8">
@@ -1775,10 +1787,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="360"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="57.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="76.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-hE-y2n">
-                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="57.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="76.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.98253947500000005" green="0.99252063040000005" blue="0.99219316239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1793,57 +1805,65 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
-                                                <rect key="frame" x="0.0" y="75.666666666666657" width="260" height="57.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
-                                                <rect key="frame" x="0.0" y="151.33333333333334" width="260" height="57.333333333333343"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
-                                                <rect key="frame" x="0.0" y="226.66666666666669" width="260" height="57.666666666666686"/>
-                                                <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="18"/>
-                                                <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="24" maxY="0.0"/>
-                                                <state key="normal" title="record activity">
-                                                    <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="recordActivityPressed:" destination="HMM-Ay-f4a" eventType="touchDown" id="Oxg-3q-tx7"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGp-ok-wLe">
-                                                <rect key="frame" x="0.0" y="302.33333333333331" width="260" height="57.666666666666686"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blT-ZE-POn">
+                                                <rect key="frame" x="0.0" y="189" width="260" height="76.666666666666686"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
+                                                        <rect key="frame" x="8" y="15.999999999999996" width="244" height="44.666666666666657"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="18"/>
-                                                <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="24" maxY="0.0"/>
-                                                <state key="normal" title="cancel to resume">
-                                                    <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cancelRecordButtonPressed:" destination="HMM-Ay-f4a" eventType="touchUpInside" id="m6e-Dn-R7M"/>
-                                                </connections>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstItem="4ny-GF-m4S" firstAttribute="leading" secondItem="blT-ZE-POn" secondAttribute="leadingMargin" id="Kzg-JY-PT6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4ny-GF-m4S" secondAttribute="bottom" constant="16" id="MsL-rD-Svi"/>
+                                                    <constraint firstItem="4ny-GF-m4S" firstAttribute="top" secondItem="blT-ZE-POn" secondAttribute="top" constant="16" id="Qcq-jh-yRv"/>
+                                                    <constraint firstItem="4ny-GF-m4S" firstAttribute="trailing" secondItem="blT-ZE-POn" secondAttribute="trailingMargin" id="wh3-gh-U2U"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-GY-yNI">
+                                                <rect key="frame" x="0.0" y="283.66666666666669" width="260" height="76.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
+                                                        <rect key="frame" x="8" y="16.000000000000004" width="244" height="44.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="18"/>
+                                                        <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="24" maxY="0.0"/>
+                                                        <state key="normal" title="record activity">
+                                                            <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="recordActivityPressed:" destination="HMM-Ay-f4a" eventType="touchDown" id="Oxg-3q-tx7"/>
+                                                            <action selector="recordActivityPressed:" destination="lWa-Ub-qss" eventType="touchUpInside" id="ccy-ot-Ud6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="rWE-9h-Gzn" secondAttribute="trailing" constant="8" id="6jd-nE-Sgp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rWE-9h-Gzn" secondAttribute="bottom" constant="16" id="dQ7-jn-J37"/>
+                                                    <constraint firstItem="rWE-9h-Gzn" firstAttribute="top" secondItem="TqE-GY-yNI" secondAttribute="top" constant="16" id="rUD-GL-v7c"/>
+                                                    <constraint firstItem="rWE-9h-Gzn" firstAttribute="leading" secondItem="TqE-GY-yNI" secondAttribute="leading" constant="8" id="vPO-l6-BlP"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="jce-cr-UCz" firstAttribute="top" secondItem="EIv-0V-HYW" secondAttribute="top" id="FZe-Eo-KAd"/>
-                                            <constraint firstItem="4ny-GF-m4S" firstAttribute="leading" secondItem="EIv-0V-HYW" secondAttribute="leading" constant="8" id="Qz2-hF-PVZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="rWE-9h-Gzn" secondAttribute="trailing" constant="8" id="SRu-0L-Idj"/>
-                                            <constraint firstItem="rWE-9h-Gzn" firstAttribute="leading" secondItem="EIv-0V-HYW" secondAttribute="leading" constant="8" id="Tch-aU-Snt"/>
-                                            <constraint firstAttribute="trailing" secondItem="4ny-GF-m4S" secondAttribute="trailing" constant="8" id="hQs-MP-gw9"/>
                                             <constraint firstAttribute="trailing" secondItem="jce-cr-UCz" secondAttribute="trailing" id="pWr-pr-veA"/>
                                             <constraint firstItem="jce-cr-UCz" firstAttribute="leading" secondItem="EIv-0V-HYW" secondAttribute="leading" id="x4L-y1-3Ll"/>
                                         </constraints>
@@ -1875,6 +1895,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iXs-Fy-VlA"/>
                     </view>
+                    <connections>
+                        <outlet property="activityNameField" destination="4ny-GF-m4S" id="VPo-a5-eDb"/>
+                        <outlet property="recordActivityButton" destination="rWE-9h-Gzn" id="oNo-TB-Wnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIE-GD-CQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
