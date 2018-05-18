@@ -1,7 +1,7 @@
 //
 //  StartActivityViewController.swift
 //  actio
-// demo folder
+//
 //  Created by Jason Hoffman on 5/1/18.
 //  Copyright © 2018 corvus group. All rights reserved.
 //
@@ -191,25 +191,17 @@ class StartActivityViewController: UIViewController {
         }
         
     }
-    
-    func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
-        var annotations = [MGLPointAnnotation]()
-        for c in coordinates {
-            let p = MGLPointAnnotation()
-            p.coordinate = c
-            annotations.append(p)
-        }
-        mapView.addAnnotations(annotations)
-    }
+
     
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
-        var annotations = [MGLPointAnnotation]()
+        var first = true
         for c in coordinates {
             let p = MGLPointAnnotation()
+            p.title = (first ? "first" : "second")
+            first = false
             p.coordinate = c
-            annotations.append(p)
+            mapView.addAnnotation(p)
         }
-        mapView.addAnnotations(annotations)
     }
     
     func removeAnnotations() {
@@ -252,19 +244,11 @@ extension StartActivityViewController: MGLMapViewDelegate {
         guard annotation is MGLPointAnnotation else {
             return nil
         }
-        
-        let reuseIdentifier = "\(annotation.coordinate.longitude)"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        
-        
-        // If there’s no reusable annotation view available, initialize a new one.
-        if annotationView == nil {
-            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
-            annotationView!.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-            
-            annotationView?.backgroundColor = UIColor.red
-        }
-        
+
+        let annotationView = RouteAnnotation()
+        annotationView.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
+        annotationView.backgroundColor = (annotationView.annotation?.title == "first" ? UIColor.green : UIColor.red)
+
         return annotationView
     }
 }
