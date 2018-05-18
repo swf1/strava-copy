@@ -9,13 +9,10 @@
 import UIKit
 import CoreLocation
 import Mapbox
-import Firebase
 
 class StartActivityViewController: UIViewController {
     
     var activity: Activity!
-    var ref: DatabaseReference!
-    
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     let time = 0.0
@@ -46,8 +43,6 @@ class StartActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.ref = Database.database().reference()
-        
         // hide save and resume buttons
         saveButton.isHidden = true
         resumeButton.isHidden = true
@@ -92,6 +87,13 @@ class StartActivityViewController: UIViewController {
   @IBAction func saveButtonPressed(_ sender: Any) {
     // open view to add activity name for saving 
     cancelToResumeButton.isHidden = false
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? SaveActivityViewController
+    {
+      vc.activity = self.activity
+    }
   }
   
   

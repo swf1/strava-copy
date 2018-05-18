@@ -22,11 +22,13 @@ class SaveActivityViewController: UIViewController {
   @IBOutlet weak var activityNameField: UITextField!
   @IBOutlet weak var recordActivityButton: UIButton!
   
+  override func viewDidLoad() {
+    self.ref = Database.database().reference()
+  }
   
   @IBAction func recordActivityPressed(_ sender: Any) {
     // perform saving functions here
     let activityName: String = activityNameField.text!
-    print(activityName);
     self.activity.name = activityName
     var data: [String:Any] = [:]
     data["type"] = activity.type
