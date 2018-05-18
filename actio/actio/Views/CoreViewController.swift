@@ -21,12 +21,41 @@ class CoreViewController: UIViewController {
   @IBOutlet weak var profileContainerView: UIView!
   // hidden choose type of activity view
   @IBOutlet weak var chooseView: UIView!
-  
+  @IBOutlet weak var manualAddButton: UIBarButtonItem!
+  @IBOutlet weak var profileButton: UIBarButtonItem!
+  @IBOutlet weak var homeButton: UIBarButtonItem!
   var chooseViewActivityType: String!
-  
-
   @IBOutlet weak var goToTrackRun: UIView!
   
+  @IBAction func showProfileView(sender: UIBarButtonItem) {
+    if (self.profileContainerView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.profileContainerView.alpha = 1
+        self.manualAddContainerView.alpha = 0
+        self.activityCollectionContainerView.alpha = 0
+      })
+    }
+  }
+  
+  @IBAction func showManualAddView(sender: UIBarButtonItem) {
+    if (self.manualAddContainerView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.profileContainerView.alpha = 0
+        self.manualAddContainerView.alpha = 1
+        self.activityCollectionContainerView.alpha = 0
+      })
+    }
+  }
+  
+  @IBAction func showActivityCollectionView(sender: UIBarButtonItem) {
+    if (self.activityCollectionContainerView.alpha == 0) {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.profileContainerView.alpha = 0
+        self.manualAddContainerView.alpha = 0
+        self.activityCollectionContainerView.alpha = 1
+      })
+    }
+  }
   @IBAction func showChooseView(_ sender: AnyObject) {
     chooseView.isHidden = false
     // might add a greyscale to make the background look unavailble.

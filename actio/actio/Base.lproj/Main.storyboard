@@ -516,7 +516,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7R-Pq-Yi2">
                                 <rect key="frame" x="0.0" y="518" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" image="ic_home" id="7d6-Fd-D4k"/>
+                                    <barButtonItem title="Item" image="ic_home" id="7d6-Fd-D4k">
+                                        <connections>
+                                            <action selector="showActivityCollectionViewWithSender:" destination="Iye-nz-8E5" id="ZCJ-Xo-AE2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="g6e-om-eMF"/>
                                     <barButtonItem title="Item" image="ic_fiber_smart_record" width="76" id="LFe-Nm-ETk">
                                         <connections>
@@ -534,11 +538,14 @@
                                     <navigationItem title="My Activities" id="1X8-OW-TSM">
                                         <barButtonItem key="leftBarButtonItem" title="Settings" image="ic_add_circle" id="9Ex-UX-LIh">
                                             <color key="tintColor" red="1" green="0.87058823529999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="showManualAddViewWithSender:" destination="Iye-nz-8E5" id="LUf-MK-H5B"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Close" image="ic_perm_identity" id="MlE-1V-0S5">
                                             <color key="tintColor" red="1" green="0.87058823529999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="closeButtonPressed:" destination="Uq0-XJ-M4B" id="0Wb-u6-kpq"/>
+                                                <action selector="showProfileViewWithSender:" destination="Iye-nz-8E5" id="QNi-kq-PYd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -665,7 +672,10 @@
                     <connections>
                         <outlet property="activityCollectionContainerView" destination="u8K-at-Gkx" id="482-g6-RVe"/>
                         <outlet property="chooseView" destination="GUc-7x-7jJ" id="X5A-PB-K7O"/>
+                        <outlet property="homeButton" destination="7d6-Fd-D4k" id="KxC-pr-9Ru"/>
+                        <outlet property="manualAddButton" destination="9Ex-UX-LIh" id="F6A-Bl-lvv"/>
                         <outlet property="manualAddContainerView" destination="iJY-UW-Grx" id="eAU-b2-T50"/>
+                        <outlet property="profileButton" destination="7d6-Fd-D4k" id="DjL-J8-TUS"/>
                         <outlet property="profileContainerView" destination="qk5-cx-u5k" id="vK8-t1-jZO"/>
                     </connections>
                 </viewController>
