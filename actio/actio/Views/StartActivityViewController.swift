@@ -1,7 +1,7 @@
 //
 //  StartActivityViewController.swift
 //  actio
-//
+// demo folder
 //  Created by Jason Hoffman on 5/1/18.
 //  Copyright © 2018 corvus group. All rights reserved.
 //
@@ -20,10 +20,10 @@ class StartActivityViewController: UIViewController {
     let activityTimer = ActivityTimer.shared
     let time = 0.0
     var paused = false
-    var orangeSource: MGLShapeSource!
-    var orangeLayer: MGLStyleLayer!
-    var blueSource: MGLShapeSource!
-    var blueLayer: MGLStyleLayer!
+    var purpleSource: MGLShapeSource!
+    var purpleLayer: MGLStyleLayer!
+    var greenSource: MGLShapeSource!
+    var greenLayer: MGLStyleLayer!
     
     @IBOutlet weak var activityNameField: UITextField!
     @IBOutlet weak var cancelToResumeButton: UIButton!
@@ -60,7 +60,7 @@ class StartActivityViewController: UIViewController {
         // Will receive notification from ActivityTimer
         NotificationCenter.default.addObserver(self, selector: #selector(updateTime(_:)), name: Notification.Name("Tick"), object: nil)
     }
-
+    
     @IBAction func pauseButtonPressed(_ sender: Any) {
         // Pause/play animation should go here
         topDownMode()
@@ -69,35 +69,35 @@ class StartActivityViewController: UIViewController {
         paused = !paused
     }
     
-  @IBAction func saveButtonPressed(_ sender: Any) {
-    // open view to add activity name for saving 
-    saveView.isHidden = false
-  }
-  
-  @IBAction func recordActivityPressed(_ sender: Any) {
-    // perform saving functions here
-    saveView.isHidden = false
-    self.activity.name = activityNameField.text!
-    var data: [String:Any] = [:]
-    data["type"] = activity.type
-    data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal
-    var coordinates: [[String:Double]] = []
-    for l in activityTimer.coordinates()! {
-        coordinates.append([
-            "latitude": l.coordinate.latitude,
-            "longitude": l.coordinate.longitude
-        ])
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        // open view to add activity name for saving
+        saveView.isHidden = false
     }
-    data["route"] = ["coordinates": coordinates]
-    self.ref.child("activities").childByAutoId().setValue(data)
-  }
-  
-  @IBAction func cancelRecordButtonPressed(_ sender: Any) {
-    // perform saving functions here
-    saveView.isHidden = true
-  }
+    
+    @IBAction func recordActivityPressed(_ sender: Any) {
+        // perform saving functions here
+        saveView.isHidden = false
+        self.activity.name = activityNameField.text!
+        var data: [String:Any] = [:]
+        data["type"] = activity.type
+        data["name"] = activity.name
+        data["athlete"] = ["uid": activity.athlete.uid]
+        data["start_date_local"] = activity.startDateLocal
+        var coordinates: [[String:Double]] = []
+        for l in activityTimer.coordinates()! {
+            coordinates.append([
+                "latitude": l.coordinate.latitude,
+                "longitude": l.coordinate.longitude
+                ])
+        }
+        data["route"] = ["coordinates": coordinates]
+        self.ref.child("activities").childByAutoId().setValue(data)
+    }
+    
+    @IBAction func cancelRecordButtonPressed(_ sender: Any) {
+        // perform saving functions here
+        saveView.isHidden = true
+    }
     
     @IBAction func resumeButtonPressed(_ sender: Any) {
         toggleButtons()
@@ -113,40 +113,42 @@ class StartActivityViewController: UIViewController {
         }
     }
     
-    func initBlueLine() {
+    func initGreenLine() {
         guard let style = self.mapView.style else { return }
-        let blueLine = MGLPolyline()
-        blueSource = MGLShapeSource(identifier: "blueLine", shape: blueLine, options: nil)
-        style.addSource(blueSource)
-        let layer = MGLLineStyleLayer(identifier: "blueLine", source: blueSource)
+        let greenLine = MGLPolyline()
+        greenSource = MGLShapeSource(identifier: "greenLine", shape: greenLine, options: nil)
+        style.addSource(greenSource)
+        let layer = MGLLineStyleLayer(identifier: "greenLine", source: greenSource)
         layer.lineJoin = NSExpression(forConstantValue: "round")
         layer.lineCap = NSExpression(forConstantValue: "round")
-        layer.lineColor = NSExpression(forConstantValue: UIColor.blue)
+        let green = UIColor(red: 0/255.0, green: 201/255.0, blue: 132/255.0, alpha: 1.0)
+        layer.lineColor = NSExpression(forConstantValue: green)
         layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                        [14: 2, 18: 20])
-        blueLayer = layer
-        style.addLayer(blueLayer)
-//        annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
+        greenLayer = layer
+        style.addLayer(greenLayer)
+        //        annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
     }
     
-    func initOrangeLine() {
+    func initPurpLine() {
         guard let style = self.mapView.style else { return }
         let pline = MGLPolyline()
-        orangeSource = MGLShapeSource(identifier: "orangeLine", shape: pline, options: nil)
-        style.addSource(orangeSource)
-        let layer = MGLLineStyleLayer(identifier: "orangeLine", source: orangeSource)
+        purpleSource = MGLShapeSource(identifier: "purpleLine", shape: pline, options: nil)
+        style.addSource(purpleSource)
+        let layer = MGLLineStyleLayer(identifier: "purpleLine", source: purpleSource)
         layer.lineJoin = NSExpression(forConstantValue: "round")
         layer.lineCap = NSExpression(forConstantValue: "round")
         // color can be set here
-        layer.lineColor = NSExpression(forConstantValue: UIColor.orange)
+        let purp = UIColor(red: 175/255.0, green: 0/255.0, blue: 214/255.0, alpha: 1.0)
+        layer.lineColor = NSExpression(forConstantValue: purp)
         layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                        [14: 2, 18: 20])
-        orangeLayer = layer
+        purpleLayer = layer
         style.addLayer(layer)
     }
     
-    func updateOrangeLine(coordinates: [CLLocationCoordinate2D]) {
-        orangeSource.shape = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+    func updatePurpleLine(coordinates: [CLLocationCoordinate2D]) {
+        purpleSource.shape = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
     }
     
     func toggleButtons() {
@@ -159,8 +161,8 @@ class StartActivityViewController: UIViewController {
     
     // polyline updates can take place in courseMode and topMode functions
     func courseMode() {
-        orangeLayer.isVisible = true
-        blueLayer.isVisible = false
+        purpleLayer.isVisible = true
+        greenLayer.isVisible = false
         removeAnnotations()
         let courseCam =  MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
@@ -173,9 +175,9 @@ class StartActivityViewController: UIViewController {
     }
     
     func topDownMode() {
-        orangeLayer.isVisible = false
-        blueSource.shape = orangeSource.shape
-        blueLayer.isVisible = true // blue line only updates on pause so doesn't keep extending
+        purpleLayer.isVisible = false
+        greenSource.shape = purpleSource.shape
+        greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
         mapView.userTrackingMode = .follow
         let topDownCam = MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate,
@@ -187,8 +189,19 @@ class StartActivityViewController: UIViewController {
         if let c = activityTimer.coordinates() {
             annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
         }
+        
     }
-
+    
+    func annotateStartEnd(coordinates: [CLLocationCoordinate2D]) {
+        var annotations = [MGLPointAnnotation]()
+        for c in coordinates {
+            let p = MGLPointAnnotation()
+            p.coordinate = c
+            annotations.append(p)
+        }
+        mapView.addAnnotations(annotations)
+    }
+    
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
         var annotations = [MGLPointAnnotation]()
         for c in coordinates {
@@ -196,7 +209,6 @@ class StartActivityViewController: UIViewController {
             p.coordinate = c
             annotations.append(p)
         }
-        
         mapView.addAnnotations(annotations)
     }
     
@@ -214,7 +226,7 @@ class StartActivityViewController: UIViewController {
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
-
+    
 }
 
 extension StartActivityViewController: MGLMapViewDelegate {
@@ -226,20 +238,13 @@ extension StartActivityViewController: MGLMapViewDelegate {
         if let locations = activityTimer.coordinates() {
             // Get coordinates
             let coords = locations.map { $0.coordinate }
-            updateOrangeLine(coordinates: coords)
+            updatePurpleLine(coordinates: coords)
         }
-        
-        // Writing to Activity object will go here if updating continuously
-        // or all coordinates at once in saveButtonPressed
-//        let encoded = pline.geoJSONData(usingEncoding: String.Encoding.utf8.rawValue)
-//        writePolylineToFile(encoded)
-        
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        print("didFinishLoading")
-        initOrangeLine()
-        initBlueLine()
+        initPurpLine()
+        initGreenLine()
         courseMode()
     }
     
@@ -262,17 +267,4 @@ extension StartActivityViewController: MGLMapViewDelegate {
         
         return annotationView
     }
-    
-    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        if annotation.title == "recalled" {
-            return UIColor.blue
-        }
-
-        return UIColor.orange
-    }
-    
-    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 5.0
-    }
-    
 }
