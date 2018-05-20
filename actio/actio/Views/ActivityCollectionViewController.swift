@@ -24,6 +24,7 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
   var ref: DatabaseReference!
   fileprivate var _refHandle: DatabaseHandle?
   @IBOutlet weak var activityCollectionView: UICollectionView!
+  
   @IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var clientTable: UITableView!
   var chooseViewActivityType: String!
@@ -64,7 +65,6 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    chooseView.isHidden = true
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
     self.ref = Database.database().reference()
@@ -81,7 +81,6 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
   }
   
   override func viewDidDisappear(_ animated: Bool) {
-      chooseView.isHidden = true
   }
 }
 

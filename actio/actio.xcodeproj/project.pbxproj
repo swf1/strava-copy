@@ -31,6 +31,7 @@
 		724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724925ED20A8A19300137F15 /* SaveActivityViewController.swift */; };
 		724BB47E20A7CDEE004A6724 /* ActivityStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */; };
 		724BB48020A7CE6E004A6724 /* InitialMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724BB47F20A7CE6E004A6724 /* InitialMapViewController.swift */; };
+		7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254172D20AEA3C6009289B3 /* CoreViewController.swift */; };
 		72573699209BFE9100E442BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72573698209BFE9100E442BB /* GoogleService-Info.plist */; };
 		72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */; };
 		72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */; };
@@ -84,6 +85,7 @@
 		724925ED20A8A19300137F15 /* SaveActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveActivityViewController.swift; sourceTree = "<group>"; };
 		724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsViewController.swift; sourceTree = "<group>"; };
 		724BB47F20A7CE6E004A6724 /* InitialMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMapViewController.swift; sourceTree = "<group>"; };
+		7254172D20AEA3C6009289B3 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
 		72573698209BFE9100E442BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Bold.ttf"; sourceTree = "<group>"; };
 		72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Light.ttf"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */,
 				31594F41209935E300F807D9 /* StartActivityViewController.swift */,
 				724925E920A80D3D00137F15 /* MainActivityViewController.swift */,
+				7254172D20AEA3C6009289B3 /* CoreViewController.swift */,
 				724925EB20A8A18200137F15 /* StatsActivityViewController.swift */,
 				724925ED20A8A19300137F15 /* SaveActivityViewController.swift */,
 			);
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */,
+				7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */,
 				724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */,
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
