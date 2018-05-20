@@ -13,7 +13,7 @@ import Firebase
 // container collection container view
 // and profile container view
 class CoreViewController: UIViewController {
-  
+  @IBOutlet weak var titleBar: UINavigationItem!
   @IBOutlet weak var activityCollectionView: UICollectionView!
   // containers
   @IBOutlet weak var manualAddContainerView: UIView!
@@ -28,6 +28,7 @@ class CoreViewController: UIViewController {
   @IBOutlet weak var goToTrackRun: UIView!
   
   @IBAction func showProfileView(sender: UIBarButtonItem) {
+    self.titleBar.title = "Your profile"
     if (self.profileContainerView.alpha == 0) {
       UIView.animate(withDuration: 0.5, animations: {
         self.profileContainerView.alpha = 1
@@ -38,6 +39,7 @@ class CoreViewController: UIViewController {
   }
   
   @IBAction func showManualAddView(sender: UIBarButtonItem) {
+    self.titleBar.title = "Manually add activity"
     if (self.manualAddContainerView.alpha == 0) {
       UIView.animate(withDuration: 0.5, animations: {
         self.profileContainerView.alpha = 0
@@ -48,6 +50,7 @@ class CoreViewController: UIViewController {
   }
   
   @IBAction func showActivityCollectionView(sender: UIBarButtonItem) {
+    self.titleBar.title = "Your activities"
     if (self.activityCollectionContainerView.alpha == 0) {
       UIView.animate(withDuration: 0.5, animations: {
         self.profileContainerView.alpha = 0
@@ -91,6 +94,7 @@ class CoreViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     chooseView.isHidden = true
+    self.titleBar.title = "Welcome"
   }
   
   override func viewDidDisappear(_ animated: Bool) {
