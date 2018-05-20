@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
           if let updatedUser = profile {
             print("updated facebook user found: \(updatedUser)")
           } else {
-            print("still no user)
+            print("still no user")
           }
         })
       }
