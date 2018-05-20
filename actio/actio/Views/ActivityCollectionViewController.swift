@@ -12,10 +12,10 @@ import Firebase
 
 class ActivityCollectionViewController: UIViewController {
     
-
   @IBOutlet weak var activityCollectionView: UICollectionView!
+  
   @IBOutlet weak var chooseView: UIView!
-    var chooseViewActivityType: String!
+  var chooseViewActivityType: String!
   
   @IBOutlet weak var goToTrackRun: UIView!
   
@@ -53,13 +53,11 @@ class ActivityCollectionViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    chooseView.isHidden = true
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
   }
   
   override func viewDidDisappear(_ animated: Bool) {
-      chooseView.isHidden = true
   }
     
     
