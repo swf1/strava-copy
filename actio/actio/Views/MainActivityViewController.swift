@@ -93,7 +93,6 @@ class MainActivityViewController: UIViewController {
                                        [14: 2, 18: 20])
         greenLayer = layer
         style.addLayer(greenLayer)
-//        annotationsAt(coordinates: [coordinates.first!, coordinates.last!])
     }
     
     // polyline updates can take place in courseMode and topMode functions
@@ -122,7 +121,10 @@ class MainActivityViewController: UIViewController {
           pitch: 0.0,
           heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
-    
+        
+        if let c = activityTimer.coordinates() {
+            annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
+        }
     }
   
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
