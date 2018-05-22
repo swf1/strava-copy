@@ -20,9 +20,10 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
     return cell
   }
   
-  
   var ref: DatabaseReference!
   fileprivate var _refHandle: DatabaseHandle?
+    
+  let locationManager = Loc.shared
   @IBOutlet weak var activityCollectionView: UICollectionView!
   
   @IBOutlet weak var chooseView: UIView!
@@ -52,14 +53,19 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
     self.chooseViewActivityType = "Bike"
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? InitialMapViewController
-    {
-      guard let user = Auth.auth().currentUser else { return }
-      guard let uid = user.uid as? String else { return  }
-      guard let email = user.email as? String else { return }
-      let athlete = Athlete(uid: uid, email: email)
-      vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? InitialMapViewController
+        {
+            guard let user = Auth.auth().currentUser else { return }
+            guard let uid = user.uid as? String else { return  }
+            guard let email = user.email as? String else { return }
+            let athlete = Athlete(uid: uid, email: email)
+            vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
+            if let flag = locationManager.gpsFlag {
+                flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
+                vc.gpsLabel.text = flag.1
+            }
+        }
     }
   }
 
