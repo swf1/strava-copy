@@ -172,7 +172,6 @@ extension MainActivityViewController: MGLMapViewDelegate {
         let annotationView = RouteAnnotation()
         annotationView.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
         annotationView.backgroundColor = (annotationView.annotation?.title == "first" ? UIColor.green : UIColor.red)
-        
         return annotationView
     }
 }
