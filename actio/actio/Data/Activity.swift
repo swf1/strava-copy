@@ -13,24 +13,23 @@ import Foundation
 import FirebaseDatabase
 
 class Activity: NSObject {
-    var uid: String?
-    var route: Route?
-    var athlete: Athlete
-    var name: String?
-    var type: String
-    var startDateLocal: String?
-    
-    init(athlete: Athlete, type: String) {
-        self.athlete = athlete
-        self.type = type
-    }
+  var uid: String?
+  var route: Route?
+  var athlete: Athlete
+  var name: String?
+  var type: String
+  var startDateLocal: String?
+  
+  init(athlete: Athlete, type: String) {
+    self.athlete = athlete
+    self.type = type
+  }
 
-//    init(athlete: Athlete, name: String, type: String, startDateLocal: String) {
-//        self.athlete = athlete
-//        self.name = name
-//        self.type = type
-//        self.startDateLocal = startDateLocal
-//    }
+  init?(athlete: Athlete, type: String, name: String) {
+    self.athlete = athlete
+    self.type = type
+    self.name = name
+  }
 //
 //    init?(
 //        uid: String,

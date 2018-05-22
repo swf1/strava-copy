@@ -10,29 +10,20 @@ import Foundation
 import UIKit
 import Firebase
 
-class ActivityCollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = self.clientTable .dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-    return cell
-  }
-  
-  var ref: DatabaseReference!
-  fileprivate var _refHandle: DatabaseHandle?
-    
+class ActivityCollectionViewController: UIViewController {
+
+  var activities: [Activity] = []
+  var datastore: FirebaseStorageAdapter!
+//  fileprivate var _refHandle: DatabaseHandle?
   let locationManager = Loc.shared
   @IBOutlet weak var activityCollectionView: UICollectionView!
-  
   @IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var clientTable: UITableView!
   var chooseViewActivityType: String!
-  var activities: [DataSnapshot]! = []
   
+
   @IBOutlet weak var goToTrackRun: UIView!
-  
+
   @IBAction func showChooseView(_ sender: AnyObject) {
     chooseView.isHidden = false
     // might add a greyscale to make the background look unavailble.
@@ -53,19 +44,18 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
     self.chooseViewActivityType = "Bike"
   }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? InitialMapViewController
-        {
-            guard let user = Auth.auth().currentUser else { return }
-            guard let uid = user.uid as? String else { return  }
-            guard let email = user.email as? String else { return }
-            let athlete = Athlete(uid: uid, email: email)
-            vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
-            if let flag = locationManager.gpsFlag {
-                flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
-                vc.gpsLabel.text = flag.1
-            }
-        }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? InitialMapViewController
+    {
+      guard let user = Auth.auth().currentUser else { return }
+      guard let uid = user.uid as? String else { return  }
+      guard let email = user.email as? String else { return }
+      let athlete = Athlete(uid: uid, email: email)
+      vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
+      if let flag = locationManager.gpsFlag {
+        flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
+        vc.gpsLabel.text = flag.1
+      }
     }
   }
 
@@ -73,16 +63,21 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
     super.viewDidLoad()
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
-    self.ref = Database.database().reference()
-    
+    self.datastore = FirebaseStorageAdapter()
+    self.loadActivities()
+  }
+  
+  func loadActivities() {
     guard let user = Auth.auth().currentUser else { return }
-    _refHandle = self.ref.child("activities").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+    self.datastore.activities(forAthlete: user.uid).observe(.childAdded, with: { [weak self] (snapshot) -> Void in
       guard let strongSelf = self else { return }
-      guard let activity = snapshot.value as? [String:Any?] else { return }
-      guard let athlete = activity["athlete"] as? [String:Any?] else { return }
-      print(athlete["uid"])
-//      strongSelf.activities.append(snapshot)
-//      strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.activities.count-1, section: 0)], with: .automatic)
+      let activityDict = snapshot.value as? [String: AnyObject] ?? [:]
+      strongSelf.activities.append(Activity(
+        athlete: Athlete(uid: user.uid, email: user.email!),
+        type: (activityDict["type"] as? String)!,
+        name: (activityDict["name"] as? String)!
+        )!)
+      strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.activities.count-1, section: 0)], with: .automatic)
     })
   }
   
@@ -94,7 +89,8 @@ class ActivityCollectionViewController: UIViewController, UITableViewDataSource,
 extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+//    return 5
+    return 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,7 +98,6 @@ extension ActivityCollectionViewController: UICollectionViewDelegate, UICollecti
     return cell
   }
 }
-
 
 func didPressButtonFromCustomView(sender:UIButton) {
   // do whatever you want
