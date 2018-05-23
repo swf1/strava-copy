@@ -10,11 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
-class ActivityCollectionViewController: UIViewController {
+class ActivityCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
   var activities: [Activity] = []
   var datastore: FirebaseStorageAdapter!
-//  fileprivate var _refHandle: DatabaseHandle?
   let locationManager = Loc.shared
   @IBOutlet weak var activityCollectionView: UICollectionView!
   @IBOutlet weak var chooseView: UIView!
@@ -83,20 +82,19 @@ class ActivityCollectionViewController: UIViewController {
   
   override func viewDidDisappear(_ animated: Bool) {
   }
-}
-
-
-extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//    return 5
-    return 0
+        return 5
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath)
     return cell
   }
+}
+
+class ActivityCollectionViewCell: UICollectionViewCell {
+  
 }
 
 func didPressButtonFromCustomView(sender:UIButton) {

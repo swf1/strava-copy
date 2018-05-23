@@ -1760,7 +1760,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionCell" id="9mo-pd-nhU">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionCell" id="9mo-pd-nhU" customClass="ActivityCollectionViewCell" customModule="actio" customModuleProvider="target">
                                                 <rect key="frame" x="7" y="0.0" width="400" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -2444,7 +2444,6 @@
         <image name="swquare_map" width="182" height="175"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i67-cl-gKA"/>
         <segue reference="eCp-ZK-pTW"/>
         <segue reference="CxQ-qp-KFJ"/>
         <segue reference="4Vt-ZZ-f6n"/>

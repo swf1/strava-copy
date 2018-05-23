@@ -87,7 +87,7 @@ DEPENDENCIES:
   - Repeat
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Bolts
     - FacebookCore
     - FacebookLogin
@@ -131,4 +131,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7235bb17d172f0cf72994d06f41615741f2b29c8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
