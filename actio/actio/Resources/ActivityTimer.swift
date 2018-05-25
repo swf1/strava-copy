@@ -42,12 +42,15 @@ class ActivityTimer {
     
     func pace() -> String {
         if let loc = currentLocation {
-            let mps = Measurement(value: loc.speed, unit: UnitSpeed.metersPerSecond)
-            let mph = mps.converted(to: .milesPerHour)
-            let paceInSeconds = 3600.0 / mph.value
-            paceArray.append(paceInSeconds)
-            guard let formattedPace = df.string(from: paceInSeconds) else { return "?:??" }
-            return formattedPace
+            // stops crash but need to handle standing still
+            if loc.speed > 0.0 {
+                let mps = Measurement(value: loc.speed, unit: UnitSpeed.metersPerSecond)
+                let mph = mps.converted(to: .milesPerHour)
+                let paceInSeconds = 3600.0 / mph.value
+                paceArray.append(paceInSeconds)
+                guard let formattedPace = df.string(from: paceInSeconds) else { return "?:??" }
+                return formattedPace
+            }
         }
         
         return "?:??"
