@@ -35,6 +35,9 @@ class ActivityTimer {
         df.allowedUnits = [.minute, .second]
         df.zeroFormattingBehavior = [.pad]
         df.unitsStyle = .positional
+        
+        if !paceArray.isEmpty { paceArray = [Double]() }
+        if !locationArray.isEmpty { locationArray = [CLLocation]() }
     }
     
     func pace() -> String {
