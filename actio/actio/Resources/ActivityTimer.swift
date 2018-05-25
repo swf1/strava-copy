@@ -69,13 +69,9 @@ class ActivityTimer {
     func totalTime() -> String {
         let c = Measurement(value: counter, unit: UnitDuration.seconds)
         guard let tot = df.string(from: c.value) else { return "?:??" }
-//        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
         return tot
     }
-    
-    // function to encode GeoJSON for Activty object
-    // but leave creating the polyline to view controller
-    
+
 
     func startTime() {
         timer.start()
