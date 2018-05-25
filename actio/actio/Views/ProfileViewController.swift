@@ -26,8 +26,19 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var monthLabel: UILabel!
   @IBOutlet weak var totalLabel: UILabel!
   
+  @IBOutlet weak var logoutButton: UIButton!
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var profileImage: UIImageView!
-  @IBOutlet weak var addImageButton: UIButton!
+  
+  
+  @IBAction func logoutUser(sender: UIButton) {
+    let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,22 +46,25 @@ class ProfileViewController: UIViewController {
     totalLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     monthLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
 
-    guard let user = Auth.auth().currentUser else { return }
-    // check is facebook profile found?
-    if let _ = FBSDKAccessToken.current() {
-      if let currentUser = FBSDKProfile.current() {
-        print("Found current facebook user: \(currentUser)")
-      } else {
-        print("facebook user not found")
-        FBSDKProfile.loadCurrentProfile(completion: {
-          profile, error in
-          if let updatedUser = profile {
-            print("updated facebook user found: \(updatedUser)")
-          } else {
-            print("still no user")
-          }
-        })
-      }
+    // check if facebook user, if so use profile image, first, and last for profile
+    if FBSDKAccessToken.current() != nil {
+      let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+      graphRequest?.start(completionHandler: {
+        (connection, result, error) -> Void in
+        if ((error) != nil)
+        {
+          print("Error: \(String(describing: error))")
+        }
+        else if error == nil
+        {
+          let data:[String:AnyObject] = result as! [String : AnyObject]
+          let facebookID: NSString = (data["id"]! as? NSString)!
+          self.nameLabel.text = (data["name"]! as? String)!
+          let url = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1")
+          self.profileImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+        }
+      })
     }
+    // check if google user if so source profile image, first, last as profile details
   }
 }

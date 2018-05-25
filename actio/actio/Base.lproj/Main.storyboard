@@ -550,6 +550,14 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </navigationBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-at-Gkx">
                                 <rect key="frame" x="0.0" y="64" width="414" height="454"/>
@@ -669,6 +677,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TXm-78-GgK"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="activityCollectionContainerView" destination="u8K-at-Gkx" id="482-g6-RVe"/>
                         <outlet property="chooseView" destination="GUc-7x-7jJ" id="X5A-PB-K7O"/>
@@ -1384,7 +1393,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="142"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharp_loop_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="e26-t2-sma">
-                                                                                <rect key="frame" x="30" y="28.999999999999993" width="121" height="84.333333333333314"/>
+                                                                                <rect key="frame" x="30" y="29" width="121" height="84"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1453,7 +1462,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="142"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharp_equalizer_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="KLL-ex-Tte">
-                                                                                <rect key="frame" x="30" y="28.999999999999993" width="121" height="84.333333333333314"/>
+                                                                                <rect key="frame" x="30" y="29" width="121" height="84"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1523,7 +1532,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="142"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_query_builder_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-rR-lcb">
-                                                                        <rect key="frame" x="30" y="28.999999999999993" width="121" height="84.333333333333314"/>
+                                                                        <rect key="frame" x="30" y="29" width="121" height="84"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1604,7 +1613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTl-l2-VqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="1048"/>
+            <point key="canvasLocation" x="1212" y="977"/>
         </scene>
         <!--saveActivityView-->
         <scene sceneID="IFi-Mc-ptB">
@@ -1618,7 +1627,7 @@
                                 <rect key="frame" x="78" y="101" width="260" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-0V-HYW">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360.66666666666669"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="76.666666666666671"/>
@@ -1639,13 +1648,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
-                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blT-ZE-POn">
-                                                <rect key="frame" x="0.0" y="189" width="260" height="76.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="189.33333333333331" width="260" height="76.666666666666686"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
                                                         <rect key="frame" x="8" y="15.999999999999996" width="244" height="44.666666666666657"/>
@@ -1663,7 +1672,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-GY-yNI">
-                                                <rect key="frame" x="0.0" y="283.66666666666669" width="260" height="76.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="284" width="260" height="76.666666666666686"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
                                                         <rect key="frame" x="8" y="16.000000000000004" width="244" height="44.333333333333343"/>
@@ -1737,7 +1746,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIE-GD-CQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="1048"/>
+            <point key="canvasLocation" x="1923" y="977"/>
         </scene>
         <!--Activity Collection View Controller-->
         <scene sceneID="IuK-UL-L2E">
@@ -1956,11 +1965,33 @@
                                                             <constraint firstAttribute="width" constant="80" id="OWW-MK-T2h"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-KT-jYK">
+                                                        <rect key="frame" x="128" y="40" width="41.666666666666657" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UW0-7w-qcQ">
+                                                        <rect key="frame" x="352" y="38" width="29" height="17.666666666666671"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="29" id="pYf-RF-SGx"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="baseline_exit_to_app_black_18dp"/>
+                                                        <connections>
+                                                            <action selector="logoutUserWithSender:" destination="IDP-0e-GQV" eventType="touchUpInside" id="vqa-YL-3sS"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="QRT-KT-jYK" firstAttribute="leading" secondItem="AOk-2V-pAX" secondAttribute="trailing" constant="17" id="5X4-tg-Tkz"/>
                                                     <constraint firstAttribute="bottom" secondItem="AOk-2V-pAX" secondAttribute="bottom" constant="15" id="8kd-uy-z3Q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UW0-7w-qcQ" secondAttribute="trailing" constant="33" id="DAG-G4-Mpw"/>
                                                     <constraint firstItem="AOk-2V-pAX" firstAttribute="top" secondItem="ma1-NI-Bq9" secondAttribute="top" constant="13" id="GI0-5P-Tx3"/>
+                                                    <constraint firstItem="QRT-KT-jYK" firstAttribute="centerY" secondItem="AOk-2V-pAX" secondAttribute="centerY" id="MK1-eh-w5Y"/>
+                                                    <constraint firstItem="UW0-7w-qcQ" firstAttribute="top" secondItem="ma1-NI-Bq9" secondAttribute="top" constant="38" id="dIH-91-djM"/>
+                                                    <constraint firstItem="QRT-KT-jYK" firstAttribute="top" secondItem="ma1-NI-Bq9" secondAttribute="top" constant="40" id="ocP-1P-x2I"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UW0-7w-qcQ" secondAttribute="bottom" constant="46" id="qzj-eb-cIs"/>
                                                     <constraint firstItem="AOk-2V-pAX" firstAttribute="leading" secondItem="ma1-NI-Bq9" secondAttribute="leading" constant="31" id="vjn-qa-96e"/>
                                                 </constraints>
                                             </view>
@@ -2391,7 +2422,9 @@
                         <viewLayoutGuide key="safeArea" id="KD6-de-cAO"/>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="UW0-7w-qcQ" id="0zM-U2-Qt2"/>
                         <outlet property="monthLabel" destination="gpX-z2-4LV" id="H5x-pS-zaS"/>
+                        <outlet property="nameLabel" destination="QRT-KT-jYK" id="MFw-YP-eYl"/>
                         <outlet property="profileImage" destination="AOk-2V-pAX" id="IM5-ek-tjq"/>
                         <outlet property="totalDistanceLabel" destination="c4D-tv-caA" id="86l-zJ-ZQv"/>
                         <outlet property="totalLabel" destination="MLP-02-2tz" id="95p-fa-qRl"/>
@@ -2399,7 +2432,7 @@
                         <outlet property="totalTimeLabel" destination="6eB-AJ-g4Y" id="u9S-9A-SzJ"/>
                         <outlet property="weekLabel" destination="rY6-ID-qgi" id="e4A-hW-RcL"/>
                         <outlet property="weeklyDistance" destination="egS-Xq-blQ" id="3Kx-zX-kWW"/>
-                        <outlet property="weeklyPace" destination="pt4-kh-PIH" id="NRK-nq-SJx"/>
+                        <outlet property="weeklyPace" destination="QRT-KT-jYK" id="FbI-HI-w9s"/>
                         <outlet property="weeklyTime" destination="J54-ab-c76" id="3k7-px-7jy"/>
                     </connections>
                 </viewController>
@@ -2424,6 +2457,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="baseline_exit_to_app_black_18dp" width="18" height="18"/>
         <image name="baseline_query_builder_black_18dp" width="18" height="18"/>
         <image name="baseline_query_builder_black_18dp-1" width="18" height="18"/>
         <image name="dawn-dusk-forest-347134" width="6016" height="4016"/>
