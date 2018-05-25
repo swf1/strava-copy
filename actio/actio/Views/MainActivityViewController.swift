@@ -124,18 +124,17 @@ class MainActivityViewController: UIViewController {
           pitch: 0.0,
           heading: mapView.camera.heading)
         mapView.fly(to: topDownCam, completionHandler: nil)
-        
         if let c = activityTimer.coordinates() {
             annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
         }
     }
   
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
-        var first = true
+        var first = false
         for c in coordinates {
-            let p = MGLPointAnnotation()
-            p.title = (first ? "first" : "second")
-            first = false
+            let p = RouteAnnotation()
+            p.isFirst = first
+            first = true
             p.coordinate = c
             mapView.addAnnotation(p)
         }
@@ -173,9 +172,21 @@ extension MainActivityViewController: MGLMapViewDelegate {
             return nil
         }
         
-        let annotationView = RouteAnnotation()
-        annotationView.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
-        annotationView.backgroundColor = (annotationView.annotation?.title == "first" ? UIColor.green : UIColor.red)
+        let reuseIdentifier = "routeAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
+        }
+        
+        if let a = annotation as? RouteAnnotation {
+            let red = UIColor(red: 255/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+            let green = UIColor(red: 0/255.0, green: 255/255.0, blue: 0/255.0, alpha: 1.0)
+            annotationView?.backgroundColor = (a.isFirst ? red : green)
+        }
+        
         return annotationView
     }
 }
