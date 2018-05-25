@@ -50,8 +50,8 @@ class MainActivityViewController: UIViewController {
   }
   
     @objc func updateTime(_ notification: Notification) {
+        if paused { return }
         if let t = notification.userInfo?["time"] as? String {
-            // has to be on main thread
             DispatchQueue.main.async {
                 self.elapsedTimeLabel.text = t
             }
@@ -97,8 +97,10 @@ class MainActivityViewController: UIViewController {
     
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
+        paused = false
         purpleLayer.isVisible = true
         greenLayer.isVisible = false
+        mapView.isUserInteractionEnabled = false
         removeAnnotations()
         let courseCam =  MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
@@ -111,6 +113,7 @@ class MainActivityViewController: UIViewController {
     }
 
     @objc func topDownMode(_ notification: Notification) {
+        paused = true
         purpleLayer.isVisible = false
         greenSource.shape = purpleSource.shape
         greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
@@ -148,11 +151,12 @@ class MainActivityViewController: UIViewController {
 extension MainActivityViewController: MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
-        if paused { return }
-        paceLabel.text = activityTimer.pace()
-        distanceLabel.text = String(format: "%.2f", activityTimer.totalDistance)
+        if !paused {
+            paceLabel.text = activityTimer.pace()
+            distanceLabel.text = String(format: "%.2f", activityTimer.totalDistance)
+        }
+
         if let locations = activityTimer.coordinates() {
-            // Get coordinates
             let coords = locations.map { $0.coordinate }
             updatePurpleLine(coordinates: coords)
         }
