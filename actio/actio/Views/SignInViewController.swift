@@ -15,7 +15,9 @@ import FirebaseAuth
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+  
+  @IBAction func unwindtoSignInView(segue: UIStoryboardSegue) {}
+
     @IBAction func loginAction(_ sender: AnyObject) {
         
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
