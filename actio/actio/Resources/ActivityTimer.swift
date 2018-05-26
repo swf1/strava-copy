@@ -42,7 +42,6 @@ class ActivityTimer {
     
     func pace() -> String {
         if let loc = currentLocation {
-            // stops crash but need to handle standing still
             if loc.speed > 0.0 {
                 let mps = Measurement(value: loc.speed, unit: UnitSpeed.metersPerSecond)
                 let mph = mps.converted(to: .milesPerHour)
@@ -53,6 +52,7 @@ class ActivityTimer {
             }
         }
         
+        paceArray.append(0.0)
         return "?:??"
     }
     
