@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
     let firebaseAuth = Auth.auth()
     do {
       try firebaseAuth.signOut()
+      print("logged out");
     } catch let signOutError as NSError {
       print ("Error signing out: %@", signOutError)
     }
