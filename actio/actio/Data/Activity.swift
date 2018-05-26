@@ -4,60 +4,30 @@
 //
 //  Contributors:
 //    Alieta Train
-//    Tyler Mcginnis on 5/5/18.
+//    Tyler Mcginnis
 //    Jason Hoffman
 //  Copyright © 2018 corvus group. All rights reserved.
 //
 
 import Foundation
-import FirebaseDatabase
+import Firebase
 
-class Activity: NSObject {
+struct Activity{
   var uid: String?
   var route: Route?
-  var athlete: Athlete
+  var athlete: Athlete?
   var name: String?
-  var type: String
+  var type: String?
   var startDateLocal: String?
-  
-  init(athlete: Athlete, type: String) {
-    self.athlete = athlete
-    self.type = type
+
+  init(snapshot: DataSnapshot) {
+    let activityData = snapshot.value as? [String:AnyObject] ?? [:]
+    self.name = activityData["name"] as? String
+    self.type = activityData["type"] as? String
   }
 
-  init?(athlete: Athlete, type: String, name: String) {
+  init?(athlete: Athlete, type: String) {
     self.athlete = athlete
     self.type = type
-    self.name = name
   }
-//
-//    init?(
-//        uid: String,
-//        athlete: Athlete,
-//        name: String,
-//        type: String,
-//        startDateLocal: String
-//    ) {
-//        self.uid = uid
-//        self.athlete = athlete
-//        self.name = name
-//        self.type = type
-//        self.startDateLocal = startDateLocal
-//    }
-//
-//    init?(
-//        uid: String,
-//        athlete: Athlete,
-//        name: String,
-//        type: String,
-//        startDateLocal: String,
-//        route: Route
-//    ) {
-//        self.uid = uid
-//        self.athlete = athlete
-//        self.name = name
-//        self.type = type
-//        self.startDateLocal = startDateLocal
-//        self.route = route
-//    }
 }

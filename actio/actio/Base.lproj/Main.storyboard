@@ -1830,6 +1830,13 @@
                                                                             <color key="textColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-Zk-rXP">
+                                                                            <rect key="frame" x="137" y="8" width="42" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -1900,6 +1907,10 @@
                                                     <constraint firstItem="cFo-I9-NWU" firstAttribute="leading" secondItem="9mo-pd-nhU" secondAttribute="leadingMargin" id="O9b-qw-BTk"/>
                                                 </constraints>
                                                 <size key="customSize" width="400" height="200"/>
+                                                <connections>
+                                                    <outlet property="activityName" destination="hYR-WU-gvy" id="rqD-1L-Kms"/>
+                                                    <outlet property="activityType" destination="fTT-Zk-rXP" id="DaE-Jp-Gw3"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>

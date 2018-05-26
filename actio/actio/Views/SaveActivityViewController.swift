@@ -33,7 +33,7 @@ class SaveActivityViewController: UIViewController {
     var data: [String:Any] = [:]
     data["type"] = activity.type
     data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
+    data["athlete"] = ["uid": activity.athlete?.uid]
     data["start_date_local"] = activity.startDateLocal
     var coordinates: [[String:Double]] = []
     for l in activityTimer.coordinates()! {

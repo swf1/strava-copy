@@ -12,15 +12,13 @@ import Firebase
 
 class ActivityCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-  var activities: [Activity] = []
-  var datastore: FirebaseStorageAdapter!
+  let store = FirebaseDataStore.instance
   let locationManager = Loc.shared
+  var chooseViewActivityType: String!
+
   @IBOutlet weak var activityCollectionView: UICollectionView!
   @IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var clientTable: UITableView!
-  var chooseViewActivityType: String!
-  
-
   @IBOutlet weak var goToTrackRun: UIView!
 
   @IBAction func showChooseView(_ sender: AnyObject) {
@@ -62,39 +60,24 @@ class ActivityCollectionViewController: UIViewController, UICollectionViewDelega
     super.viewDidLoad()
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
-    self.datastore = FirebaseStorageAdapter()
-    self.loadActivities()
+    store.getActivities {
+      self.activityCollectionView.reloadSections(IndexSet(integer: 0))
+    }
   }
   
-  func loadActivities() {
-    guard let user = Auth.auth().currentUser else { return }
-    self.datastore.activities(forAthlete: user.uid).observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-      guard let strongSelf = self else { return }
-      let activityDict = snapshot.value as? [String: AnyObject] ?? [:]
-      strongSelf.activities.append(Activity(
-        athlete: Athlete(uid: user.uid, email: user.email!),
-        type: (activityDict["type"] as? String)!,
-        name: (activityDict["name"] as? String)!
-        )!)
-      strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.activities.count-1, section: 0)], with: .automatic)
-    })
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-  }
+  override func viewDidDisappear(_ animated: Bool) {}
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+    return store.activities.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath)
+      as! ActivityCollectionViewCell
+    let activity = store.activities[indexPath.row]
+    cell.displayContent(name: activity.name!, type: activity.type!)
     return cell
   }
-}
-
-class ActivityCollectionViewCell: UICollectionViewCell {
-  
 }
 
 func didPressButtonFromCustomView(sender:UIButton) {
