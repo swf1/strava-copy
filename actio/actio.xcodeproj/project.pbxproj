@@ -65,8 +65,8 @@
 		31594F41209935E300F807D9 /* StartActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
 		318DAE9F20AF91DD009AC340 /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
 		3F431D8720B5151500067F12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseClient.swift; path = ../Data/FirebaseClient.swift; sourceTree = "<group>"; };
-		3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseDataStore.swift; path = ../Data/FirebaseDataStore.swift; sourceTree = "<group>"; };
+		3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataStore.swift; sourceTree = "<group>"; };
 		3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FB9AC6920B513690064742C /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Athlete.swift; path = actio/Data/Athlete.swift; sourceTree = SOURCE_ROOT; };
 		3FB9AC6B20B513690064742C /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = actio/Data/Activity.swift; sourceTree = SOURCE_ROOT; };
@@ -147,8 +147,7 @@
 				3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */,
 				3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */,
 			);
-			name = Data;
-			path = "New Group";
+			path = Data;
 			sourceTree = "<group>";
 		};
 		72365EE62086E13900413444 = {
