@@ -98,35 +98,57 @@ class MainActivityViewController: UIViewController {
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
         paused = false
+        mapView.showsUserLocation = true
         purpleLayer.isVisible = true
         greenLayer.isVisible = false
         mapView.isUserInteractionEnabled = false
         removeAnnotations()
-        let courseCam =  MGLMapCamera(
+        let courseCam = MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
             fromDistance: 400,
             pitch: 70.0,
             heading: mapView.camera.heading)
         mapView.fly(to: courseCam) {
-        self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
+            self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
         }
     }
+    
 
     @objc func topDownMode(_ notification: Notification) {
         paused = true
-        purpleLayer.isVisible = false
-        greenSource.shape = purpleSource.shape
-        greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
-        mapView.userTrackingMode = .follow
-        let topDownCam = MGLMapCamera(
-          lookingAtCenter: mapView.userLocation!.coordinate,
-          fromDistance: 1500,
-          pitch: 0.0,
-          heading: mapView.camera.heading)
-        mapView.fly(to: topDownCam, completionHandler: nil)
-        if let c = activityTimer.coordinates() {
-            annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
+        var bounds: MGLCoordinateBounds
+        if let locs = activityTimer.coordinates() {
+            let coords = locs.map { $0.coordinate }
+            purpleLayer.isVisible = false
+            greenSource.shape = purpleSource.shape
+            greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
+            mapView.showsUserLocation = false
+            bounds = getBounds(coords) // need to add a little padding to bounds
+            let topDownCam = mapView.cameraThatFitsCoordinateBounds(bounds)
+            topDownCam.setValue(0.0, forKey: "pitch")
+            mapView.fly(to: topDownCam) {
+                self.mapView.setUserTrackingMode(.none, animated: true)
+            }
+            if let c = activityTimer.coordinates() {
+                annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
+            }
         }
+    }
+    
+    func getBounds(_ coords: [CLLocationCoordinate2D]) -> MGLCoordinateBounds {
+        var lonMin = coords[0].longitude, lonMax = coords[0].longitude, latMin = coords[0].latitude, latMax = coords[0].latitude
+        
+        for i in coords {
+            lonMin = lonMin < i.longitude ? lonMin : i.longitude
+            lonMax = lonMax > i.longitude ? lonMax : i.longitude
+            latMin = latMin < i.latitude ? latMin : i.latitude
+            latMax = latMax > i.latitude ? latMax : i.latitude
+        }
+        
+        let ne = CLLocationCoordinate2D(latitude: latMax, longitude: lonMax)
+        let sw = CLLocationCoordinate2D(latitude: latMin, longitude: lonMin)
+        
+        return MGLCoordinateBounds(sw: sw, ne: ne)
     }
   
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
@@ -166,6 +188,7 @@ extension MainActivityViewController: MGLMapViewDelegate {
         initGreenLine()
         courseMode(nil)
     }
+    
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         guard annotation is MGLPointAnnotation else {
