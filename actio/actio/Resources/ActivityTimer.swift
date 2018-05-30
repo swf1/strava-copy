@@ -53,7 +53,7 @@ class ActivityTimer {
         }
         
         paceArray.append(0.0)
-        return "?:??"
+        return "0:00"
     }
     
     func avgPace() -> String {
@@ -92,6 +92,7 @@ class ActivityTimer {
     }
     
     func appendLocation(_ location: CLLocation) {
+        // These coordinates are coming from CLLocationManager and not map delegate
         locationArray.append(location)
         currentLocation = location
     }

@@ -98,7 +98,7 @@ class MainActivityViewController: UIViewController {
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
         paused = false
-        mapView.showsUserLocation = true
+//        mapView.showsUserLocation = true
         purpleLayer.isVisible = true
         greenLayer.isVisible = false
         mapView.isUserInteractionEnabled = false
@@ -116,19 +116,29 @@ class MainActivityViewController: UIViewController {
 
     @objc func topDownMode(_ notification: Notification) {
         paused = true
+        mapView.setUserTrackingMode(.none, animated: false)
         var bounds: MGLCoordinateBounds
         if let locs = activityTimer.coordinates() {
             let coords = locs.map { $0.coordinate }
             purpleLayer.isVisible = false
             greenSource.shape = purpleSource.shape
             greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
-            mapView.showsUserLocation = false
-            bounds = getBounds(coords) // need to add a little padding to bounds
-            let topDownCam = mapView.cameraThatFitsCoordinateBounds(bounds)
-            topDownCam.setValue(0.0, forKey: "pitch")
-            mapView.fly(to: topDownCam) {
-                self.mapView.setUserTrackingMode(.none, animated: true)
-            }
+            bounds = getBounds(coords)
+            let span = MGLCoordinateSpan(
+                latitudeDelta: bounds.ne.latitude - bounds.sw.latitude,
+                longitudeDelta: bounds.ne.longitude - bounds.sw.longitude)
+            let center = CLLocationCoordinate2D(
+                latitude: bounds.sw.latitude + (span.latitudeDelta / 2),
+                longitude: bounds.sw.longitude + (span.longitudeDelta / 2))
+            
+            let topDownCam = mapView.cameraThatFitsCoordinateBounds(bounds, edgePadding: UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0))
+            topDownCam.pitch = 0.0
+            topDownCam.heading = 0.0
+            topDownCam.centerCoordinate = center
+            
+            mapView.isUserInteractionEnabled = true
+            mapView.fly(to: topDownCam, completionHandler: nil)
+            
             if let c = activityTimer.coordinates() {
                 annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
             }
@@ -136,21 +146,21 @@ class MainActivityViewController: UIViewController {
     }
     
     func getBounds(_ coords: [CLLocationCoordinate2D]) -> MGLCoordinateBounds {
-        var lonMin = coords[0].longitude, lonMax = coords[0].longitude, latMin = coords[0].latitude, latMax = coords[0].latitude
+        var lonMin = 180.0, lonMax = -180.0, latMin = 90.0, latMax = -90.0
         
         for i in coords {
-            lonMin = lonMin < i.longitude ? lonMin : i.longitude
-            lonMax = lonMax > i.longitude ? lonMax : i.longitude
             latMin = latMin < i.latitude ? latMin : i.latitude
             latMax = latMax > i.latitude ? latMax : i.latitude
+            lonMin = lonMin < i.longitude ? lonMin : i.longitude
+            lonMax = lonMax > i.longitude ? lonMax : i.longitude
         }
         
         let ne = CLLocationCoordinate2D(latitude: latMax, longitude: lonMax)
         let sw = CLLocationCoordinate2D(latitude: latMin, longitude: lonMin)
-        
+
         return MGLCoordinateBounds(sw: sw, ne: ne)
     }
-  
+
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
         var first = false
         for c in coordinates {
