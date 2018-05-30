@@ -8,12 +8,9 @@
 
 import Mapbox
 
-class RouteAnnotation: MGLAnnotationView {
+class RouteAnnotation: MGLPointAnnotation {
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = bounds.width / 2  // round
-    }
+    var isFirst: Bool = true
 }
 
 

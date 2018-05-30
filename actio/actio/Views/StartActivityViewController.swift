@@ -97,6 +97,7 @@ class StartActivityViewController: UIViewController {
     @IBAction func resumeButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("courseMode"), object: nil)
         toggleButtons()
+        activityTimer.startTime()
     }
     
     func toggleButtons() {
