@@ -26,7 +26,8 @@ class CoreViewController: UIViewController {
   @IBOutlet weak var homeButton: UIBarButtonItem!
   var chooseViewActivityType: String!
   @IBOutlet weak var goToTrackRun: UIView!
-  
+  let locationManager = Loc.shared
+    
   @IBAction func showProfileView(sender: UIBarButtonItem) {
     self.titleBar.title = "Your profile"
     if (self.profileContainerView.alpha == 0) {
@@ -88,6 +89,11 @@ class CoreViewController: UIViewController {
       guard let email = user.email as? String else { return }
       let athlete = Athlete(uid: uid, email: email)
       vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
+        
+      if let flag = locationManager.gpsFlag {
+        flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
+        vc.gpsLabel.text = flag.1
+      }
     }
   }
   
@@ -100,16 +106,6 @@ class CoreViewController: UIViewController {
   override func viewDidDisappear(_ animated: Bool) {
     chooseView.isHidden = true
   }
-  
-  
-  //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  //        if segue.identifier == "activitySegue" {
-  //            if let flag = locationManager.gpsFlag, let vc = segue.destination as? InitialMapViewController {
-  //                flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
-  //                vc.gpsLabel.text = flag.1
-  //            }
-  //        }
-  //    }
 }
 
 
