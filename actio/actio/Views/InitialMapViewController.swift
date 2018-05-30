@@ -30,7 +30,8 @@ class InitialMapViewController: UIViewController {
     var coordinateArray = [CLLocationCoordinate2D]()
     var cam = MGLMapCamera()
     var log = false
-
+    var labelText: String?
+    var labelColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,9 @@ class InitialMapViewController: UIViewController {
         mapView.compassView.isHidden = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
+        
+        gpsLabel.text = labelText
+        gpsLabel.backgroundColor = labelColor
         
         if locationManager.locServicesEnabled() {
             mapView.showsUserLocation = true
@@ -59,9 +63,6 @@ class InitialMapViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         gpsFlag()
-//        if mapView.isUserLocationVisible {
-//            centerMap()
-//        }
     }
         
     @IBAction func startButtonPressed(_ sender: Any) {
@@ -84,11 +85,10 @@ class InitialMapViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Redundant with segue code?
     func gpsFlag() {
         if let flag = locationManager.gpsFlag {
-            // Animation needed to change after view loads?
             UIView.animate(withDuration: 0.5) {
-                // Still need a green color
                 flag.0 ? (self.gpsLabel.backgroundColor = UIColor.green) : (self.gpsLabel.backgroundColor = UIColor.red)
                 self.gpsLabel.text = flag.1
                 self.gpsLabelHeightConstraint.constant = 41
@@ -96,8 +96,7 @@ class InitialMapViewController: UIViewController {
         }
     }
     
-    // app will crash with this called and location
-    // services disabled
+
     func centerMap() {
         if let loc = mapView.userLocation {
             mapView.setCenter(loc.coordinate, zoomLevel: 15.0, animated: true)
