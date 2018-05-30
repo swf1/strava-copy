@@ -131,13 +131,18 @@ class MainActivityViewController: UIViewController {
                 latitude: bounds.sw.latitude + (span.latitudeDelta / 2),
                 longitude: bounds.sw.longitude + (span.longitudeDelta / 2))
             
-            let topDownCam = mapView.cameraThatFitsCoordinateBounds(bounds, edgePadding: UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0))
-            topDownCam.pitch = 0.0
-            topDownCam.heading = 0.0
-            topDownCam.centerCoordinate = center
+            let topDownCam = MGLMapCamera(lookingAtCenter: center, fromDistance: 2000, pitch: 0.0, heading: 0.0)
+            
+//            topDownCam.pitch = 0.0
+//            topDownCam.heading = 0.0
+//            topDownCam.centerCoordinate = center
             
             mapView.isUserInteractionEnabled = true
-            mapView.fly(to: topDownCam, completionHandler: nil)
+            
+            
+            mapView.fly(to: topDownCam) {
+                self.mapView.setVisibleCoordinateBounds(bounds, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: true)
+            }
             
             if let c = activityTimer.coordinates() {
                 annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])

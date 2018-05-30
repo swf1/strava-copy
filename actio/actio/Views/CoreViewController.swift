@@ -89,10 +89,10 @@ class CoreViewController: UIViewController {
       guard let email = user.email as? String else { return }
       let athlete = Athlete(uid: uid, email: email)
       vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
-        
+
       if let flag = locationManager.gpsFlag {
-        flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
-        vc.gpsLabel.text = flag.1
+        flag.0 ? (vc.labelColor = UIColor.green) : (vc.labelColor = UIColor.red)
+        vc.labelText = flag.1
       }
     }
   }
