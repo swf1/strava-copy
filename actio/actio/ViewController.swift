@@ -65,6 +65,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         print("Failed to get access token")
         return
       }
+
       print("access token", accessToken)
       print("access token string", accessToken.tokenString)
       

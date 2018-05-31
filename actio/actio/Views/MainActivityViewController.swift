@@ -50,8 +50,8 @@ class MainActivityViewController: UIViewController {
   }
   
     @objc func updateTime(_ notification: Notification) {
+        if paused { return }
         if let t = notification.userInfo?["time"] as? String {
-            // has to be on main thread
             DispatchQueue.main.async {
                 self.elapsedTimeLabel.text = t
             }
@@ -97,42 +97,81 @@ class MainActivityViewController: UIViewController {
     
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
+        paused = false
+//        mapView.showsUserLocation = true
         purpleLayer.isVisible = true
         greenLayer.isVisible = false
+        mapView.isUserInteractionEnabled = false
         removeAnnotations()
-        let courseCam =  MGLMapCamera(
+        let courseCam = MGLMapCamera(
             lookingAtCenter: mapView.userLocation!.coordinate, // possibly dangerous
             fromDistance: 400,
             pitch: 70.0,
             heading: mapView.camera.heading)
         mapView.fly(to: courseCam) {
-        self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
+            self.mapView.setUserTrackingMode(.followWithCourse, animated: true)
         }
     }
+    
 
     @objc func topDownMode(_ notification: Notification) {
-        purpleLayer.isVisible = false
-        greenSource.shape = purpleSource.shape
-        greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
-        mapView.userTrackingMode = .follow
-        let topDownCam = MGLMapCamera(
-          lookingAtCenter: mapView.userLocation!.coordinate,
-          fromDistance: 1500,
-          pitch: 0.0,
-          heading: mapView.camera.heading)
-        mapView.fly(to: topDownCam, completionHandler: nil)
-        
-        if let c = activityTimer.coordinates() {
-            annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
+        paused = true
+        mapView.setUserTrackingMode(.none, animated: false)
+        var bounds: MGLCoordinateBounds
+        if let locs = activityTimer.coordinates() {
+            let coords = locs.map { $0.coordinate }
+            purpleLayer.isVisible = false
+            greenSource.shape = purpleSource.shape
+            greenLayer.isVisible = true // green line only updates on pause so doesn't keep extending
+            bounds = getBounds(coords)
+            let span = MGLCoordinateSpan(
+                latitudeDelta: bounds.ne.latitude - bounds.sw.latitude,
+                longitudeDelta: bounds.ne.longitude - bounds.sw.longitude)
+            let center = CLLocationCoordinate2D(
+                latitude: bounds.sw.latitude + (span.latitudeDelta / 2),
+                longitude: bounds.sw.longitude + (span.longitudeDelta / 2))
+            
+            let topDownCam = MGLMapCamera(lookingAtCenter: center, fromDistance: 2000, pitch: 0.0, heading: 0.0)
+            
+//            topDownCam.pitch = 0.0
+//            topDownCam.heading = 0.0
+//            topDownCam.centerCoordinate = center
+            
+            mapView.isUserInteractionEnabled = true
+            
+            
+            mapView.fly(to: topDownCam) {
+                self.mapView.setVisibleCoordinateBounds(bounds, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: true)
+            }
+            
+            if let c = activityTimer.coordinates() {
+                annotationsAt(coordinates: [c.first!.coordinate, c.last!.coordinate])
+            }
         }
     }
-  
+    
+    func getBounds(_ coords: [CLLocationCoordinate2D]) -> MGLCoordinateBounds {
+        var lonMin = 180.0, lonMax = -180.0, latMin = 90.0, latMax = -90.0
+        
+        for i in coords {
+            latMin = latMin < i.latitude ? latMin : i.latitude
+            latMax = latMax > i.latitude ? latMax : i.latitude
+            lonMin = lonMin < i.longitude ? lonMin : i.longitude
+            lonMax = lonMax > i.longitude ? lonMax : i.longitude
+        }
+        
+        let ne = CLLocationCoordinate2D(latitude: latMax, longitude: lonMax)
+        let sw = CLLocationCoordinate2D(latitude: latMin, longitude: lonMin)
+
+        return MGLCoordinateBounds(sw: sw, ne: ne)
+    }
+
     func annotationsAt(coordinates: [CLLocationCoordinate2D]) {
-        var first = true
+        var first = false
         for c in coordinates {
-            let p = MGLPointAnnotation()
-            p.title = (first ? "first" : "second")
-            first = false
+            let p = RouteAnnotation()
+            p.isFirst = first
+            first = true
             p.coordinate = c
             mapView.addAnnotation(p)
         }
@@ -148,11 +187,12 @@ class MainActivityViewController: UIViewController {
 extension MainActivityViewController: MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
-        if paused { return }
-        paceLabel.text = activityTimer.pace()
-        distanceLabel.text = String(format: "%.2f", activityTimer.totalDistance)
+        if !paused {
+            paceLabel.text = activityTimer.pace()
+            distanceLabel.text = String(format: "%.2f", activityTimer.totalDistance)
+        }
+
         if let locations = activityTimer.coordinates() {
-            // Get coordinates
             let coords = locations.map { $0.coordinate }
             updatePurpleLine(coordinates: coords)
         }
@@ -164,14 +204,26 @@ extension MainActivityViewController: MGLMapViewDelegate {
         courseMode(nil)
     }
     
+    
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         guard annotation is MGLPointAnnotation else {
             return nil
         }
         
-        let annotationView = RouteAnnotation()
-        annotationView.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
-        annotationView.backgroundColor = (annotationView.annotation?.title == "first" ? UIColor.green : UIColor.red)
+        let reuseIdentifier = "routeAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
+        }
+        
+        if let a = annotation as? RouteAnnotation {
+            let red = UIColor(red: 255/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+            let green = UIColor(red: 0/255.0, green: 255/255.0, blue: 0/255.0, alpha: 1.0)
+            annotationView?.backgroundColor = (a.isFirst ? red : green)
+        }
         
         return annotationView
     }

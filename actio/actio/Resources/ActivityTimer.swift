@@ -35,19 +35,25 @@ class ActivityTimer {
         df.allowedUnits = [.minute, .second]
         df.zeroFormattingBehavior = [.pad]
         df.unitsStyle = .positional
+        
+        if !paceArray.isEmpty { paceArray = [Double]() }
+        if !locationArray.isEmpty { locationArray = [CLLocation]() }
     }
     
     func pace() -> String {
         if let loc = currentLocation {
-            let mps = Measurement(value: loc.speed, unit: UnitSpeed.metersPerSecond)
-            let mph = mps.converted(to: .milesPerHour)
-            let paceInSeconds = 3600.0 / mph.value
-            paceArray.append(paceInSeconds)
-            guard let formattedPace = df.string(from: paceInSeconds) else { return "?:??" }
-            return formattedPace
+            if loc.speed > 0.0 {
+                let mps = Measurement(value: loc.speed, unit: UnitSpeed.metersPerSecond)
+                let mph = mps.converted(to: .milesPerHour)
+                let paceInSeconds = 3600.0 / mph.value
+                paceArray.append(paceInSeconds)
+                guard let formattedPace = df.string(from: paceInSeconds) else { return "?:??" }
+                return formattedPace
+            }
         }
         
-        return "?:??"
+        paceArray.append(0.0)
+        return "0:00"
     }
     
     func avgPace() -> String {
@@ -69,13 +75,9 @@ class ActivityTimer {
     func totalTime() -> String {
         let c = Measurement(value: counter, unit: UnitDuration.seconds)
         guard let tot = df.string(from: c.value) else { return "?:??" }
-//        guard let formattedTime = df.string(from: totalTime.value) else { return "?:??" }
         return tot
     }
-    
-    // function to encode GeoJSON for Activty object
-    // but leave creating the polyline to view controller
-    
+
 
     func startTime() {
         timer.start()
@@ -90,6 +92,7 @@ class ActivityTimer {
     }
     
     func appendLocation(_ location: CLLocation) {
+        // These coordinates are coming from CLLocationManager and not map delegate
         locationArray.append(location)
         currentLocation = location
     }

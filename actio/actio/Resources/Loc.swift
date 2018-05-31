@@ -20,7 +20,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
     let activityTimer = ActivityTimer.shared
     var currentLocation: CLLocation?
     var locationArray: [CLLocation]?
-    var gpsFlag: (Bool, String)? 
+    var gpsFlag: (Bool, String)?
     var logging = false
     
     override init() {
@@ -30,6 +30,7 @@ class Loc: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = .fitness
         locationManager.delegate = self
+        gpsFlag = (true, "GPS is active")
     }
     
     func startLogging() {
@@ -77,7 +78,6 @@ class Loc: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError")
         if let err = error as? CLError {
             isGPSActive(err: err)
         }
