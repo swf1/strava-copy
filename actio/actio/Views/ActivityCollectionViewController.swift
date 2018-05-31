@@ -41,6 +41,9 @@ class ActivityCollectionViewController: UIViewController {
     @IBAction func didPressBike() {
         self.chooseViewActivityType = "Bike"
     }
+  
+    @IBAction func unwindToActivityCollectionView(segue: UIStoryboardSegue){}
+  
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? InitialMapViewController

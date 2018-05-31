@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 
 class ProfileViewController: UIViewController {
+ 
   // total labels
   @IBOutlet weak var totalTimeLabel: UILabel!
   @IBOutlet weak var totalPaceLabel: UILabel!
@@ -20,27 +21,24 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var weeklyTime: UILabel!
   @IBOutlet weak var weeklyDistance: UILabel!
   @IBOutlet weak var weeklyPace: UILabel!
-  
   // monthly labels
   @IBOutlet weak var weekLabel: UILabel!
   @IBOutlet weak var monthLabel: UILabel!
   @IBOutlet weak var totalLabel: UILabel!
-  
-  @IBOutlet weak var logoutButton: UIButton!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var profileImage: UIImageView!
   
-  
-  @IBAction func logoutUser(sender: UIButton) {
+  @IBAction func logoutUserClicked(_ sender: Any) {
+    print("clicked")
     let firebaseAuth = Auth.auth()
     do {
       try firebaseAuth.signOut()
       print("logged out");
-      self.performSegue(withIdentifier: "unwindtoSignInView", sender: self)
     } catch let signOutError as NSError {
       print ("Error signing out: %@", signOutError)
     }
   }
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -23,7 +23,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
   @IBOutlet weak var googleLogin: UIButton!
   @IBOutlet weak var emailLogin: UIButton!
   @IBOutlet weak var facebookButton: UIButton!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     emailLogin.layer.borderWidth = 0.5
@@ -34,10 +34,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func unwindtoWelcomeView(segue: UIStoryboardSegue) {
-        dismiss(animated: true, completion: nil)
-    }
   
     // our button triggers this
     @IBAction func googleLogin(sender:UIButton) {
@@ -47,6 +43,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     }
   
 
+  
   @IBAction func  googleLogout (sender:UIButton) {
       func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
       // Perform any operations when the user disconnects from app here.
