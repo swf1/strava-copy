@@ -14,20 +14,28 @@ import Firebase
 
 struct Activity{
   var uid: String?
-  var route: Route?
-  var athlete: Athlete?
   var name: String?
   var type: String?
   var startDateLocal: String?
+  var route: Route?
+  var athlete: Athlete?
 
   init(snapshot: DataSnapshot) {
     let activityData = snapshot.value as? [String:AnyObject] ?? [:]
+    self.uid = snapshot.key
     self.name = activityData["name"] as? String
     self.type = activityData["type"] as? String
+    self.startDateLocal = activityData["start_date_local"] as? String
   }
 
-  init?(athlete: Athlete, type: String) {
+  init(type: String, startDateLocal: String) {
+    self.type = type
+    self.startDateLocal = startDateLocal
+  }
+
+  init(athlete: Athlete, type: String) {
     self.athlete = athlete
     self.type = type
   }
+
 }

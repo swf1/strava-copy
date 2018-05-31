@@ -608,6 +608,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="didPressRun" destination="Iye-nz-8E5" eventType="touchUpInside" id="4Wq-t5-9a4"/>
+                                                    <action selector="didPressRun" destination="Iye-nz-8E5" eventType="touchDown" id="DrY-wD-vuV"/>
                                                     <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="eCp-ZK-pTW"/>
                                                 </connections>
                                             </button>
@@ -621,6 +622,7 @@
                                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="didPressBike" destination="Iye-nz-8E5" eventType="touchDown" id="LFo-K7-tte"/>
                                                     <action selector="didPressBike" destination="Iye-nz-8E5" eventType="touchUpInside" id="a3U-D9-oqc"/>
                                                     <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="B8J-EK-AmQ"/>
                                                 </connections>
@@ -1622,7 +1624,7 @@
                                 <rect key="frame" x="78" y="101" width="260" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-0V-HYW">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="76.666666666666671"/>
@@ -1643,13 +1645,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
-                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blT-ZE-POn">
-                                                <rect key="frame" x="0.0" y="189.33333333333331" width="260" height="76.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="189" width="260" height="76.666666666666686"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
                                                         <rect key="frame" x="8" y="15.999999999999996" width="244" height="44.666666666666657"/>
@@ -1667,7 +1669,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-GY-yNI">
-                                                <rect key="frame" x="0.0" y="284" width="260" height="76.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="283.66666666666669" width="260" height="76.333333333333314"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
                                                         <rect key="frame" x="8" y="16.000000000000004" width="244" height="44.333333333333343"/>
@@ -2575,7 +2577,7 @@
         <image name="swquare_map" width="182" height="175"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eCp-ZK-pTW"/>
+        <segue reference="B8J-EK-AmQ"/>
         <segue reference="CxQ-qp-KFJ"/>
         <segue reference="dUl-3J-noZ"/>
         <segue reference="2zd-KK-HrM"/>

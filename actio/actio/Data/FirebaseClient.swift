@@ -15,4 +15,10 @@ struct FirebaseClient {
     guard let user = Auth.auth().currentUser else { return }
     ref.child("activities").child(user.uid).observe(.childAdded, with: onChildAdded)
   }
+  
+  static func saveActivity(activityData: [String:Any?]) {
+    let ref = Database.database().reference()
+    guard let user = Auth.auth().currentUser else { return }
+    ref.child("activities").child(user.uid).childByAutoId().setValue(activityData)
+  }
 }

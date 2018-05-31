@@ -40,7 +40,7 @@ class ManualAddViewController: UIViewController {
     var data: [String:Any] = [:]
     data["type"] = activity.type
     data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
+    data["athlete"] = ["uid": activity.athlete?.uid]
     data["start_date_local"] = activity.startDateLocal
   }
 }

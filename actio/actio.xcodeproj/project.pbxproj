@@ -17,7 +17,6 @@
 		3F8D360420B9A5E70065E5D9 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */; };
 		3FB9AC6E20B513690064742C /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6920B513690064742C /* Athlete.swift */; };
 		3FB9AC7020B513690064742C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6B20B513690064742C /* Activity.swift */; };
-		3FB9AC7120B513690064742C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6C20B513690064742C /* Coordinate.swift */; };
 		3FB9AC7220B513690064742C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6D20B513690064742C /* Route.swift */; };
 		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
 		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
@@ -70,7 +69,6 @@
 		3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FB9AC6920B513690064742C /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Athlete.swift; path = actio/Data/Athlete.swift; sourceTree = SOURCE_ROOT; };
 		3FB9AC6B20B513690064742C /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = actio/Data/Activity.swift; sourceTree = SOURCE_ROOT; };
-		3FB9AC6C20B513690064742C /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinate.swift; path = actio/Data/Coordinate.swift; sourceTree = SOURCE_ROOT; };
 		3FB9AC6D20B513690064742C /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Route.swift; path = actio/Data/Route.swift; sourceTree = SOURCE_ROOT; };
 		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
 		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +140,6 @@
 			children = (
 				3FB9AC6B20B513690064742C /* Activity.swift */,
 				3FB9AC6920B513690064742C /* Athlete.swift */,
-				3FB9AC6C20B513690064742C /* Coordinate.swift */,
 				3FB9AC6D20B513690064742C /* Route.swift */,
 				3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */,
 				3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */,
@@ -485,7 +482,6 @@
 				3F8D360220B9968B0065E5D9 /* FirebaseDataStore.swift in Sources */,
 				724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */,
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
-				3FB9AC7120B513690064742C /* Coordinate.swift in Sources */,
 				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
 				3FB9AC6E20B513690064742C /* Athlete.swift in Sources */,
 				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,

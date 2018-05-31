@@ -18,6 +18,7 @@ final class FirebaseDataStore {
   fileprivate init() {}
 
   var activities: [Activity] = []
+  var currentActivity: Activity!
 
   func getActivities(onCompletion: @escaping () -> Void) {
     FirebaseClient.observeActivities { (snapshot) in
@@ -25,5 +26,13 @@ final class FirebaseDataStore {
       self.activities.append(activity)
       onCompletion()
     }
+  }
+  func saveActivity(activity: Activity) {
+    let data: [String:Any?] = [
+      "name": activity.name,
+      "type": activity.type,
+      "start_date_local": activity.startDateLocal
+    ]
+    FirebaseClient.saveActivity(activityData: data)
   }
 }

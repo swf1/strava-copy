@@ -13,6 +13,7 @@ import Mapbox
 class StartActivityViewController: UIViewController {
     
     var activity: Activity!
+    let store = FirebaseDataStore.instance
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     
