@@ -12,7 +12,12 @@ import FBSDKLoginKit
 
 
 class ProfileViewController: UIViewController {
- 
+  var activity: Activity!
+
+  // these are for user profile
+  var name: String!
+  var photo: URL!
+
   // total labels
   @IBOutlet weak var totalTimeLabel: UILabel!
   @IBOutlet weak var totalPaceLabel: UILabel!
@@ -39,32 +44,20 @@ class ProfileViewController: UIViewController {
     }
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     weekLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     totalLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     monthLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-
-    // check if facebook user, if so use profile image, first, and last for profile
-    if FBSDKAccessToken.current() != nil {
-      let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-      graphRequest?.start(completionHandler: {
-        (connection, result, error) -> Void in
-        if ((error) != nil)
-        {
-          print("Error: \(String(describing: error))")
+    self.nameLabel.text = name
+    let imageURL = photo
+    // only programatically assign profile values if they exist (social auth) 
+    if imageURL != nil {
+      if let data = try? Data(contentsOf: imageURL!) {
+        if let image = UIImage(data: data) {
+            self.profileImage.image = image
         }
-        else if error == nil
-        {
-          let data:[String:AnyObject] = result as! [String : AnyObject]
-          let facebookID: NSString = (data["id"]! as? NSString)!
-          self.nameLabel.text = (data["name"]! as? String)!
-          let url = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1")
-          self.profileImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-        }
-      })
+      }
     }
-    // check if google user if so source profile image, first, last as profile details
   }
 }

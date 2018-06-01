@@ -49,9 +49,11 @@ class ActivityCollectionViewController: UIViewController {
         if let vc = segue.destination as? InitialMapViewController
         {
             guard let user = Auth.auth().currentUser else { return }
+            guard let name = user.displayName else { return }
+            guard let photo = user.photoURL else { return }
             guard let uid = user.uid as? String else { return  }
             guard let email = user.email as? String else { return }
-            let athlete = Athlete(uid: uid, email: email)
+            let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
             vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
             if let flag = locationManager.gpsFlag {
                 flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)

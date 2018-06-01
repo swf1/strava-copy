@@ -548,7 +548,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Close" image="ic_perm_identity" id="MlE-1V-0S5">
                                             <color key="tintColor" red="1" green="0.87058823529999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="showProfileViewWithSender:" destination="Iye-nz-8E5" id="QNi-kq-PYd"/>
+                                                <action selector="showProfileViewWithSender:" destination="Iye-nz-8E5" id="rh8-5A-aof"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -557,19 +557,19 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-at-Gkx">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <connections>
-                                    <segue destination="A9m-Cb-1uW" kind="embed" id="LAb-Vp-8ni"/>
+                                    <segue destination="A9m-Cb-1uW" kind="embed" identifier="ActivityCollectionSegue" id="LAb-Vp-8ni"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJY-UW-Grx">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <connections>
-                                    <segue destination="9E8-DX-g5o" kind="embed" id="uaT-6f-o1S"/>
+                                    <segue destination="9E8-DX-g5o" kind="embed" identifier="ManualAddActivitySegue" id="uaT-6f-o1S"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qk5-cx-u5k">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <connections>
-                                    <segue destination="IDP-0e-GQV" kind="embed" id="mS1-Zv-izL"/>
+                                    <segue destination="IDP-0e-GQV" kind="embed" identifier="ProfileViewSegue" id="mS1-Zv-izL"/>
                                 </connections>
                             </containerView>
                             <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GUc-7x-7jJ">
@@ -2551,7 +2551,7 @@
         <image name="swquare_map" width="182" height="175"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eCp-ZK-pTW"/>
+        <segue reference="B8J-EK-AmQ"/>
         <segue reference="CxQ-qp-KFJ"/>
         <segue reference="dUl-3J-noZ"/>
         <segue reference="BZw-cp-LUj"/>
