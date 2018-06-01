@@ -82,7 +82,9 @@ class InitialMapViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+      performSegue(withIdentifier: "unwindToCoreView", sender: self)
+
+      //self.dismiss(animated: true, completion: nil)
     }
     
     // Redundant with segue code?
