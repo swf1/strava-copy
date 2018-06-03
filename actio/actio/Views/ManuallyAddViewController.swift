@@ -10,15 +10,14 @@ import UIKit
 
 class ManualAddViewController: UIViewController {
   
-  
   var activity: Activity!
   
   @IBOutlet weak var submitManualEntryButton: UIButton!
   @IBOutlet weak var timeInput: UITextField!
   @IBOutlet weak var distanceInput: UITextField!
   @IBOutlet weak var activityTypeSegment: UISegmentedControl!
-  @IBOutlet weak var activityNameInput: UITextField!
   
+  @IBOutlet weak var activityNameField: UITextField!
   @IBOutlet weak var milesWholeLabel: UILabel!
   @IBOutlet weak var milesWholeStepper: UIStepper!
   @IBAction func milesWholeStepperChanged(_ sender: UIStepper) {
@@ -79,21 +78,12 @@ class ManualAddViewController: UIViewController {
   }
   
   // record manual activity *needs work on distance and time*
-  @IBAction func recordManualActivityPressed(_ sender: AnyObject) {
+  @IBAction func submitManualActivityPressed(_ sender: AnyObject) {
     // perform saving functions here
-    let activityName: String = activityNameInput.text!
-    self.activity.name = activityName
-    var data: [String:Any] = [:]
-    data["type"] = activity.type
-    data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal
-  }
-  
-  // record manual activity *needs work on distance and time*
-  @IBAction func validateInput(_ sender: AnyObject) {
-    // perform saving functions here
-    let activityName: String = activityNameInput.text!
+    
+    let distance = milesFractLabel.text! + milesWholeLabel.text!
+    let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
+    let activityName: String = activityNameField.text!
     self.activity.name = activityName
     var data: [String:Any] = [:]
     data["type"] = activity.type

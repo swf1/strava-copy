@@ -2482,7 +2482,7 @@
                                                 <rect key="frame" x="0.0" y="55.333333333333329" width="398" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select activity type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-bx-8ot">
                                                 <rect key="frame" x="0.0" y="106.66666666666666" width="398" height="34"/>
@@ -2629,6 +2629,9 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="submitManualActivityPressed:" destination="9E8-DX-g5o" eventType="touchUpInside" id="EUd-Tp-KgM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2652,6 +2655,7 @@
                         <viewLayoutGuide key="safeArea" id="7ne-tm-7Cc"/>
                     </view>
                     <connections>
+                        <outlet property="activityNameField" destination="aXB-Eu-xTT" id="nXu-4n-iI0"/>
                         <outlet property="hoursLabel" destination="zQm-bD-axU" id="xeg-yw-Pht"/>
                         <outlet property="hoursStepper" destination="JlB-8U-VxA" id="TbN-jm-vFL"/>
                         <outlet property="milesFracStepper" destination="waP-JQ-Gdq" id="Vl3-P7-RMK"/>
