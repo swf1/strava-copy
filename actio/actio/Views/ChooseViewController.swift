@@ -17,12 +17,7 @@ class ChooseViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // hide save and resume buttons
-    self.view.backgroundColor = UIColor.clear
-    let blurEffect = UIBlurEffect(style: .extraLight)
-    let blurEffectView = UIVisualEffectView(effect: blurEffect)
-    blurEffectView.frame = self.view.frame
-    self.view.insertSubview(blurEffectView, at: 0)
+    view?.backgroundColor = UIColor(white: 1, alpha: 0.7)
 
   }
 
