@@ -17,6 +17,8 @@ class ChooseViewController: UIViewController {
   //@IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var topBox: UIView!
   
+  @IBAction func timeInput(_ sender: UIDatePicker) {
+  }
   @IBOutlet weak var topLabel: UILabel!
   @IBOutlet weak var stackView: UIStackView!
   override func viewDidLoad() {
