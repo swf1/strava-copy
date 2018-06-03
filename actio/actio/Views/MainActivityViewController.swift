@@ -94,7 +94,7 @@ class MainActivityViewController: UIViewController {
         greenLayer = layer
         style.addLayer(greenLayer)
     }
-    
+  
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
         paused = false

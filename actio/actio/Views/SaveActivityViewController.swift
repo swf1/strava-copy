@@ -43,7 +43,10 @@ class SaveActivityViewController: UIViewController {
         ])
     }
     data["route"] = ["coordinates": coordinates]
-    self.ref.child("activities").childByAutoId().setValue(data)
+    //self.ref.child("activities").childByAutoId().setValue(data)
+     self.ref.child("activities").child(activity.athlete.uid).childByAutoId().setValue(data)
+     self.performSegue(withIdentifier: "unwindToActivityCollectionView", sender: self)
+
   }
   // allows user to touch off keyboar to hide keyboard
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
