@@ -21,7 +21,7 @@ class Activity: NSObject {
     //var distance: 
     //var manual_distance: UInt64
     //var manual_time: String
-    //var manual_pace: (manual_distance/manual_time)
+    //var manual_pace: UIInt64
     var startDateLocal: String?
     
     init(athlete: Athlete, type: String) {

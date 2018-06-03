@@ -85,6 +85,15 @@ class CoreViewController: UIViewController {
       vc.name = user.displayName 
       vc.photo = user.photoURL
     }
+    if let vc = segue.destination as? ManualAddViewController
+      {
+        guard let user = Auth.auth().currentUser else { return }
+        guard let name = user.displayName else { return }
+        guard let photo = user.photoURL else { return }
+        guard let uid = user.uid as? String else { return  }
+        guard let email = user.email as? String else { return }
+        let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
+    }
   }
 }
 

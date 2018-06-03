@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ManualAddViewController: UIViewController {
   
   var activity: Activity!
+  
+  var chooseViewActivityType: String!
   
   @IBOutlet weak var submitManualEntryButton: UIButton!
   @IBOutlet weak var timeInput: UITextField!
@@ -49,9 +52,9 @@ class ManualAddViewController: UIViewController {
     switch activityTypeSegment.selectedSegmentIndex
     {
     case 0:
-      activity.type = "bike";
+      self.chooseViewActivityType = "bike";
     case 1:
-      activity.type = "run";
+      self.chooseViewActivityType = "run";
     default:
       break
     }
@@ -81,15 +84,26 @@ class ManualAddViewController: UIViewController {
   @IBAction func submitManualActivityPressed(_ sender: AnyObject) {
     // perform saving functions here
     
-    let distance = milesFractLabel.text! + milesWholeLabel.text!
+    //guard let user = Auth.auth().currentUser else { return }
+    //guard let name = user.displayName else { return }
+    //guard let photo = user.photoURL else { return }
+    //guard let uid = user.uid as? String else { return  }
+    //guard let email = user.email as? String else { return }
+    //let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
+    //let activity = Activity(athlete: athlete, type: chooseViewActivityType)
+    //let fraction = Int(milesFractLabel.text!)
+    print(fractionInt)
+    /*let distance = Int(milesFractLabel.text!) + Int(milesWholeLabel.text!)
     let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
     let activityName: String = activityNameField.text!
     self.activity.name = activityName
     var data: [String:Any] = [:]
+    //data["distance"] =
+    //data["time"] =
     data["type"] = activity.type
     data["name"] = activity.name
     data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal
+    data["start_date_local"] = activity.startDateLocal*/
   }
 }
 
