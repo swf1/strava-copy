@@ -10,15 +10,29 @@ import UIKit
 import Firebase
 
 class ChooseViewController: UIViewController {
-
+  @IBOutlet weak var bikeBox: UIButton!
+  @IBOutlet var chooseWrapper: UIView!
   var chooseViewActivityType: String!
   let locationManager = Loc.shared
   //@IBOutlet weak var chooseView: UIView!
+  @IBOutlet weak var topBox: UIView!
   
+  @IBOutlet weak var topLabel: UILabel!
+  @IBOutlet weak var stackView: UIStackView!
   override func viewDidLoad() {
     super.viewDidLoad()
-    view?.backgroundColor = UIColor(white: 1, alpha: 0.7)
+    chooseWrapper.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    topBox.roundCorners([.topLeft, .topRight], radius: 5)
 
+  }
+  
+  // override touches to dismiss choose view, don't dismiss if touch is on our
+  // choose box
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let touch: UITouch? = touches.first
+    if touch?.view != stackView && touch?.view != topBox && touch?.view != topLabel {
+      dismiss(animated: true, completion: nil)
+    }
   }
 
   @IBAction func dismissVC(_ sender: Any) {
@@ -32,7 +46,7 @@ class ChooseViewController: UIViewController {
   @IBAction func didPressBike() {
     self.chooseViewActivityType = "Bike"
   }
-
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let vc = segue.destination as? InitialMapViewController
     {
@@ -55,4 +69,18 @@ class ChooseViewController: UIViewController {
       }
     }
   }
+}
+
+
+extension UIView {
+  
+  func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+    let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+    let mask = CAShapeLayer()
+    mask.frame = layer.bounds
+
+    mask.path = path.cgPath
+    self.layer.mask = mask
+  }
+  
 }

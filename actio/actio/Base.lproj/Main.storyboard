@@ -623,19 +623,19 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cDC-SH-Bam">
-                                        <rect key="frame" x="87" y="145" width="240" height="338"/>
+                                        <rect key="frame" x="56" y="160" width="302" height="396"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKQ-ZK-Asr">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="112.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="132"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an activity type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQe-aR-SVC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="112.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="132"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.98253947496414185" green="0.99252063035964966" blue="0.99219316244125366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ZQe-aR-SVC" secondAttribute="bottom" id="S1r-wD-G1V"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZQe-aR-SVC" secondAttribute="trailing" id="Tud-cB-yFJ"/>
@@ -644,13 +644,14 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-iI-ebE">
-                                                <rect key="frame" x="0.0" y="112.66666666666669" width="240" height="112.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="132" width="302" height="132"/>
                                                 <color key="backgroundColor" red="0.98253947496414185" green="0.99252063035964966" blue="0.99219316244125366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="26"/>
+                                                <color key="tintColor" red="0.013840418780000001" green="0.013840418780000001" blue="0.013840418780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="24" maxY="0.0"/>
                                                 <state key="normal" title="Run" image="ic_directions_run">
-                                                    <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
@@ -660,13 +661,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi4-0o-9CZ">
-                                                <rect key="frame" x="0.0" y="225.33333333333329" width="240" height="112.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="264" width="302" height="132"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="26"/>
+                                                <color key="tintColor" red="0.013840418780000001" green="0.013840418780000001" blue="0.013840418780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="24" maxY="0.0"/>
                                                 <state key="normal" title="Bike" image="ic_directions_bike">
-                                                    <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="didPressBike" destination="Iye-nz-8E5" eventType="touchUpInside" id="a3U-D9-oqc"/>
@@ -676,25 +678,18 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-m8-DwB">
-                                        <rect key="frame" x="339" y="653" width="45" height="30"/>
-                                        <state key="normal" title="cancel">
-                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dismissVC:" destination="BZG-jr-uPz" eventType="touchUpInside" id="GlR-RS-fki"/>
-                                            <segue destination="SZR-ix-YoW" kind="unwind" unwindAction="unwindToMainActivityViewWithSegue:" id="JV3-B1-elH"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="centerX" secondItem="GUc-7x-7jJ" secondAttribute="centerX" id="7Me-Q4-BsO"/>
-                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="centerY" secondItem="GUc-7x-7jJ" secondAttribute="centerY" constant="-44" id="Bue-Ni-lyT"/>
-                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="top" secondItem="GUc-7x-7jJ" secondAttribute="top" constant="145" id="Ev3-1k-x1H"/>
-                                    <constraint firstAttribute="trailing" secondItem="s9h-m8-DwB" secondAttribute="trailing" constant="30" id="hqf-Fp-mbt"/>
-                                    <constraint firstAttribute="bottom" secondItem="s9h-m8-DwB" secondAttribute="bottom" constant="33" id="n2W-7i-jVg"/>
-                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="leading" secondItem="GUc-7x-7jJ" secondAttribute="leading" constant="87" id="rPJ-7n-oOC"/>
+                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="top" secondItem="GUc-7x-7jJ" secondAttribute="top" constant="160" id="3Mb-Zh-1II"/>
+                                    <constraint firstItem="cDC-SH-Bam" firstAttribute="leading" secondItem="GUc-7x-7jJ" secondAttribute="leading" constant="56" id="4dN-2N-yk0"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDC-SH-Bam" secondAttribute="bottom" constant="160" id="THy-lK-PQr"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDC-SH-Bam" secondAttribute="trailing" constant="56" id="Tpx-ak-jWm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -707,11 +702,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZHM-o1-UIW"/>
                     </view>
+                    <connections>
+                        <outlet property="bikeBox" destination="xi4-0o-9CZ" id="i4a-Cz-Ida"/>
+                        <outlet property="chooseWrapper" destination="bNm-au-IFH" id="aLz-jx-E21"/>
+                        <outlet property="stackView" destination="cDC-SH-Bam" id="RqG-OF-OFu"/>
+                        <outlet property="topBox" destination="KKQ-ZK-Asr" id="xTr-jc-7yw"/>
+                        <outlet property="topLabel" destination="ZQe-aR-SVC" id="seF-Fs-J3A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYE-Ub-DwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="SZR-ix-YoW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1186" y="289"/>
+            <point key="canvasLocation" x="-1655" y="409"/>
         </scene>
         <!--Initial Map View Controller-->
         <scene sceneID="kgj-9m-ioV">
@@ -1185,7 +1186,7 @@
             <objects>
                 <viewController title="mainActivityView" id="Uge-vN-nF9" customClass="MainActivityViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebW-0h-gVn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QY3-WG-y43">
@@ -2457,10 +2458,10 @@
             </objects>
             <point key="canvasLocation" x="-1803" y="1327"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual Add View Controller-->
         <scene sceneID="9cS-dA-nhT">
             <objects>
-                <viewController id="9E8-DX-g5o" sceneMemberID="viewController">
+                <viewController id="9E8-DX-g5o" customClass="ManualAddViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="plS-oZ-N0n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2469,74 +2470,82 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="608"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BBF-sh-L3z">
-                                        <rect key="frame" x="16" y="48" width="382" height="512"/>
+                                        <rect key="frame" x="8" y="16" width="398" height="576"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-qw-hqe">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="22.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-Eu-xTT">
-                                                <rect key="frame" x="0.0" y="55.666666666666671" width="382" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evening run with the dog" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-Eu-xTT">
+                                                <rect key="frame" x="0.0" y="41.333333333333329" width="398" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select activity type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-bx-8ot">
-                                                <rect key="frame" x="0.0" y="120.99999999999999" width="382" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="90.666666666666671" width="398" height="22.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H8C-eJ-U34">
-                                                <rect key="frame" x="0.0" y="176.66666666666666" width="382" height="29"/>
+                                                <rect key="frame" x="0.0" y="132" width="398" height="29"/>
                                                 <segments>
                                                     <segment title="" image="ic_directions_bike"/>
                                                     <segment title="" image="ic_directions_run"/>
                                                 </segments>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-Do-syZ">
-                                                <rect key="frame" x="0.0" y="240" width="382" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance in miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-Do-syZ">
+                                                <rect key="frame" x="0.0" y="179" width="398" height="22.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mph-2b-Wws">
-                                                <rect key="frame" x="0.0" y="295.66666666666669" width="382" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3.5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mph-2b-Wws">
+                                                <rect key="frame" x="0.0" y="220.33333333333331" width="398" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yej-9s-3IS">
-                                                <rect key="frame" x="0.0" y="361" width="382" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="269.66666666666669" width="398" height="22.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJe-W2-yIj">
-                                                <rect key="frame" x="0.0" y="416.66666666666669" width="382" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovz-do-5Xc">
+                                                <rect key="frame" x="0.0" y="311" width="398" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="549691034.37163496">
+                                                    <!--2018-06-03 03:57:14 +0000-->
+                                                </date>
+                                            </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-zI-FMw">
-                                                <rect key="frame" x="0.0" y="482" width="382" height="30"/>
+                                                <rect key="frame" x="0.0" y="546" width="398" height="30"/>
                                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Subnit">
+                                                <state key="normal" title="Submit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="titleShadowColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="recordManualActivityPressed:" destination="9E8-DX-g5o" eventType="touchUpInside" id="gYx-FC-h75"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BBF-sh-L3z" secondAttribute="trailing" constant="16" id="GiZ-bC-Tu5"/>
-                                    <constraint firstItem="BBF-sh-L3z" firstAttribute="leading" secondItem="Gcn-zI-ckz" secondAttribute="leading" constant="16" id="LjA-Ds-WYP"/>
-                                    <constraint firstAttribute="bottom" secondItem="BBF-sh-L3z" secondAttribute="bottom" constant="48" id="MIW-E9-7w7"/>
-                                    <constraint firstItem="BBF-sh-L3z" firstAttribute="top" secondItem="Gcn-zI-ckz" secondAttribute="top" constant="48" id="itW-QZ-C2f"/>
+                                    <constraint firstAttribute="bottom" secondItem="BBF-sh-L3z" secondAttribute="bottom" constant="16" id="BC7-wc-imV"/>
+                                    <constraint firstItem="BBF-sh-L3z" firstAttribute="leading" secondItem="Gcn-zI-ckz" secondAttribute="leading" constant="8" id="Np9-K1-Y15"/>
+                                    <constraint firstItem="BBF-sh-L3z" firstAttribute="top" secondItem="Gcn-zI-ckz" secondAttribute="top" constant="16" id="PV8-vt-dtR"/>
+                                    <constraint firstAttribute="trailing" secondItem="BBF-sh-L3z" secondAttribute="trailing" constant="8" id="dzr-V9-jUl"/>
                                 </constraints>
                             </view>
                         </subviews>
