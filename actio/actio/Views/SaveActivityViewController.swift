@@ -29,7 +29,7 @@ class SaveActivityViewController: UIViewController {
   @IBAction func recordActivityPressed(_ sender: Any) {
     // perform saving functions here
     let activityName: String = activityNameField.text!
-//    self.activity.name = activityName
+    self.activity.name = activityName
     var data: [String:Any] = [:]
     data["type"] = activity.type
     data["name"] = activity.name

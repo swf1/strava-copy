@@ -82,10 +82,6 @@ class StartActivityViewController: UIViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    if let main = segue.destination as? MainActivityViewController {
-        self.mapView = main.mapView
-    }
-    
     if let vc = segue.destination as? SaveActivityViewController
     {
       vc.activity = self.activity
