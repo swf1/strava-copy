@@ -19,6 +19,8 @@ struct Activity{
   var startDateLocal: String?
   var route: Route?
   var athlete: Athlete?
+  var distance: String?
+  var pace: String?
 
   init(snapshot: DataSnapshot) {
     let activityData = snapshot.value as? [String:AnyObject] ?? [:]

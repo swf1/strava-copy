@@ -69,22 +69,11 @@ class CoreViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? ChooseViewController
+    if let vc = segue.destination as? ProfileViewController
     {
-      let formatter = DateFormatter()
-      formatter.dateFormat = DateFormatter.dateFormat(
-        fromTemplate: "MMddyyyy",
-        options: 0,
-        locale: Locale(identifier: "en-US")
-      )
-      vc.activity = Activity(
-        type: chooseViewActivityType,
-        startDateLocal: formatter.string(from: Date())
-      )
-      if let flag = locationManager.gpsFlag {
-        flag.0 ? (vc.labelColor = UIColor.green) : (vc.labelColor = UIColor.red)
-        vc.labelText = flag.1
-      }
+      guard let user = Auth.auth().currentUser else { return }
+      vc.name = user.displayName
+      vc.photo = user.photoURL
     }
   }
 }

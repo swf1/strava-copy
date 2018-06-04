@@ -27,11 +27,22 @@ final class FirebaseDataStore {
       onCompletion()
     }
   }
+
   func saveActivity(activity: Activity) {
+    var coordinates: [[String:Double]] = []
+    for c in activity.route!.coordinates {
+      coordinates.append([
+        "latitude": c.coordinate.latitude,
+        "longitude": c.coordinate.longitude
+      ])
+    }
     let data: [String:Any?] = [
       "name": activity.name,
       "type": activity.type,
-      "start_date_local": activity.startDateLocal
+      "start_date_local": activity.startDateLocal,
+      "route": ["coordinates": coordinates],
+      "pace": activity.pace,
+      "distance": activity.distance
     ]
     FirebaseClient.saveActivity(activityData: data)
   }
