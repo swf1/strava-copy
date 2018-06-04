@@ -98,7 +98,7 @@ class MainActivityViewController: UIViewController {
     // polyline updates can take place in courseMode and topMode functions
     @objc func courseMode(_ notification: Notification?) {
         paused = false
-//        mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
         purpleLayer.isVisible = true
         greenLayer.isVisible = false
         mapView.isUserInteractionEnabled = false
@@ -117,6 +117,7 @@ class MainActivityViewController: UIViewController {
     @objc func topDownMode(_ notification: Notification) {
         paused = true
         mapView.setUserTrackingMode(.none, animated: false)
+        mapView.showsUserLocation = false
         var bounds: MGLCoordinateBounds
         if let locs = activityTimer.coordinates() {
             let coords = locs.map { $0.coordinate }
