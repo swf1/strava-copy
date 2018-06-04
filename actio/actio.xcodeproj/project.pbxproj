@@ -34,6 +34,7 @@
 		7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254172D20AEA3C6009289B3 /* CoreViewController.swift */; };
 		7260464F20B12AE300443E05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7260464E20B12AE300443E05 /* ProfileViewController.swift */; };
 		7260465120B12B1900443E05 /* ManuallyAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7260465020B12B1900443E05 /* ManuallyAddViewController.swift */; };
+		72DE912D20C120B40076875C /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE912C20C120B40076875C /* ChooseViewController.swift */; };
 		72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */; };
 		72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */; };
 		72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */; };
@@ -44,6 +45,8 @@
 		72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */; };
 		72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */; };
 		72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */; };
+		72F3723820C386EB00B1B2BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F3723720C386EB00B1B2BE /* GoogleService-Info.plist */; };
+		72F3723A20C3A2B800B1B2BE /* UIViewControllerAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3723920C3A2B800B1B2BE /* UIViewControllerAnimations.swift */; };
 		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +92,7 @@
 		7254172D20AEA3C6009289B3 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
 		7260464E20B12AE300443E05 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7260465020B12B1900443E05 /* ManuallyAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyAddViewController.swift; sourceTree = "<group>"; };
+		72DE912C20C120B40076875C /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Bold.ttf"; sourceTree = "<group>"; };
 		72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Light.ttf"; sourceTree = "<group>"; };
 		72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Medium.ttf"; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = actio_mockups.pdf; sourceTree = "<group>"; };
+		72F3723720C386EB00B1B2BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72F3723920C3A2B800B1B2BE /* UIViewControllerAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAnimations.swift; sourceTree = "<group>"; };
 		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
 		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,8 +184,8 @@
 				72365EF62086E13900413444 /* Main.storyboard */,
 				72365EF92086E13A00413444 /* Assets.xcassets */,
 				72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */,
+				72F3723720C386EB00B1B2BE /* GoogleService-Info.plist */,
 				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
-				3F431D8720B5151500067F12 /* GoogleService-Info.plist */,
 				72365EFE2086E13A00413444 /* Info.plist */,
 			);
 			path = actio;
@@ -211,6 +217,7 @@
 				7260464E20B12AE300443E05 /* ProfileViewController.swift */,
 				724925ED20A8A19300137F15 /* SaveActivityViewController.swift */,
 				3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */,
+				72DE912C20C120B40076875C /* ChooseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 			children = (
 				72EF6B1F208BF3F7007CD9CD /* Fonts */,
 				31594F3D2097A0D400F807D9 /* ActivityTimer.swift */,
+				72F3723920C3A2B800B1B2BE /* UIViewControllerAnimations.swift */,
 				31594F3F2098B53B00F807D9 /* Loc.swift */,
 				318DAE9F20AF91DD009AC340 /* RouteAnnotation.swift */,
 			);
@@ -345,6 +353,7 @@
 				72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */,
 				72365EFA2086E13A00413444 /* Assets.xcassets in Resources */,
 				72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */,
+				72F3723820C386EB00B1B2BE /* GoogleService-Info.plist in Resources */,
 				72365EF82086E13900413444 /* Main.storyboard in Resources */,
 				72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */,
 			);
@@ -478,8 +487,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */,
+				72DE912D20C120B40076875C /* ChooseViewController.swift in Sources */,
 				7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */,
 				3F8D360220B9968B0065E5D9 /* FirebaseDataStore.swift in Sources */,
+				72F3723A20C3A2B800B1B2BE /* UIViewControllerAnimations.swift in Sources */,
 				724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */,
 				72365EF52086E13900413444 /* ViewController.swift in Sources */,
 				31594F402098B53B00F807D9 /* Loc.swift in Sources */,

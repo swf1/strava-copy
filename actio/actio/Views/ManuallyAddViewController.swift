@@ -35,6 +35,9 @@ class ManualAddViewController: UIViewController {
   // record manual activity *needs work on distance and time*
   @IBAction func recordManualActivityPressed(_ sender: AnyObject) {
     // perform saving functions here
+    if activityNameInput.text == nil {
+      
+    }
     let activityName: String = activityNameInput.text!
     self.activity.name = activityName
     var data: [String:Any] = [:]
@@ -43,5 +46,7 @@ class ManualAddViewController: UIViewController {
     data["athlete"] = ["uid": activity.athlete?.uid]
     data["start_date_local"] = activity.startDateLocal
   }
+  
+  
 }
 
