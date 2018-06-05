@@ -120,7 +120,6 @@ class StartActivityViewController: UIViewController {
         if let _ = UIGraphicsGetCurrentContext() {
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
             guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             UIGraphicsEndImageContext()
             return UIImageView(image: image)
         }
