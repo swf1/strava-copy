@@ -25,9 +25,11 @@ struct Activity{
   init(snapshot: DataSnapshot) {
     let activityData = snapshot.value as? [String:AnyObject] ?? [:]
     self.uid = snapshot.key
-    self.name = activityData["name"] as? String
-    self.type = activityData["type"] as? String
-    self.startDateLocal = activityData["start_date_local"] as? String
+    self.name = activityData["name"] as? String ?? ""
+    self.type = activityData["type"] as? String ?? ""
+    self.startDateLocal = activityData["start_date_local"] as? String ?? ""
+    self.distance = activityData["distance"] as? String ?? ""
+    self.pace = activityData["pace"] as? String ?? ""
   }
 
   init(type: String, startDateLocal: String) {

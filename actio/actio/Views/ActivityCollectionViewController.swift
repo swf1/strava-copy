@@ -39,7 +39,7 @@ class ActivityCollectionViewController: UIViewController, UICollectionViewDelega
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath)
       as! ActivityCollectionViewCell
     let activity = store.activities[indexPath.row]
-    cell.displayContent(name: activity.name!, type: activity.type!)
+    cell.displayContent(name: activity.name!, type: activity.type!, distance: activity.distance!, pace: activity.pace!)
     return cell
   }
 }

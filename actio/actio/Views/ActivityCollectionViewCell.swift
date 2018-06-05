@@ -15,9 +15,13 @@ import UIKit
 class ActivityCollectionViewCell: UICollectionViewCell {
   @IBOutlet var activityName: UILabel!
   @IBOutlet var activityType: UILabel!
+  @IBOutlet var activityDistance: UILabel!
+  @IBOutlet var activityPace: UILabel!
 
-  func displayContent(name: String, type: String) {
+  func displayContent(name: String, type: String, distance: String, pace: String) {
     activityName.text = name
     activityType.text = type
+    activityDistance.text = distance
+    activityPace.text = pace
   }
 }
