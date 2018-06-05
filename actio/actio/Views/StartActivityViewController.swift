@@ -16,6 +16,7 @@ class StartActivityViewController: UIViewController {
     let store = FirebaseDataStore.instance
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
+    var mapView: MGLMapView?
     
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var statsView: UIView!
@@ -42,6 +43,7 @@ class StartActivityViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "topDownMode"), object: nil)
         toggleButtons()
         activityTimer.pause()
+        
     }
 
   @IBAction func showStatsView(sender: UIButton) {
@@ -71,11 +73,16 @@ class StartActivityViewController: UIViewController {
   }
     
   @IBAction func saveButtonPressed(_ sender: Any) {
-    NotificationCenter.default.post(name: Notification.Name("courseMode"), object: nil)
+//    NotificationCenter.default.post(name: Notification.Name("courseMode"), object: nil)
+    let children = self.childViewControllers
+    if let mv = children[0] as? MainActivityViewController {
+        takeScreenshot(view: mv.mapView)
+    }
     cancelToResumeButton.isHidden = false
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
     if let vc = segue.destination as? SaveActivityViewController
     {
       vc.activity = self.activity
@@ -107,8 +114,22 @@ class StartActivityViewController: UIViewController {
         resumeButton.isHidden = !resumeButton.isHidden
         mapToggleButton.isHidden = !mapToggleButton.isHidden
     }
-
     
+    
+    func takeScreenshot(view: UIView) -> UIImageView? {
+        UIGraphicsBeginImageContext(view.bounds.size)
+        if let _ = UIGraphicsGetCurrentContext() {
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+            guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            UIGraphicsEndImageContext()
+            return UIImageView(image: image)
+        }
+        return nil
+    }
+    
+
+
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true
