@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController {
   var activity: Activity!
 
   // these are for user profile
-  var name: String!
+  var displayName: String!
   var photo: URL!
 
   // total labels
@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController {
     weekLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     totalLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     monthLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-    self.nameLabel.text = name
+    self.nameLabel.text = displayName
     let imageURL = photo
     // only programatically assign profile values if they exist (social auth) 
     if imageURL != nil {
