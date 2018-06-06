@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9E8-DX-g5o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -188,7 +188,7 @@
             <objects>
                 <viewController storyboardIdentifier="SignIn" title="SignInViewController" id="FEt-Ra-7HI" customClass="SignInViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfm-M7-MFC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzx-Y7-lFF">
@@ -198,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccK-Iz-tJY">
-                                <rect key="frame" x="20" y="661" width="374" height="35"/>
+                                <rect key="frame" x="20" y="553" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="forgot password?">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whl-TQ-62c">
-                                <rect key="frame" x="20" y="693" width="374" height="35"/>
+                                <rect key="frame" x="20" y="585" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Sign up?">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,33 +218,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIz-Zv-cra">
-                                <rect key="frame" x="24" y="241" width="366" height="21"/>
+                                <rect key="frame" x="24" y="187" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="16"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3T-ph-cvq">
-                                <rect key="frame" x="24" y="324" width="366" height="21"/>
+                                <rect key="frame" x="24" y="270" width="366" height="21"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="16"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdx-ib-H8h">
-                                <rect key="frame" x="24" y="270" width="366" height="30"/>
+                                <rect key="frame" x="24" y="216" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712239583336" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <textField contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-GF-mbA">
-                                <rect key="frame" x="24" y="353" width="366" height="30"/>
+                                <rect key="frame" x="24" y="299" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712240000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjN-fg-bQu">
-                                <rect key="frame" x="24" y="407" width="366" height="35"/>
+                                <rect key="frame" x="24" y="353" width="366" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Sign in">
@@ -298,11 +298,11 @@
             <objects>
                 <viewController storyboardIdentifier="SignUp" title="SignUpViewController" id="MX9-Ik-N6Y" customClass="SignUpViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PuJ-hI-uU2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRt-IC-Odb">
-                                <rect key="frame" x="24" y="322.66666666666669" width="366" height="22.333333333333314"/>
+                                <rect key="frame" x="24" y="268.66666666666669" width="366" height="22.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -314,7 +314,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KiS-Mm-e6R">
-                                <rect key="frame" x="24" y="353" width="366" height="30"/>
+                                <rect key="frame" x="24" y="299" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712240000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
@@ -324,7 +324,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auE-di-9Z1">
-                                <rect key="frame" x="24" y="407" width="366" height="36"/>
+                                <rect key="frame" x="24" y="353" width="366" height="36"/>
                                 <color key="backgroundColor" red="0.0" green="0.78823529410000004" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="18"/>
                                 <state key="normal" title="submit">
@@ -340,7 +340,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHv-k4-sLc">
-                                <rect key="frame" x="24" y="661" width="366" height="35"/>
+                                <rect key="frame" x="24" y="553" width="366" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Already have an account?  Log in">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,7 +350,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7P-a7-Zsv">
-                                <rect key="frame" x="24" y="693" width="366" height="35"/>
+                                <rect key="frame" x="24" y="585" width="366" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Forgot your password?">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -360,7 +360,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NM-ZS-pQh">
-                                <rect key="frame" x="24" y="268.66666666666669" width="366" height="30"/>
+                                <rect key="frame" x="24" y="214.66666666666666" width="366" height="30"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="0.045796712240000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="14"/>
@@ -370,7 +370,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN6-5t-kS2">
-                                <rect key="frame" x="24" y="238.33333333333334" width="366" height="22.333333333333343"/>
+                                <rect key="frame" x="24" y="184.33333333333334" width="366" height="22.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -420,7 +420,7 @@
             <objects>
                 <viewController title="ForgotPasswordViewController" id="JK8-RV-mKt" customClass="ForgotPasswordViewController" customModule="actio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Utg-Pc-wcR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-iG-45m">
@@ -431,7 +431,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljk-gi-CXp">
-                                <rect key="frame" x="20" y="659" width="374" height="35"/>
+                                <rect key="frame" x="20" y="551" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Create account">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -441,7 +441,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhD-xC-vWr">
-                                <rect key="frame" x="20" y="692" width="374" height="35"/>
+                                <rect key="frame" x="20" y="584" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="Yantramanav-Light" family="Yantramanav" pointSize="17"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2473,38 +2473,38 @@
                                         <rect key="frame" x="8" y="16" width="398" height="576"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-qw-hqe">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="30.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evening run with the dog" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-Eu-xTT">
-                                                <rect key="frame" x="0.0" y="55.333333333333329" width="398" height="30"/>
+                                                <rect key="frame" x="0.0" y="53.333333333333329" width="398" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select activity type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-bx-8ot">
-                                                <rect key="frame" x="0.0" y="106.66666666666666" width="398" height="34"/>
+                                                <rect key="frame" x="0.0" y="106.66666666666666" width="398" height="30.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H8C-eJ-U34">
-                                                <rect key="frame" x="0.0" y="161.66666666666666" width="398" height="29"/>
+                                                <rect key="frame" x="0.0" y="160" width="398" height="29"/>
                                                 <segments>
                                                     <segment title="" image="ic_directions_bike"/>
                                                     <segment title="" image="ic_directions_run"/>
                                                 </segments>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance in miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-Do-syZ">
-                                                <rect key="frame" x="0.0" y="211" width="398" height="34"/>
+                                                <rect key="frame" x="0.0" y="211" width="398" height="30.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-Cu-zqH">
-                                                <rect key="frame" x="0.0" y="266.33333333333331" width="398" height="87"/>
+                                                <rect key="frame" x="0.0" y="264.33333333333331" width="398" height="87"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MKr-bm-qCy">
                                                         <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="87"/>
@@ -2550,7 +2550,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="99" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="waP-JQ-Gdq">
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="waP-JQ-Gdq">
                                                                 <rect key="frame" x="0.0" y="58" width="94" height="29"/>
                                                                 <connections>
                                                                     <action selector="milesFracStepperChanged:" destination="9E8-DX-g5o" eventType="valueChanged" id="zwa-SJ-TTd"/>
@@ -2561,13 +2561,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yej-9s-3IS">
-                                                <rect key="frame" x="0.0" y="374.66666666666669" width="398" height="34"/>
+                                                <rect key="frame" x="0.0" y="374.66666666666669" width="398" height="30.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Medium" family="Yantramanav" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="q8A-Zk-cPE">
-                                                <rect key="frame" x="0.0" y="429.66666666666669" width="398" height="95.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="428" width="398" height="95"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-0B-z1B">
                                                         <rect key="frame" x="0.0" y="0.0" width="197" height="95"/>
@@ -2585,7 +2585,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="JlB-8U-VxA">
-                                                                <rect key="frame" x="0.0" y="65.999999999999943" width="94" height="29"/>
+                                                                <rect key="frame" x="0.0" y="66" width="94" height="29"/>
                                                                 <connections>
                                                                     <action selector="stepperValueChanged:" destination="9E8-DX-g5o" eventType="valueChanged" id="pGa-iw-VpB"/>
                                                                 </connections>
@@ -2608,7 +2608,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-iG-gku">
-                                                                <rect key="frame" x="0.0" y="65.999999999999943" width="94" height="29"/>
+                                                                <rect key="frame" x="0.0" y="66" width="94" height="29"/>
                                                                 <connections>
                                                                     <action selector="minutesValueChanged:" destination="9E8-DX-g5o" eventType="valueChanged" id="U5h-42-nwN"/>
                                                                 </connections>
@@ -2630,7 +2630,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="submitManualActivityPressed:" destination="9E8-DX-g5o" eventType="touchUpInside" id="EUd-Tp-KgM"/>
+                                                    <action selector="subimtManualActivity:" destination="9E8-DX-g5o" eventType="touchUpInside" id="I1q-bv-BBV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2695,8 +2695,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="B8J-EK-AmQ"/>
         <segue reference="CxQ-qp-KFJ"/>
-        <segue reference="Pmv-px-QhH"/>
-        <segue reference="bud-4M-U63"/>
+        <segue reference="dUl-3J-noZ"/>
+        <segue reference="BZw-cp-LUj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68627450980000004" green="0.0" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

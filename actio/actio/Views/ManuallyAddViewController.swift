@@ -12,9 +12,9 @@ import Firebase
 class ManualAddViewController: UIViewController {
   
   var activity: Activity!
-  
   var chooseViewActivityType: String!
-  
+  var milesFract: Int!
+
   @IBOutlet weak var submitManualEntryButton: UIButton!
   @IBOutlet weak var timeInput: UITextField!
   @IBOutlet weak var distanceInput: UITextField!
@@ -31,6 +31,10 @@ class ManualAddViewController: UIViewController {
   @IBOutlet weak var milesFractLabel: UILabel!
   @IBAction func milesFracStepperChanged(_ sender: UIStepper) {
     milesFractLabel.text = Int(sender.value).description
+    let milesFractInt = Int(sender.value)
+    //let milesFractDouble = Double(milesFractInt)
+    //self.milesFract = Double(milesFractDouble / 10.0)
+
   }
   
   // time hours
@@ -77,24 +81,27 @@ class ManualAddViewController: UIViewController {
     
     milesFracStepper.wraps = true
     milesFracStepper.autorepeat = true
-    milesFracStepper.maximumValue = 99
+    milesFracStepper.maximumValue = 9
   }
   
   // record manual activity *needs work on distance and time*
-  @IBAction func submitManualActivityPressed(_ sender: AnyObject) {
+  @IBAction func subimtManualActivity(_ sender: UIButton) {
     // perform saving functions here
-    
-    //guard let user = Auth.auth().currentUser else { return }
-    //guard let name = user.displayName else { return }
-    //guard let photo = user.photoURL else { return }
-    //guard let uid = user.uid as? String else { return  }
-    //guard let email = user.email as? String else { return }
-    //let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
+    guard let user = Auth.auth().currentUser else { return }
+    print("user", user)
+    guard let uid = user.uid as? String else { return  }
+    print("uid", uid)
+    guard let name = user.displayName else { return }
+    guard let photo = user.photoURL else { return }
+    guard let email = user.email as? String else { return }
+    let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
+    print("athelete", athlete)
     //let activity = Activity(athlete: athlete, type: chooseViewActivityType)
-    //let fraction = Int(milesFractLabel.text!)
-    print(fractionInt)
-    /*let distance = Int(milesFractLabel.text!) + Int(milesWholeLabel.text!)
-    let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
+    let distanceWhole = milesWholeLabel.text!
+    let distanceFract = milesFract
+    print("distanceWhole", distanceWhole)
+    print("distanceFract", distanceFract)
+    /*let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
     let activityName: String = activityNameField.text!
     self.activity.name = activityName
     var data: [String:Any] = [:]

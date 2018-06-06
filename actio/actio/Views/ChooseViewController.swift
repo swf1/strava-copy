@@ -25,6 +25,7 @@ class ChooseViewController: UIViewController {
     super.viewDidLoad()
     chooseWrapper.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     topBox.roundCorners([.topLeft, .topRight], radius: 5)
+    bikeBox.roundCorners([.bottomLeft, .bottomRight], radius: 5)
 
   }
   
