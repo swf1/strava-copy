@@ -103,12 +103,8 @@
 		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = actio_mockups.pdf; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		72F3723720C386EB00B1B2BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72F3723920C3A2B800B1B2BE /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-=======
 		72F3723720C386EB00B1B2BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
->>>>>>> collectionView
 		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
 		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
