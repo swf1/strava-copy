@@ -18,7 +18,6 @@ class StartActivityViewController: UIViewController {
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     var mapView: MGLMapView?
-    var saveVC: SaveActivityViewController?
     
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var statsView: UIView!
@@ -84,7 +83,6 @@ class StartActivityViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    print("segue")
     if let vc = segue.destination as? SaveActivityViewController
     {
       vc.activity = self.activity
@@ -123,7 +121,6 @@ class StartActivityViewController: UIViewController {
         if let _ = UIGraphicsGetCurrentContext() {
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
             guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-//            self.activityScreenshot = image
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             UIGraphicsEndImageContext()
             return image
