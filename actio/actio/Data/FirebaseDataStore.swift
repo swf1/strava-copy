@@ -42,7 +42,8 @@ final class FirebaseDataStore {
       "start_date_local": activity.startDateLocal,
       "route": ["coordinates": coordinates],
       "pace": activity.pace,
-      "distance": activity.distance
+      "distance": activity.distance,
+      "duration": activity.duration,
     ]
     FirebaseClient.saveActivity(activityData: data)
   }

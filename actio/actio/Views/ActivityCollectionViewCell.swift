@@ -17,11 +17,13 @@ class ActivityCollectionViewCell: UICollectionViewCell {
   @IBOutlet var activityType: UILabel!
   @IBOutlet var activityDistance: UILabel!
   @IBOutlet var activityPace: UILabel!
+  @IBOutlet var activityDuration: UILabel!
 
-  func displayContent(name: String, type: String, distance: String, pace: String) {
-    activityName.text = name
-    activityType.text = type
-    activityDistance.text = distance
-    activityPace.text = pace
+  func displayContent(activity: Activity) {
+    activityName.text = activity.name
+    activityType.text = activity.type
+    activityDistance.text = activity.distance
+    activityPace.text = activity.pace
+    activityDuration.text = activity.duration
   }
 }

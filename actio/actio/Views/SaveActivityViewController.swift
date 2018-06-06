@@ -32,6 +32,7 @@ class SaveActivityViewController: UIViewController {
     self.activity.route = Route(coordinates: self.activityTimer.coordinates()!)
     self.activity.pace = self.activityTimer.pace()
     self.activity.distance = String(format: "%.2f", self.activityTimer.totalDistance)
+    self.activity.duration = self.activityTimer.totalTime()
     // save distance, duration, pace, coordinates here...
     store.saveActivity(activity: activity)
   }
