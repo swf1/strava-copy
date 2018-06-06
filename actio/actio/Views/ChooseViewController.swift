@@ -53,18 +53,16 @@ class ChooseViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let vc = segue.destination as? InitialMapViewController
     {
-      //uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-      // this value to authenticate with your backend server, if
-      // you have one. Use User.getToken() instead.
-      //self.profileImage.image = UIImage(data: NSData(contentsOf: photoUrl! as URL)! as Data)
-      //self.nameLabel.text = (data["name"]! as? String)!
-      guard let user = Auth.auth().currentUser else { return }
-      guard let name = user.displayName else { return }
-      guard let photo = user.photoURL else { return }
-      guard let uid = user.uid as? String else { return  }
-      guard let email = user.email as? String else { return }
-      let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
-      vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
+      let formatter = DateFormatter()
+      formatter.dateFormat = DateFormatter.dateFormat(
+        fromTemplate: "MMddyyyy",
+        options: 0,
+        locale: Locale(identifier: "en-US")
+      )
+      vc.activity = Activity(
+        type: chooseViewActivityType,
+        startDateLocal: formatter.string(from: Date())
+      )
       
       if let flag = locationManager.gpsFlag {
         flag.0 ? (vc.labelColor = UIColor.green) : (vc.labelColor = UIColor.red)

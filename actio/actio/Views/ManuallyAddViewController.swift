@@ -90,8 +90,8 @@ class ManualAddViewController: UIViewController {
     //data["time"] =
     data["type"] = activity.type
     data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal*/
+    data["athlete"] = ["uid": activity.athlete?.uid]
+    data["start_date_local"] = activity.startDateLocal
   }
 }
 

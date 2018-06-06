@@ -15,7 +15,6 @@ import CoreLocation
 
 class InitialMapViewController: UIViewController {
 
-    var activity: Activity!
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
@@ -23,7 +22,8 @@ class InitialMapViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var gpsLabel: UILabel!
     @IBOutlet weak var gpsLabelHeightConstraint: NSLayoutConstraint! // for animation
-    
+  
+    var activity: Activity!
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
     var regionRadius: CLLocationDistance = 500
