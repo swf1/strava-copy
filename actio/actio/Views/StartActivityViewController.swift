@@ -13,6 +13,7 @@ import Mapbox
 class StartActivityViewController: UIViewController {
     
     var activity: Activity!
+    var activityScreenshot: UIImage?
     let store = FirebaseDataStore.instance
     let locationManager = Loc.shared
     let activityTimer = ActivityTimer.shared
@@ -76,7 +77,7 @@ class StartActivityViewController: UIViewController {
 //    NotificationCenter.default.post(name: Notification.Name("courseMode"), object: nil)
     let children = self.childViewControllers
     if let mv = children[0] as? MainActivityViewController {
-        takeScreenshot(view: mv.mapView)
+        let image = takeScreenshot(view: mv.mapView)!
     }
     cancelToResumeButton.isHidden = false
   }
@@ -86,6 +87,8 @@ class StartActivityViewController: UIViewController {
     if let vc = segue.destination as? SaveActivityViewController
     {
       vc.activity = self.activity
+      vc.activityScreenshot = self.activityScreenshot
+      print(self.activityScreenshot)
     }
   }
   
@@ -121,15 +124,14 @@ class StartActivityViewController: UIViewController {
         if let _ = UIGraphicsGetCurrentContext() {
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
             guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+            self.activityScreenshot = image
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             UIGraphicsEndImageContext()
             return UIImageView(image: image)
         }
         return nil
     }
-    
-
-
+  
     // Hide status bar at top when modal seuges
     override var prefersStatusBarHidden: Bool {
         return true

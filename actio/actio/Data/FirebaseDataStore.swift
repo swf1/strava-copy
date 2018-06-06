@@ -47,4 +47,8 @@ final class FirebaseDataStore {
     ]
     FirebaseClient.saveActivity(activityData: data)
   }
+  
+  func storeScreenshot(screenshot: UIImage) {
+    FirebaseClient.storeScreenshot(screenshot: screenshot)
+  }
 }

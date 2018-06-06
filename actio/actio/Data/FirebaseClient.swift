@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 struct FirebaseClient {
   static func observeActivities(onChildAdded: @escaping (DataSnapshot) -> Void) {
@@ -20,5 +21,17 @@ struct FirebaseClient {
     let ref = Database.database().reference()
     guard let user = Auth.auth().currentUser else { return }
     ref.child("activities").child(user.uid).childByAutoId().setValue(activityData)
+  }
+  
+  static func storeScreenshot(screenshot: UIImage) {
+    let ref = Storage.storage().reference()
+    let snapshotRef = ref.child("test.jpg")
+    let data = UIImageJPEGRepresentation(screenshot, 0.8)
+    snapshotRef.putData(data!, metadata: nil) { (metadata, error) in
+      guard let metadata = metadata else {
+        return
+      }
+      let size = metadata.size
+    }
   }
 }
