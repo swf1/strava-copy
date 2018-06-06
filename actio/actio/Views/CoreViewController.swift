@@ -1,10 +1,8 @@
-//
 //  ActivityCollectionViewController.swift
 //  actio
 //
 //  Created by Alieta Train on 4/29/18.
 //  Copyright © 2018 corvus group. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -32,10 +30,10 @@ class CoreViewController: UIViewController {
     super.viewDidLoad()
     self.titleBar.title = "Welcome"
   }
-  
-  @IBAction func unwindToCoreView(segue: UIStoryboardSegue){}
-
-  @IBAction func showProfileView(sender: UIBarButtonItem) {
+  @IBAction func unwindToCoreView(segue: UIStoryboardSegue){
+    showActivityCollectionView(sender: (Any).self)
+  }
+  @IBAction func showProfileView(sender: Any) {
     self.titleBar.title = "Your profile"
     if (self.profileContainerView.alpha == 0) {
       UIView.animate(withDuration: 0.5, animations: {
@@ -57,7 +55,7 @@ class CoreViewController: UIViewController {
     }
   }
   
-  @IBAction func showActivityCollectionView(sender: UIBarButtonItem) {
+  @IBAction func showActivityCollectionView(sender: Any) {
     self.titleBar.title = "Your activities"
     if (self.activityCollectionContainerView.alpha == 0) {
       UIView.animate(withDuration: 0.5, animations: {
@@ -68,23 +66,7 @@ class CoreViewController: UIViewController {
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? ProfileViewController
-    {
-      guard let user = Auth.auth().currentUser else { return }
-      vc.name = user.displayName
-      vc.photo = user.photoURL
-    }
-    if let vc = segue.destination as? ManualAddViewController
-      {
-        guard let user = Auth.auth().currentUser else { return }
-        guard let name = user.displayName else { return }
-        guard let photo = user.photoURL else { return }
-        guard let uid = user.uid as? String else { return  }
-        guard let email = user.email as? String else { return }
-        let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
-    }
-  }
+  
 }
 
 

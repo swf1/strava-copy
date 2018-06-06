@@ -14,51 +14,24 @@ class ManualAddViewController: UIViewController {
   var activity: Activity!
   var chooseViewActivityType: String!
   var milesFract: Int!
+  let store = FirebaseDataStore.instance
 
+  @IBOutlet weak var activityNameInputField: UITextField!
   @IBOutlet weak var submitManualEntryButton: UIButton!
-  @IBOutlet weak var timeInput: UITextField!
-  @IBOutlet weak var distanceInput: UITextField!
   @IBOutlet weak var activityTypeSegment: UISegmentedControl!
+  @IBOutlet weak var timeField: UITextField!
+  @IBOutlet weak var distanceField: UITextField!
   
-  @IBOutlet weak var activityNameField: UITextField!
-  @IBOutlet weak var milesWholeLabel: UILabel!
-  @IBOutlet weak var milesWholeStepper: UIStepper!
-  @IBAction func milesWholeStepperChanged(_ sender: UIStepper) {
-    milesWholeLabel.text = Int(sender.value).description
-  }
-  
-  @IBOutlet weak var milesFracStepper: UIStepper!
-  @IBOutlet weak var milesFractLabel: UILabel!
-  @IBAction func milesFracStepperChanged(_ sender: UIStepper) {
-    milesFractLabel.text = Int(sender.value).description
-    let milesFractInt = Int(sender.value)
-    //let milesFractDouble = Double(milesFractInt)
-    //self.milesFract = Double(milesFractDouble / 10.0)
-
-  }
-  
-  // time hours
-  @IBOutlet weak var minutesLabel: UILabel!
-  @IBOutlet weak var minutesStepper: UIStepper!
-  @IBAction func stepperValueChanged(_ sender: UIStepper) {
-    hoursLabel.text = Int(sender.value).description
-  }
-  
-  // time minutes
-  @IBOutlet weak var hoursLabel: UILabel!
-  @IBOutlet weak var hoursStepper: UIStepper!
-  @IBAction func minutesValueChanged(_ sender: UIStepper) {
-    minutesLabel.text = Int(sender.value).description
-  }
-
   // get and set activity type
   @IBAction func typeChanged(_ sender: AnyObject) {
     switch activityTypeSegment.selectedSegmentIndex
     {
     case 0:
       self.chooseViewActivityType = "bike";
+      print("choose view type", chooseViewActivityType)
     case 1:
       self.chooseViewActivityType = "run";
+      print("choose view type", chooseViewActivityType)
     default:
       break
     }
@@ -66,32 +39,48 @@ class ManualAddViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.chooseViewActivityType = "run";
   }
   
   // record manual activity *needs work on distance and time*
   @IBAction func subimtManualActivity(_ sender: UIButton) {
     // perform saving functions here
     guard let user = Auth.auth().currentUser else { return }
-    print("user", user)
     guard let uid = user.uid as? String else { return  }
-    print("uid", uid)
-    guard let name = user.displayName else { return }
+    guard let displayName = user.displayName else { return }
     guard let photo = user.photoURL else { return }
-    guard let email = user.email as? String else { return }
-    let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
-    print("athelete", athlete)
-    
-    //let activity = Activity(athlete: athlete, type: chooseViewActivityType)
-    /*let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
-    let activityName: String = activityNameField.text!
-    self.activity.name = activityName
-    var data: [String:Any] = [:]
-    //data["distance"] =
-    //data["time"] =
-    data["type"] = activity.type
-    data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete?.uid]
-    data["start_date_local"] = activity.startDateLocal
+    guard let email = user.email else { return }
+    let athlete = Athlete(uid: uid, email: email, displayName: displayName, photo: photo)
+  
+    let formatter = DateFormatter()
+    formatter.dateFormat = DateFormatter.dateFormat(
+      fromTemplate: "MMddyyyy",
+      options: 0,
+      locale: Locale(identifier: "en-US")
+    )
+    activity = Activity(
+      type: chooseViewActivityType,
+      startDateLocal: formatter.string(from: Date())
+    )
+
+    self.activity.name = activityNameInputField.text!
+    let time = timeField.text
+    let distance = distanceField.text
+    var dur = Double(time!)
+    let d1 = (dur!/60.0).rounded(.towardZero)
+    let intd1 = Int(d1)
+    let d2 = (dur?.truncatingRemainder(dividingBy: 60.0))!
+    let intd2 = Int(d2)
+    let durString = "\(intd1):\(intd2)"
+    let dis = Double(distance!)
+    let p1 = (dur! / dis!).rounded(.towardZero)
+    let intP1 = Int(p1)
+    let p2 = (dur?.truncatingRemainder(dividingBy: dis!))!
+    let intP2 = Int(p2)
+    self.activity.duration = durString
+    self.activity.distance = distance
+    self.activity.pace = "\(intP1):\(intP2)"
+    store.saveActivity(activity: activity)
   }
 }
 

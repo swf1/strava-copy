@@ -10,17 +10,17 @@ import UIKit
 import Firebase
 
 class ChooseViewController: UIViewController {
+  
   @IBOutlet weak var bikeBox: UIButton!
   @IBOutlet var chooseWrapper: UIView!
   var chooseViewActivityType: String!
+  
   let locationManager = Loc.shared
-  //@IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var topBox: UIView!
   
-  @IBAction func timeInput(_ sender: UIDatePicker) {
-  }
   @IBOutlet weak var topLabel: UILabel!
   @IBOutlet weak var stackView: UIStackView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     chooseWrapper.backgroundColor = UIColor.black.withAlphaComponent(0.5)

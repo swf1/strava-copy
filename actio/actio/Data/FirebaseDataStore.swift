@@ -30,11 +30,13 @@ final class FirebaseDataStore {
 
   func saveActivity(activity: Activity) {
     var coordinates: [[String:Double]] = []
-    for c in activity.route!.coordinates {
-      coordinates.append([
-        "latitude": c.coordinate.latitude,
-        "longitude": c.coordinate.longitude
-      ])
+    if coordinates.count > 0 {
+      for c in activity.route!.coordinates {
+        coordinates.append([
+          "latitude": c.coordinate.latitude,
+          "longitude": c.coordinate.longitude
+        ])
+      }
     }
     let data: [String:Any?] = [
       "name": activity.name,
