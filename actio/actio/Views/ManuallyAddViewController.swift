@@ -66,22 +66,6 @@ class ManualAddViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    hoursStepper.wraps = true
-    hoursStepper.autorepeat = true
-    hoursStepper.maximumValue = 10
-    
-    minutesStepper.wraps = true
-    minutesStepper.autorepeat = true
-    minutesStepper.maximumValue = 60
-    
-    milesWholeStepper.wraps = true
-    milesWholeStepper.autorepeat = true
-    milesWholeStepper.maximumValue = 50
-    
-    milesFracStepper.wraps = true
-    milesFracStepper.autorepeat = true
-    milesFracStepper.maximumValue = 9
   }
   
   // record manual activity *needs work on distance and time*
@@ -96,11 +80,8 @@ class ManualAddViewController: UIViewController {
     guard let email = user.email as? String else { return }
     let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
     print("athelete", athlete)
+    
     //let activity = Activity(athlete: athlete, type: chooseViewActivityType)
-    let distanceWhole = milesWholeLabel.text!
-    let distanceFract = milesFract
-    print("distanceWhole", distanceWhole)
-    print("distanceFract", distanceFract)
     /*let time = Int(hoursLabel.text!)! * 60 + Int(minutesLabel.text!)!
     let activityName: String = activityNameField.text!
     self.activity.name = activityName
