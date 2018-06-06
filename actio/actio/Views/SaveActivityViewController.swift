@@ -28,8 +28,14 @@ class SaveActivityViewController: UIViewController {
     self.activity.pace = self.activityTimer.pace()
     self.activity.distance = String(format: "%.2f", self.activityTimer.totalDistance)
     self.activity.duration = self.activityTimer.totalTime()
+    
+    if let p = parent as? StartActivityViewController {
+        if let img = p.activityScreenshot {
+            store.storeScreenshot(screenshot: img)
+        }
+    }
+    
     store.saveActivity(activity: activity)
-    store.storeScreenshot(screenshot: self.activityScreenshot!)
   }
 
   // allows user to touch off keyboar to hide keyboard
