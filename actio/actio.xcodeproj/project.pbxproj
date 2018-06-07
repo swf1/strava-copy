@@ -7,111 +7,277 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		726112F420826DB7005E3C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F320826DB7005E3C12 /* AppDelegate.swift */; };
-		726112F620826DB7005E3C12 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F520826DB7005E3C12 /* RootViewController.swift */; };
-		726112F820826DB8005E3C12 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F720826DB8005E3C12 /* DataViewController.swift */; };
-		726112FA20826DB8005E3C12 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726112F920826DB8005E3C12 /* ModelController.swift */; };
-		726112FD20826DB8005E3C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726112FB20826DB8005E3C12 /* Main.storyboard */; };
-		726112FF20826DBA005E3C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726112FE20826DBA005E3C12 /* Assets.xcassets */; };
-		7261130220826DBA005E3C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7261130020826DBA005E3C12 /* LaunchScreen.storyboard */; };
-		7261130D20826DBA005E3C12 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261130C20826DBA005E3C12 /* actioTests.swift */; };
+		31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3D2097A0D400F807D9 /* ActivityTimer.swift */; };
+		31594F402098B53B00F807D9 /* Loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F3F2098B53B00F807D9 /* Loc.swift */; };
+		31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31594F41209935E300F807D9 /* StartActivityViewController.swift */; };
+		318DAEA020AF91DD009AC340 /* RouteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DAE9F20AF91DD009AC340 /* RouteAnnotation.swift */; };
+		3F8D360020B991B00065E5D9 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */; };
+		3F8D360220B9968B0065E5D9 /* FirebaseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */; };
+		3F8D360420B9A5E70065E5D9 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */; };
+		3FB9AC6E20B513690064742C /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6920B513690064742C /* Athlete.swift */; };
+		3FB9AC7020B513690064742C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6B20B513690064742C /* Activity.swift */; };
+		3FB9AC7220B513690064742C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9AC6D20B513690064742C /* Route.swift */; };
+		4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */; };
+		72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */; };
+		72365EF32086E13900413444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF22086E13900413444 /* AppDelegate.swift */; };
+		72365EF52086E13900413444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365EF42086E13900413444 /* ViewController.swift */; };
+		72365EF82086E13900413444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF62086E13900413444 /* Main.storyboard */; };
+		72365EFA2086E13A00413444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72365EF92086E13A00413444 /* Assets.xcassets */; };
+		72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72365EFB2086E13A00413444 /* LaunchScreen.storyboard */; };
+		72365F082086E13A00413444 /* actioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72365F072086E13A00413444 /* actioTests.swift */; };
+		724925EA20A80D3D00137F15 /* MainActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724925E920A80D3D00137F15 /* MainActivityViewController.swift */; };
+		724925EC20A8A18200137F15 /* StatsActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724925EB20A8A18200137F15 /* StatsActivityViewController.swift */; };
+		724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724925ED20A8A19300137F15 /* SaveActivityViewController.swift */; };
+		724BB47E20A7CDEE004A6724 /* ActivityStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */; };
+		724BB48020A7CE6E004A6724 /* InitialMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724BB47F20A7CE6E004A6724 /* InitialMapViewController.swift */; };
+		7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254172D20AEA3C6009289B3 /* CoreViewController.swift */; };
+		7260464F20B12AE300443E05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7260464E20B12AE300443E05 /* ProfileViewController.swift */; };
+		7260465120B12B1900443E05 /* ManuallyAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7260465020B12B1900443E05 /* ManuallyAddViewController.swift */; };
+		727EA57B20C85B740044CB87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 727EA57A20C85B740044CB87 /* GoogleService-Info.plist */; };
+		72DE912D20C120B40076875C /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE912C20C120B40076875C /* ChooseViewController.swift */; };
+		72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */; };
+		72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */; };
+		72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */; };
+		72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */; };
+		72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */; };
+		72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */; };
+		72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4D20969A17007CD9CD /* SignInViewController.swift */; };
+		72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */; };
+		72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */; };
+		72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */; };
+		72F3723A20C3A2B800B1B2BE /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3723920C3A2B800B1B2BE /* UIViewExtensions.swift */; };
+		81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7261130920826DBA005E3C12 /* PBXContainerItemProxy */ = {
+		72365F042086E13A00413444 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 726112E820826DB7005E3C12 /* Project object */;
+			containerPortal = 72365EE72086E13900413444 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 726112EF20826DB7005E3C12;
+			remoteGlobalIDString = 72365EEE2086E13900413444;
 			remoteInfo = actio;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		726112F020826DB7005E3C12 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		726112F320826DB7005E3C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		726112F520826DB7005E3C12 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		726112F720826DB8005E3C12 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		726112F920826DB8005E3C12 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		726112FC20826DB8005E3C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		726112FE20826DBA005E3C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7261130120826DBA005E3C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7261130320826DBA005E3C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7261130820826DBA005E3C12 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7261130C20826DBA005E3C12 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
-		7261130E20826DBA005E3C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31594F3D2097A0D400F807D9 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
+		31594F3F2098B53B00F807D9 /* Loc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loc.swift; sourceTree = "<group>"; };
+		31594F41209935E300F807D9 /* StartActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
+		318DAE9F20AF91DD009AC340 /* RouteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnnotation.swift; sourceTree = "<group>"; };
+		3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataStore.swift; sourceTree = "<group>"; };
+		3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FB9AC6920B513690064742C /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Athlete.swift; path = actio/Data/Athlete.swift; sourceTree = SOURCE_ROOT; };
+		3FB9AC6B20B513690064742C /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = actio/Data/Activity.swift; sourceTree = SOURCE_ROOT; };
+		3FB9AC6D20B513690064742C /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Route.swift; path = actio/Data/Route.swift; sourceTree = SOURCE_ROOT; };
+		72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewController.swift; sourceTree = "<group>"; };
+		72365EEF2086E13900413444 /* actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72365EF22086E13900413444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		72365EF42086E13900413444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72365EF72086E13900413444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72365EF92086E13A00413444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72365EFC2086E13A00413444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		72365EFE2086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72365F032086E13A00413444 /* actioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72365F072086E13A00413444 /* actioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actioTests.swift; sourceTree = "<group>"; };
+		72365F092086E13A00413444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		724925E920A80D3D00137F15 /* MainActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityViewController.swift; sourceTree = "<group>"; };
+		724925EB20A8A18200137F15 /* StatsActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsActivityViewController.swift; sourceTree = "<group>"; };
+		724925ED20A8A19300137F15 /* SaveActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveActivityViewController.swift; sourceTree = "<group>"; };
+		724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsViewController.swift; sourceTree = "<group>"; };
+		724BB47F20A7CE6E004A6724 /* InitialMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMapViewController.swift; sourceTree = "<group>"; };
+		7254172D20AEA3C6009289B3 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		7260464E20B12AE300443E05 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7260465020B12B1900443E05 /* ManuallyAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyAddViewController.swift; sourceTree = "<group>"; };
+		727EA57A20C85B740044CB87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72DE912C20C120B40076875C /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
+		72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Bold.ttf"; sourceTree = "<group>"; };
+		72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Light.ttf"; sourceTree = "<group>"; };
+		72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Medium.ttf"; sourceTree = "<group>"; };
+		72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Black.ttf"; sourceTree = "<group>"; };
+		72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Regular.ttf"; sourceTree = "<group>"; };
+		72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yantramanav-Thin.ttf"; sourceTree = "<group>"; };
+		72EF6B4D20969A17007CD9CD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = actio_mockups.pdf; sourceTree = "<group>"; };
+		72F3723920C3A2B800B1B2BE /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_actio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.release.xcconfig"; sourceTree = "<group>"; };
+		D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.release.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.release.xcconfig"; sourceTree = "<group>"; };
+		EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-actioTests/Pods-actioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-actio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-actio/Pods-actio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		726112ED20826DB7005E3C12 /* Frameworks */ = {
+		72365EEC2086E13900413444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A73D5D5414858AC37CCBB21 /* Pods_actio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130520826DBA005E3C12 /* Frameworks */ = {
+		72365F002086E13A00413444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F768158BA5B247DECAC43C /* Pods_actioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		726112E720826DB7005E3C12 = {
+		2187E81085F4716E3C137B21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				726112F220826DB7005E3C12 /* actio */,
-				7261130B20826DBA005E3C12 /* actioTests */,
-				726112F120826DB7005E3C12 /* Products */,
+				B9BDACAB9DD3A156AE200FD3 /* Pods_actio.framework */,
+				276C898B4567DCB4E4A3FFEB /* Pods_actioTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FB9AC6820B5135B0064742C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3FB9AC6B20B513690064742C /* Activity.swift */,
+				3FB9AC6920B513690064742C /* Athlete.swift */,
+				3FB9AC6D20B513690064742C /* Route.swift */,
+				3F8D35FF20B991B00065E5D9 /* FirebaseClient.swift */,
+				3F8D360120B9968B0065E5D9 /* FirebaseDataStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3FF6F17B20C4C9E700A6F4B0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		72365EE62086E13900413444 = {
+			isa = PBXGroup;
+			children = (
+				72365EF12086E13900413444 /* actio */,
+				72365F062086E13A00413444 /* actioTests */,
+				72365EF02086E13900413444 /* Products */,
+				8E2C261C5CC7BBC29C92527E /* Pods */,
+				2187E81085F4716E3C137B21 /* Frameworks */,
+				3FF6F17B20C4C9E700A6F4B0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
-		726112F120826DB7005E3C12 /* Products */ = {
+		72365EF02086E13900413444 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				726112F020826DB7005E3C12 /* actio.app */,
-				7261130820826DBA005E3C12 /* actioTests.xctest */,
+				72365EEF2086E13900413444 /* actio.app */,
+				72365F032086E13A00413444 /* actioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		726112F220826DB7005E3C12 /* actio */ = {
+		72365EF12086E13900413444 /* actio */ = {
 			isa = PBXGroup;
 			children = (
-				726112F320826DB7005E3C12 /* AppDelegate.swift */,
-				726112F520826DB7005E3C12 /* RootViewController.swift */,
-				726112F720826DB8005E3C12 /* DataViewController.swift */,
-				726112F920826DB8005E3C12 /* ModelController.swift */,
-				726112FB20826DB8005E3C12 /* Main.storyboard */,
-				726112FE20826DBA005E3C12 /* Assets.xcassets */,
-				7261130020826DBA005E3C12 /* LaunchScreen.storyboard */,
-				7261130320826DBA005E3C12 /* Info.plist */,
+				3FB9AC6820B5135B0064742C /* Data */,
+				72ACA906208989BD003D35D9 /* Resources */,
+				72ACA905208989AE003D35D9 /* Views */,
+				72365EF22086E13900413444 /* AppDelegate.swift */,
+				72365EF42086E13900413444 /* ViewController.swift */,
+				72365EF62086E13900413444 /* Main.storyboard */,
+				72365EF92086E13A00413444 /* Assets.xcassets */,
+				72EF6B5320969FC1007CD9CD /* actio_mockups.pdf */,
+				72365EFB2086E13A00413444 /* LaunchScreen.storyboard */,
+				727EA57A20C85B740044CB87 /* GoogleService-Info.plist */,
+				72365EFE2086E13A00413444 /* Info.plist */,
 			);
 			path = actio;
 			sourceTree = "<group>";
 		};
-		7261130B20826DBA005E3C12 /* actioTests */ = {
+		72365F062086E13A00413444 /* actioTests */ = {
 			isa = PBXGroup;
 			children = (
-				7261130C20826DBA005E3C12 /* actioTests.swift */,
-				7261130E20826DBA005E3C12 /* Info.plist */,
+				72365F072086E13A00413444 /* actioTests.swift */,
+				72365F092086E13A00413444 /* Info.plist */,
 			);
 			path = actioTests;
+			sourceTree = "<group>";
+		};
+		72ACA905208989AE003D35D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D360320B9A5E70065E5D9 /* ActivityCollectionViewCell.swift */,
+				72035A202096B06B0088E976 /* ActivityCollectionViewController.swift */,
+				724BB47D20A7CDEE004A6724 /* ActivityStatsViewController.swift */,
+				72DE912C20C120B40076875C /* ChooseViewController.swift */,
+				7254172D20AEA3C6009289B3 /* CoreViewController.swift */,
+				72EF6B4E20969A17007CD9CD /* ForgotPasswordViewController.swift */,
+				724BB47F20A7CE6E004A6724 /* InitialMapViewController.swift */,
+				724925E920A80D3D00137F15 /* MainActivityViewController.swift */,
+				7260465020B12B1900443E05 /* ManuallyAddViewController.swift */,
+				7260464E20B12AE300443E05 /* ProfileViewController.swift */,
+				724925ED20A8A19300137F15 /* SaveActivityViewController.swift */,
+				72EF6B4D20969A17007CD9CD /* SignInViewController.swift */,
+				72EF6B4F20969A17007CD9CD /* SignUpViewController.swift */,
+				31594F41209935E300F807D9 /* StartActivityViewController.swift */,
+				724925EB20A8A18200137F15 /* StatsActivityViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		72ACA906208989BD003D35D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72EF6B1F208BF3F7007CD9CD /* Fonts */,
+				31594F3D2097A0D400F807D9 /* ActivityTimer.swift */,
+				72F3723920C3A2B800B1B2BE /* UIViewExtensions.swift */,
+				31594F3F2098B53B00F807D9 /* Loc.swift */,
+				318DAE9F20AF91DD009AC340 /* RouteAnnotation.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		72EF6B1F208BF3F7007CD9CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				72EF6B23208BF410007CD9CD /* Yantramanav-Black.ttf */,
+				72EF6B20208BF410007CD9CD /* Yantramanav-Bold.ttf */,
+				72EF6B21208BF410007CD9CD /* Yantramanav-Light.ttf */,
+				72EF6B22208BF410007CD9CD /* Yantramanav-Medium.ttf */,
+				72EF6B24208BF410007CD9CD /* Yantramanav-Regular.ttf */,
+				72EF6B25208BF410007CD9CD /* Yantramanav-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8E2C261C5CC7BBC29C92527E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */,
+				D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */,
+				EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */,
+				C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		726112EF20826DB7005E3C12 /* actio */ = {
+		72365EEE2086E13900413444 /* actio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7261131120826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actio" */;
+			buildConfigurationList = 72365F0C2086E13A00413444 /* Build configuration list for PBXNativeTarget "actio" */;
 			buildPhases = (
-				726112EC20826DB7005E3C12 /* Sources */,
-				726112ED20826DB7005E3C12 /* Frameworks */,
-				726112EE20826DB7005E3C12 /* Resources */,
+				74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */,
+				72365EEB2086E13900413444 /* Sources */,
+				72365EEC2086E13900413444 /* Frameworks */,
+				72365EED2086E13900413444 /* Resources */,
+				CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */,
+				9D16BC923770B62CD763C448 /* [CP] Copy Pods Resources */,
+				31594F3C20976CBE00F807D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -119,47 +285,48 @@
 			);
 			name = actio;
 			productName = actio;
-			productReference = 726112F020826DB7005E3C12 /* actio.app */;
+			productReference = 72365EEF2086E13900413444 /* actio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7261130720826DBA005E3C12 /* actioTests */ = {
+		72365F022086E13A00413444 /* actioTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7261131420826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actioTests" */;
+			buildConfigurationList = 72365F0F2086E13A00413444 /* Build configuration list for PBXNativeTarget "actioTests" */;
 			buildPhases = (
-				7261130420826DBA005E3C12 /* Sources */,
-				7261130520826DBA005E3C12 /* Frameworks */,
-				7261130620826DBA005E3C12 /* Resources */,
+				D6D1B7D3E57678823AF45F21 /* [CP] Check Pods Manifest.lock */,
+				72365EFF2086E13A00413444 /* Sources */,
+				72365F002086E13A00413444 /* Frameworks */,
+				72365F012086E13A00413444 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7261130A20826DBA005E3C12 /* PBXTargetDependency */,
+				72365F052086E13A00413444 /* PBXTargetDependency */,
 			);
 			name = actioTests;
 			productName = actioTests;
-			productReference = 7261130820826DBA005E3C12 /* actioTests.xctest */;
+			productReference = 72365F032086E13A00413444 /* actioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		726112E820826DB7005E3C12 /* Project object */ = {
+		72365EE72086E13900413444 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "corvus group";
 				TargetAttributes = {
-					726112EF20826DB7005E3C12 = {
+					72365EEE2086E13900413444 = {
 						CreatedOnToolsVersion = 9.3;
 					};
-					7261130720826DBA005E3C12 = {
+					72365F022086E13A00413444 = {
 						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 726112EF20826DB7005E3C12;
+						TestTargetID = 72365EEE2086E13900413444;
 					};
 				};
 			};
-			buildConfigurationList = 726112EB20826DB7005E3C12 /* Build configuration list for PBXProject "actio" */;
+			buildConfigurationList = 72365EEA2086E13900413444 /* Build configuration list for PBXProject "actio" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,29 +334,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 726112E720826DB7005E3C12;
-			productRefGroup = 726112F120826DB7005E3C12 /* Products */;
+			mainGroup = 72365EE62086E13900413444;
+			productRefGroup = 72365EF02086E13900413444 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				726112EF20826DB7005E3C12 /* actio */,
-				7261130720826DBA005E3C12 /* actioTests */,
+				72365EEE2086E13900413444 /* actio */,
+				72365F022086E13A00413444 /* actioTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		726112EE20826DB7005E3C12 /* Resources */ = {
+		72365EED2086E13900413444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7261130220826DBA005E3C12 /* LaunchScreen.storyboard in Resources */,
-				726112FF20826DBA005E3C12 /* Assets.xcassets in Resources */,
-				726112FD20826DB8005E3C12 /* Main.storyboard in Resources */,
+				72EF6B5420969FC1007CD9CD /* actio_mockups.pdf in Resources */,
+				72EF6B28208BF410007CD9CD /* Yantramanav-Medium.ttf in Resources */,
+				72EF6B27208BF410007CD9CD /* Yantramanav-Light.ttf in Resources */,
+				72EF6B2A208BF410007CD9CD /* Yantramanav-Regular.ttf in Resources */,
+				72365EFD2086E13A00413444 /* LaunchScreen.storyboard in Resources */,
+				72EF6B2B208BF410007CD9CD /* Yantramanav-Thin.ttf in Resources */,
+				72365EFA2086E13A00413444 /* Assets.xcassets in Resources */,
+				72EF6B29208BF410007CD9CD /* Yantramanav-Black.ttf in Resources */,
+				727EA57B20C85B740044CB87 /* GoogleService-Info.plist in Resources */,
+				72365EF82086E13900413444 /* Main.storyboard in Resources */,
+				72EF6B26208BF410007CD9CD /* Yantramanav-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130620826DBA005E3C12 /* Resources */ = {
+		72365F012086E13A00413444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,49 +373,184 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31594F3C20976CBE00F807D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.mapbox",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "token_file=.mapbox\ntoken=\"$(cat $token_file)\"\nif [ \"$token\" ]; then\nplutil -replace MGLMapboxAccessToken -string $token \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nelse\necho 'error: Missing Mapbox access token'\nopen 'https://www.mapbox.com/studio/account/tokens/'\necho \"error: Get an access token from <https://www.mapbox.com/studio/account/tokens/>, then create a new file at $token_file that contains the access token.\"\nexit 1\nfi";
+		};
+		74A7F1F3F1CDBE34D73AD4B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-actio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D16BC923770B62CD763C448 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF06BA41C0FC60C30622B0E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-actio/Pods-actio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6D1B7D3E57678823AF45F21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-actioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		726112EC20826DB7005E3C12 /* Sources */ = {
+		72365EEB2086E13900413444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726112F620826DB7005E3C12 /* RootViewController.swift in Sources */,
-				726112FA20826DB8005E3C12 /* ModelController.swift in Sources */,
-				726112F820826DB8005E3C12 /* DataViewController.swift in Sources */,
-				726112F420826DB7005E3C12 /* AppDelegate.swift in Sources */,
+				72EF6B5120969A18007CD9CD /* ForgotPasswordViewController.swift in Sources */,
+				72DE912D20C120B40076875C /* ChooseViewController.swift in Sources */,
+				7254172E20AEA3C6009289B3 /* CoreViewController.swift in Sources */,
+				72F3723A20C3A2B800B1B2BE /* UIViewExtensions.swift in Sources */,
+				3F8D360220B9968B0065E5D9 /* FirebaseDataStore.swift in Sources */,
+				724925EE20A8A19300137F15 /* SaveActivityViewController.swift in Sources */,
+				72365EF52086E13900413444 /* ViewController.swift in Sources */,
+				31594F402098B53B00F807D9 /* Loc.swift in Sources */,
+				3FB9AC6E20B513690064742C /* Athlete.swift in Sources */,
+				72365EF32086E13900413444 /* AppDelegate.swift in Sources */,
+				3FB9AC7220B513690064742C /* Route.swift in Sources */,
+				3F8D360420B9A5E70065E5D9 /* ActivityCollectionViewCell.swift in Sources */,
+				31594F42209935E300F807D9 /* StartActivityViewController.swift in Sources */,
+				3FB9AC7020B513690064742C /* Activity.swift in Sources */,
+				31594F3E2097A0D400F807D9 /* ActivityTimer.swift in Sources */,
+				724BB48020A7CE6E004A6724 /* InitialMapViewController.swift in Sources */,
+				7260465120B12B1900443E05 /* ManuallyAddViewController.swift in Sources */,
+				724925EA20A80D3D00137F15 /* MainActivityViewController.swift in Sources */,
+				7260464F20B12AE300443E05 /* ProfileViewController.swift in Sources */,
+				724925EC20A8A18200137F15 /* StatsActivityViewController.swift in Sources */,
+				72EF6B5020969A18007CD9CD /* SignInViewController.swift in Sources */,
+				72EF6B5220969A18007CD9CD /* SignUpViewController.swift in Sources */,
+				724BB47E20A7CDEE004A6724 /* ActivityStatsViewController.swift in Sources */,
+				318DAEA020AF91DD009AC340 /* RouteAnnotation.swift in Sources */,
+				72035A212096B06B0088E976 /* ActivityCollectionViewController.swift in Sources */,
+				3F8D360020B991B00065E5D9 /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7261130420826DBA005E3C12 /* Sources */ = {
+		72365EFF2086E13A00413444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7261130D20826DBA005E3C12 /* actioTests.swift in Sources */,
+				72365F082086E13A00413444 /* actioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7261130A20826DBA005E3C12 /* PBXTargetDependency */ = {
+		72365F052086E13A00413444 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 726112EF20826DB7005E3C12 /* actio */;
-			targetProxy = 7261130920826DBA005E3C12 /* PBXContainerItemProxy */;
+			target = 72365EEE2086E13900413444 /* actio */;
+			targetProxy = 72365F042086E13A00413444 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		726112FB20826DB8005E3C12 /* Main.storyboard */ = {
+		72365EF62086E13900413444 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				726112FC20826DB8005E3C12 /* Base */,
+				72365EF72086E13900413444 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7261130020826DBA005E3C12 /* LaunchScreen.storyboard */ = {
+		72365EFB2086E13A00413444 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7261130120826DBA005E3C12 /* Base */,
+				72365EFC2086E13A00413444 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -248,7 +558,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7261130F20826DBA005E3C12 /* Debug */ = {
+		72365F0A2086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -308,7 +618,7 @@
 			};
 			name = Debug;
 		};
-		7261131020826DBA005E3C12 /* Release */ = {
+		72365F0B2086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,42 +672,53 @@
 			};
 			name = Release;
 		};
-		7261131220826DBA005E3C12 /* Debug */ = {
+		72365F0D2086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB5E2AD197DED0FB8F50B5D6 /* Pods-actio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7261131320826DBA005E3C12 /* Release */ = {
+		72365F0E2086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D086CEAB8182912682A35555 /* Pods-actio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XU5AWAYW87;
 				INFOPLIST_FILE = actio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.actio.actio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		7261131520826DBA005E3C12 /* Debug */ = {
+		72365F102086E13A00413444 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA7DFB23336BDDED266260A7 /* Pods-actioTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -416,8 +737,9 @@
 			};
 			name = Debug;
 		};
-		7261131620826DBA005E3C12 /* Release */ = {
+		72365F112086E13A00413444 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35006963BBF370D661E1468 /* Pods-actioTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -439,34 +761,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		726112EB20826DB7005E3C12 /* Build configuration list for PBXProject "actio" */ = {
+		72365EEA2086E13900413444 /* Build configuration list for PBXProject "actio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261130F20826DBA005E3C12 /* Debug */,
-				7261131020826DBA005E3C12 /* Release */,
+				72365F0A2086E13A00413444 /* Debug */,
+				72365F0B2086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7261131120826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actio" */ = {
+		72365F0C2086E13A00413444 /* Build configuration list for PBXNativeTarget "actio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261131220826DBA005E3C12 /* Debug */,
-				7261131320826DBA005E3C12 /* Release */,
+				72365F0D2086E13A00413444 /* Debug */,
+				72365F0E2086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7261131420826DBA005E3C12 /* Build configuration list for PBXNativeTarget "actioTests" */ = {
+		72365F0F2086E13A00413444 /* Build configuration list for PBXNativeTarget "actioTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7261131520826DBA005E3C12 /* Debug */,
-				7261131620826DBA005E3C12 /* Release */,
+				72365F102086E13A00413444 /* Debug */,
+				72365F112086E13A00413444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 726112E820826DB7005E3C12 /* Project object */;
+	rootObject = 72365EE72086E13900413444 /* Project object */;
 }
