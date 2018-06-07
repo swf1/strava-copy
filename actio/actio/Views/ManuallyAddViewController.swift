@@ -22,6 +22,10 @@ class ManualAddViewController: UIViewController {
   @IBOutlet weak var timeField: UITextField!
   @IBOutlet weak var distanceField: UITextField!
   
+  @IBOutlet weak var distanceWarning: UILabel!
+  @IBOutlet weak var timeWarning: UILabel!
+  @IBOutlet weak var nameWarning: UILabel!
+  
   // get and set activity type
   @IBAction func typeChanged(_ sender: AnyObject) {
     switch activityTypeSegment.selectedSegmentIndex
@@ -40,10 +44,39 @@ class ManualAddViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.chooseViewActivityType = "run";
+    
+    distanceWarning.isHidden = true
+    timeWarning.isHidden = true
+    nameWarning.isHidden = true
+  }
+  
+  @IBAction func validateInput(_ sender: UIButton) {
+    if timeField.text == nil || timeField.text == ""  {
+        timeWarning.isHidden = false
+        print("time", timeField.text)
+    } else {
+      timeWarning.isHidden = true
+    }
+    if distanceField.text == nil || distanceField.text == "" {
+        distanceWarning.isHidden = false
+        print("distance", distanceField)
+    } else {
+      distanceWarning.isHidden = true
+    }
+    if activityNameInputField.text == nil || activityNameInputField.text == "" {
+        nameWarning.isHidden = false
+        print("name", activityNameInputField)
+    } else {
+      nameWarning.isHidden = true
+    }
+    if (activityNameInputField.text != ""  && distanceField.text != "" && timeField.text != "") {
+      print("going for it")
+      submitManualActivity()
+    }
   }
   
   // record manual activity *needs work on distance and time*
-  @IBAction func subimtManualActivity(_ sender: UIButton) {
+  func submitManualActivity() {
     // perform saving functions here
     guard let user = Auth.auth().currentUser else { return }
     guard let uid = user.uid as? String else { return  }
@@ -81,6 +114,8 @@ class ManualAddViewController: UIViewController {
     self.activity.distance = distance
     self.activity.pace = "\(intP1):\(intP2)"
     store.saveActivity(activity: activity)
+    performSegue(withIdentifier: "unwindToCoreView", sender: self)
+
   }
 }
 
