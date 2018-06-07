@@ -11,43 +11,39 @@ import CoreLocation
 import Mapbox
 import Firebase
 
-
 class SaveActivityViewController: UIViewController {
+  
   var activity: Activity!
-  var ref: DatabaseReference!
+  var activityScreenshot: UIImage?
+  let store = FirebaseDataStore.instance
   let locationManager = Loc.shared
-
   let activityTimer = ActivityTimer.shared
 
   @IBOutlet weak var activityNameField: UITextField!
   @IBOutlet weak var recordActivityButton: UIButton!
   
-  override func viewDidLoad() {
-    self.ref = Database.database().reference()
-  }
-  
   @IBAction func recordActivityPressed(_ sender: Any) {
-    // perform saving functions here
-    let activityName: String = activityNameField.text!
-    self.activity.name = activityName
-    var data: [String:Any] = [:]
-    data["type"] = activity.type
-    data["name"] = activity.name
-    data["athlete"] = ["uid": activity.athlete.uid]
-    data["start_date_local"] = activity.startDateLocal
-    var coordinates: [[String:Double]] = []
-    for l in activityTimer.coordinates()! {
-      coordinates.append([
-        "latitude": l.coordinate.latitude,
-        "longitude": l.coordinate.longitude
-        ])
+    self.activity.name = activityNameField.text!
+    self.activity.route = Route(coordinates: self.activityTimer.coordinates()!)
+    self.activity.pace = self.activityTimer.pace()
+    self.activity.distance = String(format: "%.2f", self.activityTimer.totalDistance)
+    self.activity.duration = self.activityTimer.totalTime()
+    self.activity.screenshotLabel = UUID().uuidString + ".jpg"
+    
+    if let p = parent as? StartActivityViewController {
+        if let img = p.activityScreenshot {
+          store.storeScreenshot(
+            label: self.activity.screenshotLabel!,
+            screenshot: img
+          )
+        }
     }
-    data["route"] = ["coordinates": coordinates]
-    //self.ref.child("activities").childByAutoId().setValue(data)
-     self.ref.child("activities").child(activity.athlete.uid).childByAutoId().setValue(data)
-     self.performSegue(withIdentifier: "unwindToActivityCollectionView", sender: self)
+    
+    store.saveActivity(activity: activity)
+    performSegue(withIdentifier: "unwindToCoreView", sender: self)
 
   }
+
   // allows user to touch off keyboar to hide keyboard
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)

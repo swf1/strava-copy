@@ -14,13 +14,13 @@ import Foundation
 class Athlete: NSObject {
     var uid: String
     var email: String
-    var name: String
+    var displayName: String
     var photo: URL
 
-  init(uid: String, email: String, name: String, photo: URL) {
+  init(uid: String, email: String, displayName: String, photo: URL) {
       self.uid = uid
       self.email = email
-      self.name = name
+      self.displayName = displayName
       self.photo = photo
     }
 }

@@ -75,15 +75,13 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
               
                 return
             }
-          
+      
             // Present the main view
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
                 UIApplication.shared.keyWindow?.rootViewController = viewController
                 self.dismiss(animated: true, completion: nil)
             }
         })
-      print("hello", credential)
-      
       }
     }
   
@@ -91,11 +89,12 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     if let vc = segue.destination as? CoreViewController
     {
       guard let user = Auth.auth().currentUser else { return }
-      guard let name = user.displayName else { return }
+      guard let displayName = user.displayName else { return }
       guard let photo = user.photoURL else { return }
       guard let uid = user.uid as? String else { return  }
       guard let email = user.email as? String else { return }
     }
+  
   }
 }
 
