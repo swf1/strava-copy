@@ -40,6 +40,8 @@ class SaveActivityViewController: UIViewController {
     }
     
     store.saveActivity(activity: activity)
+    performSegue(withIdentifier: "unwindToCoreView", sender: self)
+
   }
 
   // allows user to touch off keyboar to hide keyboard

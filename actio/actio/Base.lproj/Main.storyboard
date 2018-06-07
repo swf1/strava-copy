@@ -1772,6 +1772,7 @@
                         <outlet property="activityNameField" destination="4ny-GF-m4S" id="VPo-a5-eDb"/>
                         <outlet property="recordActivityButton" destination="rWE-9h-Gzn" id="oNo-TB-Wnz"/>
                         <segue destination="zI5-W5-vAr" kind="unwind" identifier="unwindToActivityCollectionView" unwindAction="unwindToActivityCollectionViewWithSegue:" id="Qkw-rO-076"/>
+                        <segue destination="zI5-W5-vAr" kind="unwind" identifier="unwindToCoreView" unwindAction="unwindToCoreViewWithSegue:" id="Oda-sK-75H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIE-GD-CQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
