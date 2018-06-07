@@ -10,19 +10,22 @@ import UIKit
 import Firebase
 
 class ChooseViewController: UIViewController {
+  
   @IBOutlet weak var bikeBox: UIButton!
   @IBOutlet var chooseWrapper: UIView!
   var chooseViewActivityType: String!
+  
   let locationManager = Loc.shared
-  //@IBOutlet weak var chooseView: UIView!
   @IBOutlet weak var topBox: UIView!
   
   @IBOutlet weak var topLabel: UILabel!
   @IBOutlet weak var stackView: UIStackView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     chooseWrapper.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     topBox.roundCorners([.topLeft, .topRight], radius: 5)
+    bikeBox.roundCorners([.bottomLeft, .bottomRight], radius: 5)
 
   }
   
