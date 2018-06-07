@@ -1954,6 +1954,7 @@
                                                     <outlet property="activityDuration" destination="4hh-SK-I6M" id="NHK-3n-BqZ"/>
                                                     <outlet property="activityName" destination="hYR-WU-gvy" id="rqD-1L-Kms"/>
                                                     <outlet property="activityPace" destination="vt3-Dz-QGM" id="jRC-Cx-K4H"/>
+                                                    <outlet property="activityScreenshot" destination="1Mk-nE-wn6" id="uXX-OS-zDy"/>
                                                     <outlet property="activityType" destination="fTT-Zk-rXP" id="DaE-Jp-Gw3"/>
                                                 </connections>
                                             </collectionViewCell>

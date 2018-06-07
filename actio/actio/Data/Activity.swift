@@ -33,6 +33,7 @@ struct Activity{
     self.distance = activityData["distance"] as? String ?? ""
     self.pace = activityData["pace"] as? String ?? ""
     self.duration = activityData["duration"] as? String ?? ""
+    self.screenshotLabel = activityData["screenshot_label"] as? String ?? ""
   }
 
   init(type: String, startDateLocal: String) {
