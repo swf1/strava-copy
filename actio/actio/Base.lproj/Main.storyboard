@@ -1309,7 +1309,7 @@
                                                         <rect key="frame" x="4" y="0.0" width="394" height="117"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DURATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-Jw-mFQ">
-                                                                <rect key="frame" x="152" y="72" width="90" height="13"/>
+                                                                <rect key="frame" x="158" y="72" width="78" height="13"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="13" id="D0m-ia-jzy"/>
                                                                 </constraints>

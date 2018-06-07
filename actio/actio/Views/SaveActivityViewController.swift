@@ -28,10 +28,14 @@ class SaveActivityViewController: UIViewController {
     self.activity.pace = self.activityTimer.pace()
     self.activity.distance = String(format: "%.2f", self.activityTimer.totalDistance)
     self.activity.duration = self.activityTimer.totalTime()
+    self.activity.screenshotLabel = UUID().uuidString + ".jpg"
     
     if let p = parent as? StartActivityViewController {
         if let img = p.activityScreenshot {
-            store.storeScreenshot(screenshot: img)
+          store.storeScreenshot(
+            label: self.activity.screenshotLabel!,
+            screenshot: img
+          )
         }
     }
     

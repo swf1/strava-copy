@@ -44,11 +44,12 @@ final class FirebaseDataStore {
       "pace": activity.pace,
       "distance": activity.distance,
       "duration": activity.duration,
+      "screenshot_label": activity.screenshotLabel
     ]
     FirebaseClient.saveActivity(activityData: data)
   }
   
-  func storeScreenshot(screenshot: UIImage) {
-    FirebaseClient.storeScreenshot(screenshot: screenshot)
+  func storeScreenshot(label: String, screenshot: UIImage) {
+    FirebaseClient.storeScreenshot(label: label, screenshot: screenshot)
   }
 }

@@ -22,6 +22,7 @@ struct Activity{
   var distance: String?
   var pace: String?
   var duration: String?
+  var screenshotLabel: String?
 
   init(snapshot: DataSnapshot) {
     let activityData = snapshot.value as? [String:AnyObject] ?? [:]
