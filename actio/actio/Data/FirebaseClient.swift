@@ -23,9 +23,9 @@ struct FirebaseClient {
     ref.child("activities").child(user.uid).childByAutoId().setValue(activityData)
   }
   
-  static func storeScreenshot(screenshot: UIImage) {
+  static func storeScreenshot(label: String, screenshot: UIImage) {
     let ref = Storage.storage().reference()
-    let snapshotRef = ref.child("test.jpg")
+    let snapshotRef = ref.child(label)
     let data = UIImageJPEGRepresentation(screenshot, 0.8)
     snapshotRef.putData(data!, metadata: nil) { (metadata, error) in
       guard let metadata = metadata else {
