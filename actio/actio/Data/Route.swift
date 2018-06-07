@@ -10,16 +10,17 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Route: NSObject {
     var name: String?
-    var coordinates: [Coordinate]
+    var coordinates: [CLLocation]
     
-    init?(coordinates: [Coordinate]) {
+    init?(coordinates: [CLLocation]) {
         self.coordinates = coordinates
     }
     
-    init?(name: String, coordinates: [Coordinate]) {
+    init?(name: String, coordinates: [CLLocation]) {
         self.name = name
         self.coordinates = coordinates
     }

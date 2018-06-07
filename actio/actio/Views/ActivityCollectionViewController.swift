@@ -10,81 +10,39 @@ import Foundation
 import UIKit
 import Firebase
 
-class ActivityCollectionViewController: UIViewController {
-    
+class ActivityCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+  let store = FirebaseDataStore.instance
   let locationManager = Loc.shared
+  var chooseViewActivityType: String!
 
   @IBOutlet weak var activityCollectionView: UICollectionView!
-  
-  @IBOutlet weak var chooseView: UIView!
-  var chooseViewActivityType: String!
-  
+  @IBOutlet weak var clientTable: UITableView!
   @IBOutlet weak var goToTrackRun: UIView!
-  
-
-  @IBAction func showChooseView(_ sender: AnyObject) {
-    chooseView.isHidden = false
-    // might add a greyscale to make the background look unavailble.
-    // this would also be a large button to unselect the pop up
-    // there is likely a better ios/swift way of doing this so I'm waiting.
-  }
-  @IBAction func hideChooseView(_ sender: AnyObject) {
-    chooseView.isHidden = true
-    // when we leave the screen we need to rehide the pop up prompt
-    // removing it upon return is too slow.
-  }
-    
-    @IBAction func didPressRun() {
-        self.chooseViewActivityType = "Run"
-    }
-
-    @IBAction func didPressBike() {
-        self.chooseViewActivityType = "Bike"
-    }
-  
-    @IBAction func unwindToActivityCollectionView(segue: UIStoryboardSegue){}
-  
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? InitialMapViewController
-        {
-            guard let user = Auth.auth().currentUser else { return }
-            guard let name = user.displayName else { return }
-            guard let photo = user.photoURL else { return }
-            guard let uid = user.uid as? String else { return  }
-            guard let email = user.email as? String else { return }
-            let athlete = Athlete(uid: uid, email: email, name: name, photo: photo)
-            vc.activity = Activity(athlete: athlete, type: chooseViewActivityType)
-            if let flag = locationManager.gpsFlag {
-                flag.0 ? (vc.gpsLabel.backgroundColor = UIColor.green) : (vc.gpsLabel.backgroundColor = UIColor.red)
-                vc.gpsLabel.text = flag.1
-            }
-        }
-    }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     activityCollectionView.delegate = self
     activityCollectionView.dataSource = self
+    store.getActivities {
+      self.activityCollectionView.reloadSections(IndexSet(integer: 0))
+    }
   }
   
-  override func viewDidDisappear(_ animated: Bool) {
-  }
-}
-
-
-extension ActivityCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+  override func viewDidDisappear(_ animated: Bool) {}
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return store.activities.count
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath)
+      as! ActivityCollectionViewCell
+    let activity = store.activities[indexPath.row]
+    cell.displayContent(activity: activity)
     return cell
   }
 }
-
 
 func didPressButtonFromCustomView(sender:UIButton) {
   // do whatever you want

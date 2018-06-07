@@ -656,7 +656,8 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="didPressRun" destination="Iye-nz-8E5" eventType="touchUpInside" id="4Wq-t5-9a4"/>
-                                                    <action selector="didPressRun" destination="BZG-jr-uPz" eventType="touchUpInside" id="pJo-BL-gbG"/>
+                                                    <action selector="didPressRun" destination="Iye-nz-8E5" eventType="touchDown" id="DrY-wD-vuV"/>
+                                                    <action selector="didPressRun" destination="BZG-jr-uPz" eventType="touchUpInside" id="aQ4-7j-bZu"/>
                                                     <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="eCp-ZK-pTW"/>
                                                 </connections>
                                             </button>
@@ -671,6 +672,7 @@
                                                     <color key="titleColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="didPressBike" destination="Iye-nz-8E5" eventType="touchDown" id="LFo-K7-tte"/>
                                                     <action selector="didPressBike" destination="Iye-nz-8E5" eventType="touchUpInside" id="a3U-D9-oqc"/>
                                                     <action selector="didPressBike" destination="BZG-jr-uPz" eventType="touchUpInside" id="mf1-n6-Amj"/>
                                                     <segue destination="Uq0-XJ-M4B" kind="presentation" identifier="activitySegue" id="B8J-EK-AmQ"/>
@@ -1650,7 +1652,7 @@
                                 <rect key="frame" x="78" y="101" width="260" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-0V-HYW">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="360"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jce-cr-UCz">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="76.666666666666671"/>
@@ -1671,13 +1673,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-cD-VXg">
-                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="94.666666666666657" width="260" height="76.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Yantramanav-Regular" family="Yantramanav" pointSize="17"/>
                                                 <color key="textColor" red="0.29411764709999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blT-ZE-POn">
-                                                <rect key="frame" x="0.0" y="189.33333333333331" width="260" height="76.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="189" width="260" height="76.666666666666686"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-GF-m4S">
                                                         <rect key="frame" x="8" y="15.999999999999996" width="244" height="44.666666666666657"/>
@@ -1695,7 +1697,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-GY-yNI">
-                                                <rect key="frame" x="0.0" y="284" width="260" height="76.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="283.66666666666669" width="260" height="76.333333333333314"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-9h-Gzn">
                                                         <rect key="frame" x="8" y="16.000000000000004" width="244" height="44.333333333333343"/>
@@ -1793,7 +1795,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionCell" id="9mo-pd-nhU">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionCell" id="9mo-pd-nhU" customClass="ActivityCollectionViewCell" customModule="actio" customModuleProvider="target">
                                                 <rect key="frame" x="7" y="0.0" width="400" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1859,6 +1861,20 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-Zx-aJc">
                                                                             <rect key="frame" x="91" y="132" width="71" height="23"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                            <color key="textColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-Zk-rXP">
+                                                                            <rect key="frame" x="12" y="112" width="42" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFl-MH-0zR">
+                                                                            <rect key="frame" x="12" y="132" width="71" height="23"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.16862745100000001" green="0.1215686275" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
@@ -1933,6 +1949,14 @@
                                                     <constraint firstItem="cFo-I9-NWU" firstAttribute="leading" secondItem="9mo-pd-nhU" secondAttribute="leadingMargin" id="O9b-qw-BTk"/>
                                                 </constraints>
                                                 <size key="customSize" width="400" height="200"/>
+                                                <connections>
+                                                    <outlet property="activityDistance" destination="cRC-5I-PJJ" id="ZSQ-5g-fKx"/>
+                                                    <outlet property="activityDuration" destination="4hh-SK-I6M" id="NHK-3n-BqZ"/>
+                                                    <outlet property="activityName" destination="hYR-WU-gvy" id="rqD-1L-Kms"/>
+                                                    <outlet property="activityPace" destination="vt3-Dz-QGM" id="jRC-Cx-K4H"/>
+                                                    <outlet property="activityScreenshot" destination="1Mk-nE-wn6" id="uXX-OS-zDy"/>
+                                                    <outlet property="activityType" destination="fTT-Zk-rXP" id="DaE-Jp-Gw3"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
